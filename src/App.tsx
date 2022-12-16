@@ -6,9 +6,7 @@ function App() {
   return (
     <div className="App">
       
-      <title>Criar conta</title>
-
-      <CreateAccount />
+    
     </div>
   );
 }
