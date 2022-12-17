@@ -1,0 +1,90 @@
+.loginScreen-container {
+	background-color: #020063;
+	height: 100%;
+	font-family: 'Raleway', sans-serif;
+}
+
+.loginScreen-h1 {
+
+	color: white;
+	font-size: 32px;
+	margin: 5% 0 5% 5%;	
+	width: 17ch;
+	overflow: hidden;
+	animation: typing 2s steps(21), bliking 10s infinite step-end alternate;
+	white-space: nowrap;
+}
+
+
+
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+
+
+@keyframes bliking {
+	50% {
+		border-color: transparent;
+	}
+}
+
+
+.eteLogo {
+	width: 78vw;
+	margin: 14% auto 6% auto;	
+	display: block;
+
+}
+
+.loginScreen-label {
+	font-family: 'Raleway', sans-serif;
+	display: block;
+	padding: 7% 0 0% 5%;
+	font-size: 22px;
+	font-weight: 600;
+	color: white;
+}
+
+
+.loginScreen-input {	
+	margin: 1% 0 0 5%;
+	width: 248px;
+	height: 29px;
+	display: block;
+	font-size: 16px;
+	background-color: transparent;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	outline: none;
+	border-bottom: 1px white solid;
+	color: white;
+}
+
+
+.loginScreen-button {
+	background-color: #048F36;
+	color: white;
+	font-weight: 600;
+	display: block;
+	width: 274px;
+	border: none;
+	outline: none;
+	height: 35px;
+	font-size: 20px;
+	border-radius: 3px;
+	margin: 50px auto 9% auto;
+	cursor: pointer;
+}
+
+.loginScreen-link {
+  	display: block;
+  	text-align: center;
+  	margin: 0% 0 1% 0;
+  	color: #DBDBDB;
+  	cursor: pointer;
+}
+

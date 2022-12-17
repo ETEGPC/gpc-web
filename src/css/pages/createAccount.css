@@ -1,21 +1,27 @@
-h1 {
+.createAccount-container {
+	background-color: white;
+	position: sticky;
+}
+
+.createAccount-h1 {
 	font-family: 'Raleway', sans-serif;
 	font-size: 32px;
 	text-decoration: underline;
 	padding: 7% 0 5% 5%;
 }
 
-p {
+.createAccount-p {
 	font-family: 'Raleway', sans-serif;
 	padding: 1% 0 1% 5%;
 	max-width: 320px;
+	font-size: 16px;
 }
 
-main {
+.createAccount-main {
 	margin: 20px 0 0 0;
 }
 
-label {
+.createAccount-label {
 	font-family: 'Raleway', sans-serif;
 	display: block;
 	padding: 12% 0 2% 5%;
@@ -24,12 +30,19 @@ label {
 
 }
 
-main input {
+.createAccount-input {
 	margin: 1% 0 0 5%;
 	width: 248px;
 	height: 29px;
 	display: block;
 	font-size: 16px;
+	background-color: transparent;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	outline: none;
+	border-bottom: 1px black solid;
+	color: black;
 } 
 
 

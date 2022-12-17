@@ -7,10 +7,10 @@ export function HeaderBack(){
 
 	return(
 
-		<div className="container">
+		<div className="headerBack-container">
 			
-			<button className="buttonBack"> <img className="greenArrow" src={greenArrow} /> </button>
-			<img className="gpLogo" src={gpIcon} />
+			<button  className="buttonBack headerBack-button"> <img className="greenArrow" src={greenArrow} /> </button>
+			<img className="gpLogo headerBack-img" src={gpIcon} />
 
 
 		</div>
