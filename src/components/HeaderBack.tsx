@@ -1,4 +1,4 @@
-import '../css/components/headerBack.css';
+import '../styles/components/headerBack.css';
 import gpIcon from '../images/icons/gp_icon.png'
 import greenArrow from '../images/icons/greenArrow_icon.png'
 
