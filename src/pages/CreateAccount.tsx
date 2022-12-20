@@ -1,7 +1,7 @@
 import googleLogo from '../images/googleLogo.png'
-import '../css/pages/createAccount.css'
-import '../css/global.css'
-import { HeaderBack } from '../componentsExport/Exports';
+import '../styles/pages/createAccount.css'
+import '../styles/global.css'
+import { HeaderBack } from '../components/Exports';
 
 export function CreateAccount(){
     return (

@@ -1,6 +1,6 @@
-import '../css/pages/loginScreen.css';
+import '../styles/pages/loginScreen.css';
 import eteLogo from '../images/eteLogo.png';
-import '../css/global.css'
+import '../styles/global.css'
 import userIcon2 from '../images/icons/user2_icon.png';
 import passwordIcon from '../images/icons/password_icon.png';
 import { Link } from "react-router-dom";

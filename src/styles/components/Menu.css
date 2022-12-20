@@ -1,0 +1,104 @@
+.menu-container {
+	background-color: #020063;
+	font-family: 'Raleway', sans-serif;
+}
+
+
+.menu-open {
+	z-index: 1;
+	flex-direction: column;
+	position: absolute;
+	background-color: #020063;
+	width: 84vw;
+	transform: translateX(-100%);
+	transition: 0.2s;
+}
+
+.menu-header {
+	height: 7vh;
+	display: flex;
+}
+
+.menu-header-img {
+	max-width: 10vw;
+	max-height: 3vh;
+	align-self: center;
+}
+
+.menu-header-button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	margin: 0 5% 0 9%;
+}
+
+.menu-header-h1 {
+	color: white;
+	text-decoration: underline;
+	font-size: 26px;
+	display: inline;
+	align-self: center;
+}
+
+
+.menu-main {
+  	background-color: #010030;
+  	height: 100vh;
+	  display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.menu-main div {
+	padding: 0% 0% 0 9%;	
+	display: flex;
+}
+
+.menu-main div img{
+	width: 25px;
+	height: 25px;
+}
+
+
+.menu-main div a{
+	color: white;
+	font-weight: 600;
+	padding: 0 0 0 19px;
+	margin: auto 0;
+	text-decoration: none;
+}
+
+.menu-main hr {
+	width: 92%;
+	margin: 16px auto 16px auto;
+	color: white;
+}
+
+
+.menu-closed {
+  height: 7vh;
+  display: flex;
+  z-index: 1;
+}
+
+.menu-button {
+	background-color: transparent;
+	height: 44px;
+	align-self: center;
+	border: none;
+	position: absolute;
+	margin: 0 0 0 3%;
+	cursor: pointer;
+}
+
+
+.menu-img-menu {
+	max-width: 9vw;
+}
+
+.menu-img-gp {
+	margin: 0 auto;
+	padding: 10px;
+	max-width: 14vw;
+}

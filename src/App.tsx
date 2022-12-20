@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreateAccount, LoginScreen } from './componentsExport/Exports';
+import { CreateAccount, LoginScreen } from './components/Exports';
 import { Routes } from './PageRoutes/Routes';
 
 
