@@ -1,0 +1,85 @@
+.createAccount-container {
+	background-color: white;
+	position: sticky;
+}
+
+.createAccount-h1 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 32px;
+	text-decoration: underline;
+	padding: 7% 0 5% 5%;
+}
+
+.createAccount-p {
+	font-family: 'Raleway', sans-serif;
+	padding: 1% 0 1% 5%;
+	max-width: 320px;
+	font-size: 16px;
+}
+
+.createAccount-main {
+	margin: 20px 0 0 0;
+}
+
+.createAccount-label {
+	font-family: 'Raleway', sans-serif;
+	display: block;
+	padding: 12% 0 2% 5%;
+	font-size: 22px;
+	font-weight: 400;
+
+}
+
+.createAccount-input {
+	margin: 1% 0 0 5%;
+	width: 248px;
+	height: 29px;
+	display: block;
+	font-size: 16px;
+	background-color: transparent;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	outline: none;
+	border-bottom: 1px black solid;
+	color: black;
+} 
+
+
+.buttonCreacteAccount {
+	background-color: #048F36;
+	color: white;
+	font-weight: 600;
+	display: block;
+	width: 274px;
+	border: none;
+	outline: none;
+	height: 35px;
+	font-size: 20px;
+	border-radius: 3px;
+	margin: 60px auto -11px auto;
+	cursor: pointer;
+
+}
+
+.buttonLoginWithGoogle {
+	color: black;
+	font-weight: 600;
+	display: flex;
+	margin: 30px auto;
+	width: 274px;
+	border: 1px solid black;
+	outline: none;
+	height: 35px;
+	font-size: 20px;
+	border-radius: 3px;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.googleLogo {
+	width: 23px;
+	align-self: center;
+}
