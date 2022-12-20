@@ -26,8 +26,6 @@ export function LoginScreen(){
 
 			<button className="loginScreen-button">Entrar</button>
 			
-			<Link to="/criarConta" className="loginScreen-link">Criar uma conta</Link>
-			<Link className="loginScreen-link" to="#">Entrar sem um login</Link>
 
 
 		</div>
