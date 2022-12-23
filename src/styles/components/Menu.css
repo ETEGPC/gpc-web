@@ -5,7 +5,7 @@
 
 
 .menu-open {
-	z-index: 1;
+	z-index: 2;
 	flex-direction: column;
 	position: absolute;
 	background-color: #020063;
@@ -79,7 +79,7 @@
 .menu-closed {
   height: 7vh;
   display: flex;
-  z-index: 1;
+  z-index: 2;
 }
 
 .menu-button {
