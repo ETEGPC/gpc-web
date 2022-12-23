@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes as Rts} from 'react-router-dom';
-import { LoginScreen, LatestNews, NewsOpen } from '../components/Exports';
+import { LoginScreen, LatestNews, NewsOpen, Chat } from '../components/Exports';
 
 export function Routes(){
 	return(
@@ -9,6 +9,7 @@ export function Routes(){
 				<Route path="" element={<LoginScreen />} />
 				<Route path="/ultimasNoticias" element={<LatestNews />} />
 				<Route path="/noticiaAberta" element={<NewsOpen />} />
+				<Route path="/chat" element={<Chat/>}></Route>
 			</Rts>
 		</BrowserRouter>
 

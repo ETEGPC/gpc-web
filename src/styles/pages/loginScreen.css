@@ -5,30 +5,13 @@
 }
 
 .loginScreen-h1 {
-
 	color: white;
-	font-size: 32px;
-	margin: 5% 0 5% 5%;	
+	font-size: 30px;
+	margin: 5% auto;
 	width: 17ch;
 	overflow: hidden;
-	animation: typing 2s steps(21), bliking 10s infinite step-end alternate;
-	white-space: nowrap;
-}
-
-
-
-
-@keyframes typing {
-	from {
-		width: 0;
-	}
-}
-
-
-@keyframes bliking {
-	50% {
-		border-color: transparent;
-	}
+	text-align: center;
+	transition: 0.4s;	
 }
 
 

@@ -79,7 +79,8 @@
 .menu-closed {
   height: 7vh;
   display: flex;
-  z-index: 2;
+  z-index: 1;
+  position: sticky;
 }
 
 .menu-button {
