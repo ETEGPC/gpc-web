@@ -1,0 +1,41 @@
+.event {
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	grid-template-areas: 
+    "date ti  arrImg"
+    "date de arrImg";
+    margin: 20px auto;
+}
+
+
+.event-date {
+	grid-area: date;
+	margin: auto;
+}
+
+.event-title {
+	grid-area: ti;	
+	margin: auto 0;
+	font-size: 5vw;
+}
+
+
+.event-description {
+	grid-area: de;
+	font-size: 3vw;
+	margin: auto;
+}
+
+.event-arrow-img {
+	grid-area: arrImg;
+	margin: auto 0;
+	width: 10vw;
+}
+
+.event-hr {
+    margin: 20px auto;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 4px;
+    grid-area: hr;
+}
