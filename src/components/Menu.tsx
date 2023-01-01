@@ -16,6 +16,7 @@ import timeline from '../images/icons/timeline_icon.png'
 import documents from '../images/icons/documents_icon.png'
 import termOfUse from '../images/icons/termsOfUse_icon.png'
 import privacyPolicy from '../images/icons/privacyPolicy_icon.png'
+import initialPage from '../images/icons/initialPage_icon.svg'
 
 
 
@@ -52,16 +53,21 @@ export function Menu(){
 				</header>		
 
 				<main className="menu-main">
+
+					<div className="menu-component-0">
+						<img src={initialPage} />
+						<Link to="#">Página inicial</Link>
+					</div>
 					 
 					<div className="menu-component-1">
 						<img src={user} />
-						<Link to="#">Minha conta</Link>
+						<Link to="/meuPerfil">Meu perfi</Link>
 					</div>
 
 
 					<div className="menu-component-2">
 						<img src={latestNews} />
-						<Link to="#">Últimas notícias</Link>
+						<Link to="/ultimasNoticias">Últimas notícias</Link>
 					</div>
 
 
@@ -73,13 +79,13 @@ export function Menu(){
 
 					<div className="menu-component-4">
 						<img src={schedule} />
-						<Link to="#">Nossa agenda</Link>
+						<Link to="/nossaAgenda">Nossa agenda</Link>
 					</div>
 
 
 					<div className="menu-component-5">
 						<img src={chat} />
-						<Link to="#">Chat</Link>
+						<Link to="/chat">Chat</Link>
 					</div>
 
 

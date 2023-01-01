@@ -8,9 +8,14 @@ export function OurAgend(){
 		<div>
 			
 			<Menu />
+
+			<h1 className="events-h1">Nossa agenda</h1>
+			
 			<CalendarComponent />
 
 			<div className="events">
+
+
 
 				<div className="event">					
 
