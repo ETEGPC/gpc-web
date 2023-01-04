@@ -49,17 +49,18 @@
 
 
 .loginScreen-button {
-	background-color: #048F36;
-	color: white;
-	font-weight: 600;
-	display: block;
-	width: 274px;
+	color: #fff;
 	border: none;
 	outline: none;
-	height: 35px;
-	font-size: 20px;
-	border-radius: 3px;
+	display: block;
+	width: 67vw;
+	height: 5vh;
 	margin: 50px auto 9% auto;
+	background-color: #048F36;
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 4px;		
 	cursor: pointer;
 }
 

@@ -121,7 +121,7 @@ export function Menu(){
 
 					<div className="menu-component-11">
 						<img src={documents} />
-						<Link to="#">Solicitação de documentos</Link>
+						<Link to="/solicitacaoDeDocumentos">Solicitação de documentos</Link>
 					</div>
 
 					<hr />

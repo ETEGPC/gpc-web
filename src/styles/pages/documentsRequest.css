@@ -1,0 +1,371 @@
+.document-type {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+	'docType selectType';
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.documents-h1 {
+	margin: 3% 0% 3% 3%;
+  font-size: 32px;
+  text-decoration: underline;
+}
+
+.documents-h2 {
+	font-weight: 600;
+	margin: 3% 0% 9% 3%;
+}
+
+.documents-p {
+	display: inline;
+	font-weight: 600;
+	grid-area: docType;
+	margin-left: 6%;
+}
+
+.documents-documentSelect {
+	grid-area: selectType;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.enrollmentStatement {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+	'enrollmentStatementGroup enrollmentStatementGroupSelect'
+	'enrollmentStatementName enrollmentStatementNameSelect';
+	visibility: hidden;
+	position: absolute;
+	gap: 15px;
+}
+
+.enrollmentStatement-group {
+	display: inline;
+	font-weight: 600;
+	grid-area: enrollmentStatementGroup;	
+	margin-left: 6%;
+}
+
+.enrollment-select {
+	grid-area: enrollmentStatementGroupSelect;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.enrollmentStatement-name{
+	display: inline;
+	font-weight: 600;
+	grid-area: enrollmentStatementName;
+	margin-left: 6%;
+}
+
+.enrollmentStatement-name-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  font-size: 12px;
+  grid-area: enrollmentStatementNameSelect;
+  margin: 0 auto;
+  width: 46vw;
+  text-align: center;
+}
+
+.frequencyStatement {
+	visibility: hidden;
+	position: absolute;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+	'frequencyStatementGroup frequencyStatementGoupSelect'
+	'frequencyStatementName  frequencyStatementNameInput';
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.frequencyStatement-group {
+	display: inline;
+	font-weight: 600;
+	grid-area: frequencyStatementGroup;	
+	margin-left: 6%;
+}
+
+.frequencyStatement-select {
+	grid-area: frequencyStatementGoupSelect;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.frequencyStatement-name{
+	display: inline;
+	font-weight: 600;
+	grid-area: frequencyStatementName;
+	margin-left: 6%;
+}
+
+.frequencyStatement-name-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  font-size: 12px;
+  grid-area: frequencyStatementNameInput;
+  margin: 0 auto;
+  width: 46vw;
+  text-align: center;
+}
+
+
+
+.sheet18 {
+	visibility: hidden;
+	position: absolute;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+	'sheet18Group sheet18GroupSelect'
+	'sheet18Name sheet18Select'
+	'sheet18MotherName sheet18MotherNameInput'
+	'sheet18FatherName sheet18FatherNameInput'
+	'sheet18PhoneNumber sheet18PhoneNumberInput';
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.sheet18-group {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet18Group;
+	margin-left: 6%;
+}
+
+.sheet18-select {
+	grid-area: sheet18GroupSelect;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.sheet18-name, .sheet18-mother-name, .sheet18-father-name, .sheet18-phone-number{
+	display: inline;
+	font-weight: 600;
+	margin: 3% 3% 3% 3%;
+}
+
+.sheet18-name {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet18Name;
+	margin-left: 6%;
+}
+
+.sheet18-mother-name {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet18MotherName;
+	margin-left: 6%;
+}
+
+.sheet18-father-name {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet18FatherName;
+	margin-left: 6%;
+}
+
+.sheet18-phone-number {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet18PhoneNumber;
+	margin-left: 6%;
+}
+
+.sheet18-name-input, .sheet18-mother-name-input, .sheet18-father-name-input, .sheet18-phone-number-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  width: 55vw;
+  font-size: 14px;
+}
+
+
+.sheet18-name-input {
+	grid-area: sheet18Select;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.sheet18-mother-name-input {
+	grid-area: sheet18MotherNameInput;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.sheet18-father-name-input {
+	grid-area: sheet18FatherNameInput;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.sheet18-phone-number-input {
+	grid-area: sheet18PhoneNumberInput;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.sheet19 {
+	visibility: hidden;
+	position: absolute;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+	'sheet19Group sheet19GroupSelect'
+	'sheet19Name sheet19Select'
+	'sheet19MotherName sheet19MotherNameInput'
+	'sheet19FatherName sheet19FatherNameInput'
+	'sheet19PhoneNumber sheet19PhoneNumberInput';
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.sheet19-group {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet19Group;
+	margin-left: 6%;
+}
+
+.sheet19-select {
+	grid-area: sheet19GroupSelect;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.sheet19-name, .sheet19-mother-name, .sheet19-father-name, .sheet19-phone-number{
+	display: inline;
+	font-weight: 600;
+	margin: 3% 3% 3% 3%;
+}
+
+.sheet19-name {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet19Name;
+	margin-left: 6%;
+}
+
+.sheet19-mother-name {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet19MotherName;
+	margin-left: 6%;
+}
+
+.sheet19-father-name {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet19FatherName;
+	margin-left: 6%;
+}
+
+.sheet19-phone-number {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet19PhoneNumber;
+	margin-left: 6%;
+}
+
+.sheet19-name-input, .sheet19-mother-name-input, .sheet19-father-name-input, .sheet19-phone-number-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  width: 55vw;
+  font-size: 14px;
+}
+
+
+.sheet19-name-input {
+	grid-area: sheet19Select;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.sheet19-mother-name-input {
+	grid-area: sheet19MotherNameInput;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.sheet19-father-name-input {
+	grid-area: sheet19FatherNameInput;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+.sheet19-phone-number-input {
+	grid-area: sheet19PhoneNumberInput;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;
+}
+
+
+.documents-button {
+	border: none;
+	outline: none;
+	display: none;
+	width: 67vw;
+	height: 5vh;
+	margin: 29px auto 20px auto;
+	background-color: #048F36;
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 4px;		
+}
