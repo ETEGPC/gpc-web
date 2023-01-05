@@ -36,8 +36,6 @@ export function Menu(){
 
 	}
 
-
-
 	return(
 
 		<div className="menu-container">
@@ -56,7 +54,7 @@ export function Menu(){
 
 					<div className="menu-component-0">
 						<img src={initialPage} />
-						<Link to="#">Página inicial</Link>
+						<Link to="/paginaInicial">Página inicial</Link>
 					</div>
 					 
 					<div className="menu-component-1">

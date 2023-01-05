@@ -1,0 +1,211 @@
+.homepage-title {
+  margin: 3% 0% 3% 3%;
+  font-size: 32px;
+  text-decoration: underline;
+}
+
+
+.homePage-container {
+
+}
+
+.carousel-content {
+	display: grid;
+	background-image: url(http://localhost:3000/static/media/imageExample.d4d901719c0f147d994a.png);
+	width: 90vw;
+	background-size: 100%;
+	height: 59vw;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	grid-template-rows: 4fr 1fr;		
+}
+
+.carousel-title {
+	margin: 3%;
+	color: white;
+
+}
+
+.carousel-image {
+	width: 93vw;
+	display: inline;
+	align-self: center;
+}
+
+.carousel-circles {
+	margin: auto;
+}
+
+.circle {
+	width: 8px;
+	height: 8px;
+	background-color: gray;
+	border-radius: 100%;
+	display: inline-block;
+	margin: 0px 1px 0px 1px;
+	transition: 0.2s;
+}
+
+#circle-1 {
+	background-color: #0076E2;
+}
+
+.links {
+	display: flex;
+	justify-content: space-evenly;
+	height: 15vh;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.links-component1, .links-component2, .links-component3 {
+	width: 18vw;
+	box-shadow: 2px 2px 8px #cacaca;
+	border-radius: 10px;
+}
+
+.links-component1 a {
+	color: #048F36;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 3.5vw;
+	text-align: center;
+	display: block;
+	margin: 6px 0;
+}
+
+.links-component2 a {
+	color: #048F36;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 3.5vw;
+	text-align: center;
+	display: block;
+	margin: 6px 0;
+}
+
+.links-component3 a {
+	color: #048F36;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 3.5vw;
+	text-align: center;
+	display: block;
+	margin: 6px 0;
+}
+
+.links-component1 img {
+	width: 9vw;
+	margin: 4% auto;
+	display: block;
+}
+
+.links-component2 img {
+	width: 9vw;
+	margin: 4% auto;
+	display: block;
+}
+
+.links-component3 img {
+	width: 9vw;
+	margin: 4% auto;
+	display: block;
+}
+
+.main-content {
+  margin: 3% 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.about-gp-content {
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.span-contact-forms {
+  font-weight: 600;
+}
+
+.about-contact-forms {
+	font-size: 13px;
+  margin: 10px 0;
+}
+
+.contact-forms {
+	display: flex;
+	justify-content: space-evenly;
+	height: 15vh;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.contact-component1, .contact-component2, .contact-component3 {
+	width: 18vw;
+}
+
+
+.contact-component1 img {
+	width: 9vw;
+	margin: 4% auto;
+	display: block;
+}
+
+.contact-component2 img {
+	width: 9vw;
+	margin: 4% auto;
+	display: block;
+}
+
+.contact-component3 img {
+	width: 9vw;
+	margin: 4% auto;
+	display: block;
+}
+
+
+.contact-component1 a {
+	text-decoration: none;
+	font-size: 3.5vw;
+	text-align: center;
+	display: block;
+	margin: 6px 0;
+	color: black;
+}
+
+.contact-component2 a {
+	text-decoration: none;
+	font-size: 3.5vw;
+	text-align: center;
+	display: block;
+	margin: 6px 0;
+	color: black;
+}
+
+.contact-component3 a {
+	text-decoration: none;
+	font-size: 3.5vw;
+	text-align: center;
+	display: block;
+	margin: 6px 0;
+	color: black;
+}
+
+.button-chat {
+	background-color: white;
+	border: none;
+	outline: none;
+	box-shadow: 2px 2px 8px #cacaca;
+	border-radius: 100%;
+	width: 16vw;
+	height: 16vw;
+	align-self: end;
+	position: absolute;
+	bottom: 7px;
+}
+
+.button-chat-img {
+  width: 10vw;
+  margin: auto;
+}
