@@ -10,3 +10,4 @@ export * from '../pages/HomePage';
 export * from '../pages/MyProfile';
 export * from '../pages/DocumentsRequest';
 export * from '../pages/BulletinBoard';
+export * from '../pages/Timesheet';

@@ -1,0 +1,19 @@
+.timeSheet-content {
+
+}
+
+.timeSheet-content h1 {
+  margin: 3% 0% 3% 3%;
+  text-decoration: underline;	
+}
+
+.timeSheet-content h3 {
+	margin: 9% 0% 1% 3%;	
+}
+
+.timeSheet-content p {
+	margin: 0% 0% 3% 3%;
+	text-decoration: underline;
+	cursor: pointer;
+	cursor: #010030;
+}

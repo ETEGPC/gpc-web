@@ -36,6 +36,14 @@ export function Menu(){
 
 	}
 
+
+	function openInstagram(){
+
+		window.open('https://www.instagram.com/eteginasiopec/', '_blank');
+
+	}
+	
+
 	return(
 
 		<div className="menu-container">
@@ -95,7 +103,7 @@ export function Menu(){
 
 					<div className="menu-component-7">
 						<img src={instagram} />
-						<Link to="#">Instagram</Link>
+						<Link onClick={openInstagram} to="#">Instagram</Link>
 					</div>
 
 
@@ -113,7 +121,7 @@ export function Menu(){
 
 					<div className="menu-component-10">
 						<img src={timeline} />
-						<Link to="#">Quadro de horários</Link>
+						<Link to="/quadroDeHorarios">Quadro de horários</Link>
 					</div>
 
 
