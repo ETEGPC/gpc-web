@@ -71,7 +71,7 @@ export function Menu(){
 
 					<div className="menu-component-3"> 
 						<img src={bulletinBoard} />
-						<Link to="#">Mural de avisos</Link>
+						<Link to="/muralDeAvisos">Mural de avisos</Link>
 					</div>
 
 

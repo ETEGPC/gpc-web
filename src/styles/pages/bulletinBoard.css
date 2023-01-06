@@ -1,0 +1,30 @@
+.page-title {
+  margin: 3% 0% 3% 3%;
+  font-size: 32px;
+  text-decoration: underline;
+}
+
+.BulletinBoard-content {
+
+}
+
+.BulletinBoard-content h4 {
+  margin: 3% 0% 0% 3%;
+}
+
+.content {
+  width: 95vw;
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #cacaca;
+}
+
+.content h5 {
+	margin: 3% 0% 0% 3%;	
+}
+
+.content p {
+  font-size: 14px;
+  margin: 2% 3%;
+}
+

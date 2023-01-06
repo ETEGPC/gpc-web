@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes as Rts} from 'react-router-dom';
-import { LoginScreen, LatestNews, NewsOpen, Chat, OurAgend, HomePage, MyProfile, DocumentsRequest } from '../components/Exports';
+import { LoginScreen, LatestNews, NewsOpen, Chat, OurAgend, HomePage, MyProfile, DocumentsRequest, BulletinBoard } from '../components/Exports';
 
 export function Routes(){
 	return(
@@ -14,6 +14,7 @@ export function Routes(){
 				<Route path="/paginaInicial" element={<HomePage />}></Route>
 				<Route path="/meuPerfil" element={<MyProfile />} />
 				<Route path="solicitacaoDeDocumentos" element={<DocumentsRequest />} />
+				<Route path="muralDeAvisos" element={<BulletinBoard />} />
 			</Rts>
 		</BrowserRouter>
 

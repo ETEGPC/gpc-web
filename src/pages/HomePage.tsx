@@ -22,7 +22,6 @@ export function HomePage(){
 		
 		
 		let carouselTitle = document.getElementById('carousel-title') as HTMLParagraphElement;
-		// let carouselImage = document.getElementById('carousel-image') as HTMLImageElement;
 		let carouselImages = document.getElementById('carousel-content') as HTMLDivElement;
 		let circle1 = document.getElementById('circle-1') as HTMLDivElement;
 		let circle2 = document.getElementById('circle-2') as HTMLDivElement;
