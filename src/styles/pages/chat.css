@@ -13,7 +13,6 @@
 }
 
 .chat-subContiner {
-    background-color: rgba(217, 217, 217, 0.5);
     width: 95vw;
     margin: 0 auto;
     border-radius: 4px;
@@ -69,31 +68,25 @@
     padding: 6px
 }
 
-.sendMessage {
-
-}
-
 .chat-textarea {
-    background-color: transparent;
+    background-color: white;
     outline: none;
-    width: 88%;
-    
+    width: 87vw;
     margin: 0 auto;
     font-size: 16px;
-    min-height: 1ch;  
-    border-radius: 0px;
-    border-bottom: 1px solid gray;
+    border-bottom: none;
     border-top: none;
     border-left: none;
     border-right: none;
     resize: none;
-    
+    box-shadow: 2px 2px 2px #cacaca;
+    border-radius: 10px;
 }
 
 .sendMessage {
+    position: absolute;
+    bottom: 0;
     display: flex;
-    margin: 100% auto 0px auto;
-    padding: 4px;
 }
 
 .chat-button {

@@ -8,10 +8,10 @@ import imageExample5 from '../images/imageExample5.svg'
 import greenSchedule from '../images/icons/greenSchedule_icon.svg'
 import greenBulletinBoard from '../images/icons/greenBulletinBoard_icon.svg'
 import greenLatestNews from '../images/icons/greenLatestNews_icon.svg'
-import emailIcon from '../images/icons/email2_icon.png'
-import instagrmaIcon from '../images/icons/instagram2_icon.png'
-import whatsappIcon from '../images/icons/whatsapp2_icon.png'
-import chatIcon from '../images/icons/chat2_icon.png'
+import emailIcon from '../images/icons/email2_icon.svg'
+import instagrmaIcon from '../images/icons/instagram2_icon.svg'
+import whatsappIcon from '../images/icons/whatsapp2_icon.svg'
+import chatIcon from '../images/icons/chat2_icon.svg'
 import { Link, useNavigate } from 'react-router-dom';
 
 export function HomePage(){	

@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom'
-import gpIcon from '../images/icons/gp_icon.png'
-import menuIcon from '../images/icons/menu_icon.png'
+import gpIcon from '../images/icons/gp_icon.svg'
+import menuIcon from '../images/icons/menu_icon.svg'
 import '../styles/components/Menu.css';
-import greenArrow from '../images/icons/greenArrow_icon.png'
-import user from '../images/icons/user_icon.png'
-import latestNews from '../images/icons/latestNews_icon.png'
-import bulletinBoard from '../images/icons/bulletinBoard_icon.png'
-import schedule from '../images/icons/schedule_icon.png'
-import chat from '../images/icons/chat_icon.png'
-import facebook from '../images/icons/facebook_icon.png'
-import instagram from '../images/icons/instagram_icon.png'
-import whatsapp from '../images/icons/whatsapp_icon.png'
-import email from '../images/icons/email_icon.png'
-import timeline from '../images/icons/timeline_icon.png'
-import documents from '../images/icons/documents_icon.png'
-import termOfUse from '../images/icons/termsOfUse_icon.png'
-import privacyPolicy from '../images/icons/privacyPolicy_icon.png'
+import greenArrow from '../images/icons/greenArrow_icon.svg'
+import user from '../images/icons/user_icon.svg'
+import latestNews from '../images/icons/latestNews_icon.svg'
+import bulletinBoard from '../images/icons/bulletinBoard_icon.svg'
+import schedule from '../images/icons/schedule_icon.svg'
+import chat from '../images/icons/chat_icon.svg'
+import facebook from '../images/icons/facebook_icon.svg'
+import instagram from '../images/icons/instagram_icon.svg'
+import whatsapp from '../images/icons/whatsapp_icon.svg'
+import email from '../images/icons/email_icon.svg'
+import timeline from '../images/icons/timeline_icon.svg'
+import documents from '../images/icons/documents_icon.svg'
+import termOfUse from '../images/icons/termsOfUse_icon.svg'
+import privacyPolicy from '../images/icons/privacyPolicy_icon.svg'
 import initialPage from '../images/icons/initialPage_icon.svg'
 
 
@@ -151,8 +151,7 @@ export function Menu(){
 				<button onClick={OpenMenu} className="menu-button"><img className="menu-img-menu" src={menuIcon} /></button>
 				<img className="menu-img-gp" src={gpIcon} />
 			</div>
-
-
+			
 		</div>
 
 	);
