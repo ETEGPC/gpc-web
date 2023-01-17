@@ -150,6 +150,97 @@ export function Menu(){
 			<div className="menu-closed">
 				<button onClick={OpenMenu} className="menu-button"><img className="menu-img-menu" src={menuIcon} /></button>
 				<img className="menu-img-gp" src={gpIcon} />
+				<h2 className="menu-school-title">ETE Ginásio Permanbucano</h2>
+			</div>
+
+			<div className="desktop-menu">
+
+				<main className="desktop-menu-main">
+
+					<div className="desktop-menu-component-0">
+						<img src={initialPage} />
+						<Link to="/paginaInicial">Página inicial</Link>
+					</div>
+					 
+					<div className="desktop-menu-component-1">
+						<img src={user} />
+						<Link to="/meuPerfil">Meu perfi</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-2">
+						<img src={latestNews} />
+						<Link to="/ultimasNoticias">Últimas notícias</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-3"> 
+						<img src={bulletinBoard} />
+						<Link to="/muralDeAvisos">Mural de avisos</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-4">
+						<img src={schedule} />
+						<Link to="/nossaAgenda">Nossa agenda</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-5">
+						<img src={chat} />
+						<Link to="/chat">Chat</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-6">
+						<img src={facebook} />
+						<Link to="#">Facebook</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-7">
+						<img src={instagram} />
+						<Link onClick={openInstagram} to="#">Instagram</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-8">
+						<img src={whatsapp} />
+						<Link to="#">WhatsApp</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-9">
+						<img src={email} />
+						<Link to="#">E-mail</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-10">
+						<img src={timeline} />
+						<Link to="/quadroDeHorarios">Quadro de horários</Link>
+					</div>
+
+
+					<div className="desktop-menu-component-11">
+						<img src={documents} />
+						<Link to="/solicitacaoDeDocumentos">Solicitação de documentos</Link>
+					</div>
+
+					<hr />
+
+					<div className="desktop-menu-component-12">
+						<img src={termOfUse} />
+						<Link to="#">Termos de uso</Link>						
+					</div>
+
+					<div className="desktop-menu-component-13">
+						<img src={privacyPolicy} />
+						<Link to="#">Política de privacidade</Link>						
+					</div>
+
+				</main>		
+				
 			</div>
 			
 		</div>

@@ -4,7 +4,6 @@ import send from '../images/icons/send_icon.svg'
 import '../styles/pages/chat.css';
 
 export function Chat(){    
-
   
     return(
 
@@ -39,12 +38,9 @@ export function Chat(){
                 <div className='sendMessage'>
 
                         <textarea  id="txt" className='chat-textarea' placeholder="Digite algo"></textarea>
-                        <button className='chat-button'><img className='chat-button-img' src={send} /></button>
-                        
+                        <button className='chat-button'><img className='chat-button-img' src={send} /></button>                    
 
-                </div>
-
-                
+                </div>                
 
             </div>
 

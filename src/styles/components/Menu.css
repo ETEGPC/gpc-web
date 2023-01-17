@@ -3,6 +3,9 @@
 	font-family: 'Raleway', sans-serif;
 }
 
+.menu-school-title {
+	display: none;
+}
 
 .menu-open {
 	z-index: 2;
@@ -102,4 +105,100 @@
 	margin: 0 auto;
 	padding: 10px;
 	max-width: 14vw;
+}
+
+
+.desktop-menu {
+	display: none;
+}
+
+@media screen and (min-width: 800px) and (min-height: 497px){ 
+
+	.menu-open {
+		z-index: 2;
+		flex-direction: column;
+		position: absolute;
+		background-color: #020063;
+		width: 84vw;
+		transform: translateX(-100%);
+		transition: 0.2s;
+		display: none;
+	}
+
+	.menu-closed {
+		height: 10vh;
+		display: flex;
+		z-index: 1;
+		position: fixed;
+		align-items: center;
+		width: 100vw;
+		background-color: #020063;
+	}
+
+	.menu-img-menu {
+		display: none;
+	}
+
+	.menu-img-gp {
+	  margin: 0 0 0 1%;
+	  padding: 5px;
+	  width: 4%;
+	}
+
+	.menu-school-title {
+	  color: #fff;
+	  font-size: 21px;
+	  margin-left: 1%;
+	  display: block;
+	}
+
+	.menu-open {
+		z-index: 2;
+		flex-direction: column;
+		position: absolute;
+		background-color: #020063;
+		width: 84vw;
+		transform: translateX(100%);
+		transition: 0.2s;
+	}
+
+	.desktop-menu {
+		display: block;
+	}
+
+	.desktop-menu-main {
+		background-color: #010030;
+		height: 90vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		position: fixed;
+		width: 24%;
+		top: 10vh;
+	}
+
+	.desktop-menu-main div img {
+		width: 25px;
+		height: 25px;
+	}
+
+	.desktop-menu-main div {
+	  padding: 0% 0% 0 9%;
+	  display: flex;
+	}
+
+	.desktop-menu-main div a {
+	  color: white;
+	  font-weight: 600;
+	  padding: 0 0 0 19px;
+	  margin: auto 0;
+	  text-decoration: none;
+	}
+
+	.desktop-menu-main hr {
+		width: 92%;
+		margin: 16px auto 16px auto;
+		color: white;
+	}	
+
 }
