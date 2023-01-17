@@ -130,119 +130,6 @@
 }
 
 
-
-.sheet18 {
-	visibility: hidden;
-	position: absolute;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-areas: 
-	'sheet18Group sheet18GroupSelect'
-	'sheet18Name sheet18Select'
-	'sheet18MotherName sheet18MotherNameInput'
-	'sheet18FatherName sheet18FatherNameInput'
-	'sheet18PhoneNumber sheet18PhoneNumberInput';
-	gap: 15px;
-	margin-bottom: 15px;
-}
-
-.sheet18-group {
-	display: inline;
-	font-weight: 600;
-	grid-area: sheet18Group;
-	margin-left: 6%;
-}
-
-.sheet18-select {
-	grid-area: sheet18GroupSelect;
-	display: block;
-	width: 46vw;
-	text-align: center;
-	margin: 0 auto;
-	font-size: 11px;
-}
-
-.sheet18-name, .sheet18-mother-name, .sheet18-father-name, .sheet18-phone-number{
-	display: inline;
-	font-weight: 600;
-	margin: 3% 3% 3% 3%;
-}
-
-.sheet18-name {
-	display: inline;
-	font-weight: 600;
-	grid-area: sheet18Name;
-	margin-left: 6%;
-}
-
-.sheet18-mother-name {
-	display: inline;
-	font-weight: 600;
-	grid-area: sheet18MotherName;
-	margin-left: 6%;
-}
-
-.sheet18-father-name {
-	display: inline;
-	font-weight: 600;
-	grid-area: sheet18FatherName;
-	margin-left: 6%;
-}
-
-.sheet18-phone-number {
-	display: inline;
-	font-weight: 600;
-	grid-area: sheet18PhoneNumber;
-	margin-left: 6%;
-}
-
-.sheet18-name-input, .sheet18-mother-name-input, .sheet18-father-name-input, .sheet18-phone-number-input {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  outline: none;
-  border-bottom: 1px solid black;
-  width: 55vw;
-  font-size: 14px;
-}
-
-
-.sheet18-name-input {
-	grid-area: sheet18Select;
-	display: block;
-	width: 46vw;
-	text-align: center;
-	margin: 0 auto;
-	font-size: 11px;
-}
-
-.sheet18-mother-name-input {
-	grid-area: sheet18MotherNameInput;
-	display: block;
-	width: 46vw;
-	text-align: center;
-	margin: 0 auto;
-	font-size: 11px;
-}
-
-.sheet18-father-name-input {
-	grid-area: sheet18FatherNameInput;
-	display: block;
-	width: 46vw;
-	text-align: center;
-	margin: 0 auto;
-	font-size: 11px;
-}
-
-.sheet18-phone-number-input {
-	grid-area: sheet18PhoneNumberInput;
-	display: block;
-	width: 46vw;
-	text-align: center;
-	margin: 0 auto;
-	font-size: 11px;
-}
-
 .sheet19 {
 	visibility: hidden;
 	position: absolute;
@@ -307,6 +194,18 @@
 	grid-area: sheet19PhoneNumber;
 	margin-left: 6%;
 }
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+
 
 .sheet19-name-input, .sheet19-mother-name-input, .sheet19-father-name-input, .sheet19-phone-number-input {
   border-top: none;
