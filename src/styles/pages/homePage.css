@@ -62,6 +62,7 @@
 	width: 18vw;
 	box-shadow: 2px 2px 8px #cacaca;
 	border-radius: 10px;
+	cursor: pointer;
 }
 
 .links-component1 a {
@@ -249,6 +250,7 @@
     align-items: center;
     height: 9vh;
     justify-content: space-evenly;
+    cursor: pointer;
 	}
 
 
@@ -273,7 +275,7 @@
 	    color: #048F36;
 	    font-weight: 700;
 	    text-decoration: none;
-	    font-size: 1.5vw;
+	    font-size: 1.5vw;	    
 	}
 
 	.links-component2 a {
@@ -288,6 +290,95 @@
 	    font-weight: 700;
 	    text-decoration: none;
 	    font-size: 1.5vw;
+	}
+
+	.about-gp {
+	  font-size: 30px;
+	}
+
+	.about-gp-content {
+  	font-size: 16px;
+  	margin: 10px 0;
+	}
+
+	.contact-forms-title {
+	  font-size: 30px;
+	  margin-top: 2%;
+	}
+
+	.about-contact-forms {
+	  font-size: 16px;
+	  margin: 10px 0;
+	}
+
+	.contact-forms {
+	  display: flex;
+	  justify-content: space-evenly;
+	  align-items: center;
+	  flex-wrap: wrap;
+	}
+
+	.contact-component1 img {
+	  width: 15%;
+	  margin: 4% auto;
+	  display: block;
+	}
+
+	.contact-component2 img {
+	  width: 15%;
+	  margin: 4% auto;
+	  display: block;
+	}
+
+	.contact-component3 img {
+	  width: 15%;
+	  margin: 4% auto;
+	  display: block;
+	}
+
+	.contact-component1 a {
+	  text-decoration: none;
+	  font-size: 19px;
+	  text-align: center;
+	  display: block;
+	  margin: 6px 0;
+	  color: black;
+	}
+
+	.contact-component2 a {
+	  text-decoration: none;
+	  font-size: 19px;
+	  text-align: center;
+	  display: block;
+	  margin: 6px 0;
+	  color: black;
+	}
+
+	.contact-component3 a {
+	  text-decoration: none;
+	  font-size: 19px;
+	  text-align: center;
+	  display: block;
+	  margin: 6px 0;
+	  color: black;
+	}
+
+	.button-chat {
+		background-color: white;
+		border: none;
+		outline: none;
+		box-shadow: 2px 2px 8px #cacaca;
+		border-radius: 100%;
+		width: 80px;
+		height: 80px;
+		align-self: end;
+		position: absolute;
+		bottom: 3%;
+	}	
+
+	.button-chat-img {
+	  width: 40px;
+	  margin: auto;
 	}
 
 }

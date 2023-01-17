@@ -79,6 +79,18 @@ export function HomePage(){
 		navigater('/chat');
 	}
 
+	function openSchedule(){
+		navigater('/nossaAgenda');		
+	}
+
+	function openBulletinBoard(){
+		navigater('/muralDeAvisos');		
+	}
+
+	function openLatestNews(){
+		navigater('/ultimasNoticias');		
+	}
+
 	return(
 
 		<div className="container">
@@ -109,21 +121,21 @@ export function HomePage(){
 
 				<div className="links">
 
-					<div className="links-component1">
+					<div className="links-component1" onClick={openSchedule} >
 						
 						<img src={greenSchedule} />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 
 					</div>
 
-					<div className="links-component2">
+					<div className="links-component2" onClick={openBulletinBoard}>
 						
 						<img src={greenBulletinBoard} />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 
 					</div>
 
-					<div className="links-component3">
+					<div className="links-component3" onClick={openLatestNews}>
 						
 						<img src={greenLatestNews} />
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
