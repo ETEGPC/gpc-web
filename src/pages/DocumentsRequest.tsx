@@ -188,6 +188,12 @@ export function DocumentsRequest(){
                     <p className="sheet19-phone-number">Telefone:</p>
                     <input className="sheet19-phone-number-input" type="number"  onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} />                                                      
 
+                    <p className="sheet19-entry-year">Ano de entrada:</p>
+                    <input placeholder="Ex.: 2020" className="sheet19-entry-year-input" type="number"  onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} />                                                      
+
+                    <p className="sheet19-outgoing-year">Ano de conclusão:</p>
+                    <input placeholder="Ex.: 2023" className="sheet19-outgoing-year-input" type="number"  onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} />                                                      
+
             </section>
 
             <button  className="documents-button" id="documents-button">Solicitar</button>

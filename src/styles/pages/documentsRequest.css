@@ -140,7 +140,9 @@
 	'sheet19Name sheet19Select'
 	'sheet19MotherName sheet19MotherNameInput'
 	'sheet19FatherName sheet19FatherNameInput'
-	'sheet19PhoneNumber sheet19PhoneNumberInput';
+	'sheet19PhoneNumber sheet19PhoneNumberInput'
+	'sheet19EntryYear sheet19EntryYearInput'
+	'sheet19OutgoingYear sheet19OutgoingYearInput';
 	gap: 15px;
 	margin-bottom: 15px;
 }
@@ -161,7 +163,7 @@
 	font-size: 11px;
 }
 
-.sheet19-name, .sheet19-mother-name, .sheet19-father-name, .sheet19-phone-number{
+.sheet19-name, .sheet19-mother-name, .sheet19-father-name, .sheet19-phone-number, .sheet19-outgoing-year, .sheet19-entry-year{
 	display: inline;
 	font-weight: 600;
 	margin: 3% 3% 3% 3%;
@@ -195,6 +197,20 @@
 	margin-left: 6%;
 }
 
+.sheet19-entry-year {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet19EntryYear;
+	margin-left: 6%;	
+}
+
+.sheet19-outgoing-year {
+	display: inline;
+	font-weight: 600;
+	grid-area: sheet19OutgoingYear;
+	margin-left: 6%;		
+}
+
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
     
@@ -207,7 +223,7 @@ input[type=number] {
 
 
 
-.sheet19-name-input, .sheet19-mother-name-input, .sheet19-father-name-input, .sheet19-phone-number-input {
+.sheet19-name-input, .sheet19-mother-name-input, .sheet19-father-name-input, .sheet19-phone-number-input, .sheet19-outgoing-year-input, .sheet19-entry-year-input {
   border-top: none;
   border-left: none;
   border-right: none;
@@ -254,6 +270,24 @@ input[type=number] {
 	font-size: 11px;
 }
 
+
+.sheet19-entry-year-input {
+	grid-area: sheet19EntryYearInput;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;	
+}
+
+.sheet19-outgoing-year-input {
+	grid-area: sheet19OutgoingYearInput;
+	display: block;
+	width: 46vw;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 11px;	
+}
 
 .documents-button {
 	border: none;
