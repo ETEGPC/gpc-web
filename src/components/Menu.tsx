@@ -8,7 +8,6 @@ import latestNews from '../images/icons/latestNews_icon.svg'
 import bulletinBoard from '../images/icons/bulletinBoard_icon.svg'
 import schedule from '../images/icons/schedule_icon.svg'
 import chat from '../images/icons/chat_icon.svg'
-import facebook from '../images/icons/facebook_icon.svg'
 import instagram from '../images/icons/instagram_icon.svg'
 import whatsapp from '../images/icons/whatsapp_icon.svg'
 import email from '../images/icons/email_icon.svg'
@@ -17,8 +16,13 @@ import documents from '../images/icons/documents_icon.svg'
 import termOfUse from '../images/icons/termsOfUse_icon.svg'
 import privacyPolicy from '../images/icons/privacyPolicy_icon.svg'
 import initialPage from '../images/icons/initialPage_icon.svg'
+ 
+export function CloseMenu(){
 
+		let menu:any = document.getElementById('menu');
+		menu.style.transform = 'translateX(-100%)';
 
+	}
 
 export function Menu(){
 
@@ -41,7 +45,7 @@ export function Menu(){
 
 		window.open('https://www.instagram.com/eteginasiopec/', '_blank');
 
-	}
+	}	
 	
 
 	return(
@@ -92,13 +96,7 @@ export function Menu(){
 					<div className="menu-component-5">
 						<img src={chat} />
 						<Link to="/chat">Chat</Link>
-					</div>
-
-
-					<div className="menu-component-6">
-						<img src={facebook} />
-						<Link to="#">Facebook</Link>
-					</div>
+					</div>					
 
 
 					<div className="menu-component-7">
@@ -190,12 +188,7 @@ export function Menu(){
 						<img src={chat} />
 						<Link to="/chat">Chat</Link>
 					</div>
-
-
-					<div className="desktop-menu-component-6">
-						<img src={facebook} />
-						<Link to="#">Facebook</Link>
-					</div>
+				
 
 
 					<div className="desktop-menu-component-7">

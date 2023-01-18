@@ -5,6 +5,8 @@ import '../styles/pages/chat.css';
 
 export function Chat(){    
   
+    document.title = 'Chat';
+
     return(
 
         <div className='chat-container'>

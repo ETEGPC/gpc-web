@@ -2,6 +2,9 @@ import { Menu } from '../components/Exports';
 import '../styles/pages/bulletinBoard.css';
 
 export function BulletinBoard(){
+
+	document.title = 'Mural de avisos';
+
 	return(
 
 		<div>

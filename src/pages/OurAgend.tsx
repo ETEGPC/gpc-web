@@ -3,6 +3,9 @@ import blueArrowIcon from '../images/icons/blueArrow_icon.svg'
 import '../styles/pages/ourAgend.css';
 
 export function OurAgend(){
+
+	document.title = 'Nossa agenda';
+
 	return(
 
 		<div>

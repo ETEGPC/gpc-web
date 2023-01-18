@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 export function LoginScreen(){
 
+	document.title = "Login";
+
 	return(
 
 		<div className="loginScreen-container">
-
-		{/*Código adicionado pós api*/}
 
 			<div className="welcome-screen">
 
@@ -36,9 +36,7 @@ export function LoginScreen(){
 
 				<button className="form-button">Entrar</button>
 
-			</div>
-			
-			{/*Código adicionado pós api*/}
+			</div>		
 
 		</div>
 	);

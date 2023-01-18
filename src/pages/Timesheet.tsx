@@ -2,6 +2,9 @@ import { Menu } from '../components/Exports';
 import '../styles/pages/timesheet.css';
 
 export function Timesheet(){
+
+	document.title = 'Quadro de horários';
+
 	return(
 
 		<div>

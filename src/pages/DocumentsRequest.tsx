@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export function DocumentsRequest(){          
 
-
+    document.title = 'Solicitação de documentos';
 
     function showOptions(){
 

@@ -13,10 +13,13 @@ import instagrmaIcon from '../images/icons/instagram2_icon.svg'
 import whatsappIcon from '../images/icons/whatsapp2_icon.svg'
 import chatIcon from '../images/icons/chat2_icon.svg'
 import { Link, useNavigate } from 'react-router-dom';
+import { CloseMenu } from '../components/Menu';
 
 export function HomePage(){	
 
-	let currentImage:number = 1;
+	document.title = 'Página inicial';
+
+	let currentImage:number = 1;	
 
 	setInterval(function(){		
 		
@@ -90,14 +93,16 @@ export function HomePage(){
 	function openLatestNews(){
 		navigater('/ultimasNoticias');		
 	}
+	
 
 	return(
+
 
 		<div className="container">
 			
 			<Menu />
 
-			<div className="homePage-container">
+			<div className="homePage-container" id="container" onClick={CloseMenu}>
 
 				<h1 className="homepage-title">Página inicial</h1>
 

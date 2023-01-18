@@ -3,6 +3,7 @@ import '../styles/pages/myProfile.css';
 
 export function MyProfile(){
 
+	document.title = 'Meu perfil';
 
 	return(
 

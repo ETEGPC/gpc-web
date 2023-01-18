@@ -6,6 +6,7 @@ import { NewsOpen } from '../pages/NewsOpen';
 
 export function LatestNews(){
 
+    document.title = 'Últimas notícias';
     
     return (
         <div className="latesnews-container">
