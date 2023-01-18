@@ -27,6 +27,7 @@ export function BulletinBoard(){
 
 					</div>
 
+
 				</main>				
 
 			</div>
