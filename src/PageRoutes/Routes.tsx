@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes as Rts} from 'react-router-dom';
-import { LoginScreen, LatestNews, NewsOpen, Chat, OurAgend, HomePage, MyProfile, DocumentsRequest, BulletinBoard,Timesheet } from '../components/Exports';
+import { LoginScreen, LatestNews, Chat, OurAgend, HomePage, MyProfile, DocumentsRequest, BulletinBoard,Timesheet } from '../components/Exports';
 
 export function Routes(){
 	return(
@@ -8,7 +8,6 @@ export function Routes(){
 			<Rts>
 				<Route path="" element={<LoginScreen />} />
 				<Route path="/ultimasNoticias" element={<LatestNews />} />
-				<Route path="/noticiaAberta" element={<NewsOpen />} />
 				<Route path="/chat" element={<Chat/>}></Route>
 				<Route path="/nossaAgenda" element={<OurAgend />}></Route>
 				<Route path="/paginaInicial" element={<HomePage />}></Route>

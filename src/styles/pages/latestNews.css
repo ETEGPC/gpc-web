@@ -2,35 +2,6 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.openNew {
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    background-color: white;
-    transform: translateX(-100%);
-    transition: 0.4s;
-}
-
-.openNew-content {
-    z-index: 1;
-    width: 95vw;
-    margin: 0 auto;
-}
-
-.openNew-content-h1 {
-    margin: 3% 0% 3% 3%;
-}
-
-.openNew-content-img {
-    max-width: 90vw;
-    display: block;
-    margin: 10px auto;   
-}
-
-.openNew-content-p {
-    margin: 3% 3% 3% 3%;    
-}
-
 .latestNews-container {
     
 }
@@ -38,32 +9,34 @@
 .latestNews-h1 {
     margin: 3% 0% 3% 3%;
     font-size: 32px;    
-    text-decoration: underline;
+    text-decoration: underline;    
 }
 
 
-.latestNews-div {    
+.latestNews-news {    
     display: flex;
     flex-direction: column;    
+    padding: 1%;
+    gap: 10px;
 }
 
-.latestNews-subdiv {
-    max-width: 95vw;
-    align-self: center;
-    border-radius: 4px;
-    box-shadow: 2px 2px 8px #cacaca;
+.latestNews-content {
+  width: 95%;
+  align-self: center;
+  border-radius: 7px;
+  box-shadow: 1px 1px 8px #cacaca;
 }
 
-.latestNews-img {
-    max-width: 90vw;
-    display: block;
-    margin: 10px auto;    
+.content-img {
+  max-width: 90%;
+  display: block;
+  margin: 10px auto;
 }
 
-.latestNews-h2 {
-    font-size: 20px;
-    display: inline-block;
-    margin: 0 10px;   
+.content-h2 {
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 5%;
 }
 
 .latestNews-p {
@@ -75,10 +48,45 @@
     text-decoration: underline;
 }
 
-.latestNews-hr {
-    margin: 20px auto;
-    outline: none;
-    border: 1px solid gray;
-    width: 95vw;
-    border-radius: 4px;
+@media screen and (min-width: 800px) and (min-height: 497px){ 
+
+    .container {
+       display: flex;
+      justify-content: space-between;
+    }
+
+    .latestNews-news {
+        display: flex;
+        flex-direction: row;
+        margin: 0 0 0 2%;
+        padding: 1%;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .latestNews-container {
+        width: 76%;
+        margin-top: 10vh;
+        height: 100vh;  
+    }
+
+    .latestNews-content {
+      width: 32%;
+      align-self: center;
+      border-radius: 7px;
+      box-shadow: 1px 1px 8px #cacaca;
+    }
+
+    .content-img {
+      max-width: 90%;
+      display: block;
+      margin: 10px auto;
+    }
+
+    .content-h2 {
+      font-size: 20px;
+      display: inline-block;
+      margin: 0 5%;
+    }
+
 }
