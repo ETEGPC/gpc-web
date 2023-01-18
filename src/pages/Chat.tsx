@@ -2,6 +2,7 @@ import { Menu } from '../components/Menu';
 import eteLogo from '../images/eteLogo.svg';
 import send from '../images/icons/send_icon.svg'
 import '../styles/pages/chat.css';
+import { CloseMenu } from '../components/Menu';
 
 export function Chat(){    
   
@@ -9,40 +10,41 @@ export function Chat(){
 
     return(
 
-        <div className='chat-container'>
+        <div className='container'>
 
             <Menu />
 
-            <h1 className='chat-container-h1'>Chat</h1>
+            <div className="chat-container" onClick={CloseMenu}>
 
-            <div className='chat-subContiner'>
+                <h1 className='container-title'>Chat</h1>
 
-                <header className='chat-header'>
+                    <h2 className='chat-school-title'>ETE Ginásio</h2>
 
-                    <h2 className='chat-header-h2'>ETE Ginásio</h2>
+                    <hr className='chat-hr' />
 
-                </header>
+                <div className='chat-content'>
 
-                <hr className='chat-hr' />
+                    <div className='chat-school-menssage'>
 
-                <div className='chat-message1'>
+                        <p className='chat-school-menssage-content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sed provident dolores qui deserunt doloribus quae quos ipsam impedit quo.</p>
 
-                    <p className='chat-message1-p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sed provident dolores qui deserunt doloribus quae quos ipsam impedit quo.</p>
+                    </div>
+
+                    <div className='chat-my-message'>
+
+                        <p className='chat-my-message-content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sed provident dolores qui deserunt doloribus quae quos ipsam impedit quo.</p>
+
+                    </div>
+ 
 
                 </div>
 
-                <div className='chat-message2'>
+                    <div className='send-my-message'>
 
-                    <p className='chat-message2-p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sed provident dolores qui deserunt doloribus quae quos ipsam impedit quo.</p>
+                            <textarea  id="txt" className='chat-textarea' placeholder="Digite algo"></textarea>
+                            <button className='chat-button'><img className='chat-button-img' src={send} /></button>                    
 
-                </div>
-
-                <div className='sendMessage'>
-
-                        <textarea  id="txt" className='chat-textarea' placeholder="Digite algo"></textarea>
-                        <button className='chat-button'><img className='chat-button-img' src={send} /></button>                    
-
-                </div>                
+                    </div>                
 
             </div>
 
