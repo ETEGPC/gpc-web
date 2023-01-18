@@ -1,46 +1,121 @@
-.event {
-	display: grid;
-	grid-template-columns: 1fr 5fr 1fr;
-	grid-template-areas: 
-    "date ti  arrImg"
-    "date de arrImg";
-    margin: 20px auto;
+.container-events {
+  margin: 0 3%;
+  display: flex;
+  flex-direction: column;
 }
 
-.events-h1 {
+.new-event {
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	grid-template-areas:
+	"date ti arrImg" 
+	"date de arrImg";
+	margin: 20px 3%;
+	border-radius: 10px;
+	box-shadow: 1px 3px 8px #cacaca;
+	padding: 5px;
+	gap: 5px;
+}
+
+.container-title {
 	margin: 3% 0% 3% 3%;
 	font-size: 32px;
 	text-decoration: underline;
 }
 
-.event-date {
+.new-event-date {
 	grid-area: date;
 	margin: auto;
 }
 
-.event-title {
-	grid-area: ti;	
-	margin: auto 0;
-	font-size: 5vw;
+.new-event-title {
+  grid-area: ti;
+  margin: auto 0;
+  font-size: 18px;
 }
 
-
-.event-description {
+.new-event-description {
 	grid-area: de;
 	font-size: 3vw;
 	margin: auto;
 }
 
-.event-arrow-img {
+.new-event-arrow-img {
 	grid-area: arrImg;
 	margin: auto 0;
 	width: 10vw;
 }
 
-.event-hr {
+.new-event-hr {
     margin: 20px auto;
     outline: none;
     border: 1px solid gray;
     border-radius: 4px;
     grid-area: hr;
+}
+
+
+@media screen and (min-width: 800px) and (min-height: 497px){ 
+
+    .container {
+       display: flex;
+      justify-content: space-between;
+    }
+
+
+	.container-events {
+	  margin: 0 3%;
+	  display: flex;
+	  flex-direction: row;
+	  flex-wrap: wrap;
+	}
+
+    .ourAgend-container {
+        width: 76%;
+        margin-top: 10vh;
+        height: 100vh;  
+    }
+
+	.react-calendar {
+	  margin: 0px auto 20px auto;
+	  width: 40%;
+	  font-size: 25px;
+	}
+
+	.container-events {
+	  margin: 0 3%;
+	}
+
+	.new-event {
+		display: grid;
+		grid-template-columns: 1fr 5fr 1fr;
+		grid-template-areas:
+		"date ti arrImg" 
+		"date de arrImg";
+		margin: 20px auto;
+		width: 450px;
+		border-radius: 10px;
+		box-shadow: 1px 3px 8px #cacaca;
+		gap: 5px;
+		padding: 5px;
+	}
+
+	.new-event-title {
+	  grid-area: ti;
+	  margin: auto 0;
+	  font-size: 18px;
+	}
+
+	.new-event-description {
+	  grid-area: de;
+	  font-size: 14px;
+	  margin: auto;
+	}
+
+	.new-event-arrow-img {
+	  grid-area: arrImg;
+	  margin: auto 0;
+	  width: 47px;
+	}
+
 }
