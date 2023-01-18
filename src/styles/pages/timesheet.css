@@ -1,14 +1,18 @@
 .timeSheet-content {
-
+  background-color: #fff;
+  box-shadow: 2px 2px 4px #cacaca;
+  margin: 3%;
+  border-radius: 10px;
+  padding: 5px;
 }
 
-.timeSheet-content h1 {
+.container-title {
   margin: 3% 0% 3% 3%;
   text-decoration: underline;	
 }
 
 .timeSheet-content h3 {
-	margin: 9% 0% 1% 3%;	
+  margin: 3%;
 }
 
 .timeSheet-content p {
@@ -16,4 +20,29 @@
 	text-decoration: underline;
 	cursor: pointer;
 	cursor: #010030;
+}
+
+@media screen and (min-width: 800px) and (min-height: 497px){ 
+
+  .container {
+     display: flex;
+    justify-content: space-between;
+  }
+
+	.timeSheet-content {
+	  background-color: #fff;
+	  box-shadow: 2px 2px 4px #cacaca;
+	  margin: 3%;
+	  border-radius: 10px;
+	  padding: 5px;
+	  width: 50%;
+	  height: auto;
+	}
+
+  .timeSheet-container {
+      width: 76%;
+      margin-top: 10vh;
+      height: 100vh;  
+  }
+
 }

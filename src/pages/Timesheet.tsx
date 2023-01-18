@@ -7,17 +7,22 @@ export function Timesheet(){
 
 	return(
 
-		<div>
+		<div className="container">
 			
 			<Menu />
 
-			<main className="timeSheet-content">
-				
-				<h1>Quadro de horários</h1>
-				<h3>Click no link abaixo  para acessar o quadro de horários de sua turma.</h3>
-				<p>Link</p>
+			<div className="timeSheet-container">
+					
+				<h1 className="container-title">Quadro de horários</h1>
 
-			</main>
+				<main className="timeSheet-content">
+
+					<h3>Click no link abaixo  para acessar o quadro de horários de sua turma.</h3>
+					<p>Link</p>
+
+				</main>
+
+			</div>
 
 		</div>
 
