@@ -1,5 +1,6 @@
 import { Menu } from '../components/Exports';
 import '../styles/pages/bulletinBoard.css';
+import { CloseMenu } from '../components/Menu';
 
 export function BulletinBoard(){
 
@@ -7,25 +8,28 @@ export function BulletinBoard(){
 
 	return(
 
-		<div>
+		<div className="container">
 			
 			<Menu />
 
-			<h1 className="page-title">Mural de avisos</h1>
+			<div className="bulletinBoard-container" onClick={CloseMenu}>
 
-			<main className="BulletinBoard-content">
-				
-				<h4>Turma: 1° ano A - DS</h4>
+				<h1 className="container-title">Mural de avisos</h1>
 
-				<div className="content">
-					
-					<h4>Atenção - recesso escolar</h4>
-					<p>Do dia 30/06 ao dia 15/07 de 2023 a nossa escola entrará em recesso, ou seja, não haverá aulas nem nenhuma atividade extra curricular nesse período.</p>
+				<h4 className="container-class">Turma: 1° ano A - DS</h4>
 
-				</div>
+				<main className="container-content" >					
 
+					<div className="new-warning">
+						
+						<h4>Atenção - recesso escolar</h4>
+						<p>Do dia 30/06 ao dia 15/07 de 2023 a nossa escola entrará em recesso, ou seja, não haverá aulas nem nenhuma atividade extra curricular nesse período.</p>
 
-			</main>
+					</div>
+
+				</main>				
+
+			</div>
 
 		</div>
 

@@ -24,7 +24,8 @@
   width: 95%;
   align-self: center;
   border-radius: 7px;
-  box-shadow: 1px 1px 8px #cacaca;
+  box-shadow: 2px 2px 8px #cacaca;
+
 }
 
 .content-img {
@@ -74,7 +75,7 @@
       width: 32%;
       align-self: center;
       border-radius: 7px;
-      box-shadow: 1px 1px 8px #cacaca;
+      box-shadow: 2px 2px 8px #cacaca;
     }
 
     .content-img {
