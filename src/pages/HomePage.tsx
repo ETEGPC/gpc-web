@@ -13,11 +13,8 @@ import instagrmaIcon from '../images/icons/instagram2_icon.svg'
 import whatsappIcon from '../images/icons/whatsapp2_icon.svg'
 import chatIcon from '../images/icons/chat2_icon.svg'
 import { Link, useNavigate } from 'react-router-dom';
-import { useReactPWAInstall } from 'react-pwa-install';
 
 export function HomePage() {
-	const { pwaInstall, supported, isInstalled } = useReactPWAInstall();
-	let btn: HTMLButtonElement | any = document.getElementById('teste');
 	let deferredprompt: any;
 
 	window.addEventListener('beforeinstallprompt', (e) => {

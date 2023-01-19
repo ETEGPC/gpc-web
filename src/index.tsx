@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import ReactPWAInstallProvider from 'react-pwa-install';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
