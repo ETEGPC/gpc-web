@@ -1,25 +1,33 @@
-.myProfile-h1 {
+.container-title {
 	margin: 3% 0% 3% 3%;
 	font-size: 32px;
 	text-decoration: underline;
 }
 
+.my-datas {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px #cacaca;
+  border-radius: 10px;
+  width: 90%;
+  height: 135px;
+  margin: 3% auto;
+}
 
-.myProfile-container-h2 {
+.container-h2 {
 	font-size: 20px;
 	text-align: center;
-	margin: 50% 0 0 0;
+	margin: 3% 0 0 0;
 }
 
 
-.myProfile-container-p {
+.container-p {
 	text-align: center;
 	color: #616161;
 	font-size: 16px;	
-	margin-bottom: 20%;
+	margin-bottom: 50px;
 }
 
-.myProfile-container-button {
+.container-button {
 	border: none;
 	outline: none;
 	display: block;
@@ -31,4 +39,60 @@
 	font-size: 20px;
 	font-weight: 600;
 	border-radius: 4px;		
+}
+
+.continer-link {
+	text-align: center;
+	display: block;
+}
+
+
+@media screen and (min-width: 800px) and (min-height: 497px){ 
+
+    .container {
+       display: flex;
+      justify-content: space-between;
+    }
+
+    .myProfile-container {
+        width: 76%;
+        margin-top: 10vh;
+        height: 100vh;  
+    }
+
+	.container-h2 {
+	  font-size: 20px;
+	  text-align: center;
+	  margin: 120px 0 0 0;
+	}
+
+	.my-datas {
+	  background-color: #fff;
+	  box-shadow: 1px 1px 4px #cacaca;
+	  border-radius: 10px;
+	  width: 400px;
+	  height: 150px;
+	  margin: 3% auto;
+	}
+
+	.container-h2 {
+	  font-size: 20px;
+	  text-align: center;
+	  margin: 3% 0 0 0;
+	}
+
+	.container-button {
+	  border: none;
+	  outline: none;
+	  display: block;
+	  width: 240px;
+	  height: 40px;
+	  margin: 29px auto 20px auto;
+	  background-color: #DF000C;
+	  color: white;
+	  font-size: 20px;
+	  font-weight: 600;
+	  border-radius: 4px;
+	}
+
 }
