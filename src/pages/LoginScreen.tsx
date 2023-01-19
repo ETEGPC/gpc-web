@@ -12,6 +12,17 @@ export function LoginScreen() {
 	const [cookie, setCookie] = useCookies(['token']);
 	const navigate = useNavigate();
 
+	let deferredprompt: any;
+
+	window.addEventListener('beforeinstallprompt', (e) => {
+		e.preventDefault();
+		deferredprompt = e;
+	});
+
+	function teste() {
+		deferredprompt.prompt();
+	}
+
 	async function handleLogin() {
 		await api.http.post('/parent-login', {
 			email,
@@ -61,6 +72,9 @@ export function LoginScreen() {
 					onChange={e => setPassword(e.target.value)}
 				/>
 				<button className="form-button" onClick={handleLogin}>Entrar</button>
+				<button id='teste' onClick={teste} >
+						<p>Install pwa</p>
+					</button>
 			</div>
 
 			{/*Código adicionado pós api*/}
