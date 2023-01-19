@@ -1,5 +1,6 @@
 import { Menu } from '../components/Exports';
 import '../styles/pages/timesheet.css';
+import { CloseMenu } from '../components/Menu';
 
 export function Timesheet(){
 
@@ -11,7 +12,7 @@ export function Timesheet(){
 			
 			<Menu />
 
-			<div className="timeSheet-container">
+			<div className="timeSheet-container" onClick={CloseMenu}>
 					
 				<h1 className="container-title">Quadro de horários</h1>
 
