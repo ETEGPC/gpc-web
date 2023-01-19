@@ -2,7 +2,7 @@ import { Menu } from "../components/Menu";
 import image from '../images/imageExample.png'
 import { Link } from "react-router-dom";
 import '../styles/pages/latestNews.css';
-import { NewsOpen } from '../pages/NewsOpen';
+//import { NewsOpen } from '../pages/NewsOpen';
 
 export function LatestNews(){
 
@@ -29,7 +29,7 @@ export function LatestNews(){
 
             <div className="latestNews-div">
                 <div className="latestNews-subdiv">
-                    <img src={image} className="latestNews-img" />
+                    <img src={image} className="latestNews-img" alt="" />
                     
                     <h2 className="latestNews-h2">Mostra de Inovação - Armazém da Criatividade - <Link to='/noticiaAberta' className="latestNews-p" >Ler matéria</Link></h2>
 

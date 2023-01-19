@@ -18,138 +18,123 @@ import termOfUse from '../images/icons/termsOfUse_icon.svg'
 import privacyPolicy from '../images/icons/privacyPolicy_icon.svg'
 import initialPage from '../images/icons/initialPage_icon.svg'
 
-
-
-export function Menu(){
-
-	function OpenMenu(){
-
-		let menu:any = document.getElementById('menu');
+export function Menu() {
+	function OpenMenu() {
+		let menu: any = document.getElementById('menu');
 		menu.style.transform = 'translateX(0%)';
 
 	}
 
-	function CloseMenu(){
-
-		let menu:any = document.getElementById('menu');
+	function CloseMenu() {
+		let menu: any = document.getElementById('menu');
 		menu.style.transform = 'translateX(-100%)';
-
 	}
 
-
-	function openInstagram(){
-
+	function openInstagram() {
 		window.open('https://www.instagram.com/eteginasiopec/', '_blank');
-
 	}
-	
 
-	return(
-
+	return (
 		<div className="menu-container">
-
-
 			<div className="menu-open" id="menu">
 
-			
 				<header className="menu-header">
-					<button onClick={CloseMenu} className="menu-header-button"><img className="menu-header-img" src={greenArrow} /></button>
-					<h1 className="menu-header-h1">Menu</h1>						
-					
-				</header>		
+					<button onClick={CloseMenu} className="menu-header-button"><img alt="" className="menu-header-img" src={greenArrow} /></button>
+					<h1 className="menu-header-h1">Menu</h1>
+				</header>
 
 				<main className="menu-main">
 
 					<div className="menu-component-0">
-						<img src={initialPage} />
+						<img alt="" src={initialPage} />
 						<Link to="/paginaInicial">Página inicial</Link>
 					</div>
-					 
+
 					<div className="menu-component-1">
-						<img src={user} />
+						<img alt="" src={user} />
 						<Link to="/meuPerfil">Meu perfi</Link>
 					</div>
 
 
 					<div className="menu-component-2">
-						<img src={latestNews} />
+						<img alt="" src={latestNews} />
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 					</div>
 
 
-					<div className="menu-component-3"> 
-						<img src={bulletinBoard} />
-						<Link to="/muralDeAvisos">Mural de avisos</Link>
+					<div className="menu-component-3">
+						<img alt="" src={bulletinBoard} />
+						<Link to={`/muralDeAvisos`} >Mural de avisos</Link>
 					</div>
 
 
 					<div className="menu-component-4">
-						<img src={schedule} />
+						<img alt="" src={schedule} />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 					</div>
 
 
 					<div className="menu-component-5">
-						<img src={chat} />
+						<img alt="" src={chat} />
 						<Link to="/chat">Chat</Link>
 					</div>
 
 
 					<div className="menu-component-6">
-						<img src={facebook} />
+						<img alt="" src={facebook} />
 						<Link to="#">Facebook</Link>
 					</div>
 
 
 					<div className="menu-component-7">
-						<img src={instagram} />
+						<img alt="" src={instagram} />
 						<Link onClick={openInstagram} to="#">Instagram</Link>
 					</div>
 
 
 					<div className="menu-component-8">
-						<img src={whatsapp} />
+						<img alt="" src={whatsapp} />
 						<Link to="#">WhatsApp</Link>
 					</div>
 
 
 					<div className="menu-component-9">
-						<img src={email} />
+						<img alt="" src={email} />
 						<Link to="#">E-mail</Link>
 					</div>
 
 
 					<div className="menu-component-10">
-						<img src={timeline} />
+						<img alt="" src={timeline} />
 						<Link to="/quadroDeHorarios">Quadro de horários</Link>
 					</div>
 
 
 					<div className="menu-component-11">
-						<img src={documents} />
+						<img alt="" src={documents} />
 						<Link to="/solicitacaoDeDocumentos">Solicitação de documentos</Link>
 					</div>
 
 					<hr />
 
 					<div className="menu-component-12">
-						<img src={termOfUse} />
-						<Link to="#">Termos de uso</Link>						
+						<img alt="" src={termOfUse} />
+						<Link to="#">Termos de uso</Link>
 					</div>
 
 					<div className="menu-component-13">
-						<img src={privacyPolicy} />
-						<Link to="#">Política de privacidade</Link>						
+						<img alt="" src={privacyPolicy} />
+						<Link to="#">Política de privacidade</Link>
 					</div>
 
-				</main>	
+				</main>
 
 			</div>
-			
+
 
 			<div className="menu-closed">
-				<button onClick={OpenMenu} className="menu-button"><img className="menu-img-menu" src={menuIcon} /></button>
-				<img className="menu-img-gp" src={gpIcon} />
+				<button onClick={OpenMenu} className="menu-button"><img alt="" className="menu-img-menu" src={menuIcon} /></button>
+				<img alt="" className="menu-img-gp" src={gpIcon} />
 				<h2 className="menu-school-title">ETE Ginásio Permanbucano</h2>
 			</div>
 
@@ -158,91 +143,91 @@ export function Menu(){
 				<main className="desktop-menu-main">
 
 					<div className="desktop-menu-component-0">
-						<img src={initialPage} />
+						<img alt="" src={initialPage} />
 						<Link to="/paginaInicial">Página inicial</Link>
 					</div>
-					 
+
 					<div className="desktop-menu-component-1">
-						<img src={user} />
+						<img alt="" src={user} />
 						<Link to="/meuPerfil">Meu perfi</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-2">
-						<img src={latestNews} />
+						<img alt="" src={latestNews} />
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 					</div>
 
 
-					<div className="desktop-menu-component-3"> 
-						<img src={bulletinBoard} />
+					<div className="desktop-menu-component-3">
+						<img alt="" src={bulletinBoard} />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-4">
-						<img src={schedule} />
+						<img alt="" src={schedule} />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-5">
-						<img src={chat} />
+						<img alt="" src={chat} />
 						<Link to="/chat">Chat</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-6">
-						<img src={facebook} />
+						<img alt="" src={facebook} />
 						<Link to="#">Facebook</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-7">
-						<img src={instagram} />
+						<img alt="" src={instagram} />
 						<Link onClick={openInstagram} to="#">Instagram</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-8">
-						<img src={whatsapp} />
+						<img alt="" src={whatsapp} />
 						<Link to="#">WhatsApp</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-9">
-						<img src={email} />
+						<img alt="" src={email} />
 						<Link to="#">E-mail</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-10">
-						<img src={timeline} />
+						<img alt="" src={timeline} />
 						<Link to="/quadroDeHorarios">Quadro de horários</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-11">
-						<img src={documents} />
+						<img alt="" src={documents} />
 						<Link to="/solicitacaoDeDocumentos">Solicitação de documentos</Link>
 					</div>
 
 					<hr />
 
 					<div className="desktop-menu-component-12">
-						<img src={termOfUse} />
-						<Link to="#">Termos de uso</Link>						
+						<img alt="" src={termOfUse} />
+						<Link to="#">Termos de uso</Link>
 					</div>
 
 					<div className="desktop-menu-component-13">
-						<img src={privacyPolicy} />
-						<Link to="#">Política de privacidade</Link>						
+						<img alt="" src={privacyPolicy} />
+						<Link to="#">Política de privacidade</Link>
 					</div>
 
-				</main>		
-				
+				</main>
+
 			</div>
-			
+
 		</div>
 
 	);

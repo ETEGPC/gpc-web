@@ -10,7 +10,7 @@ export function NewsOpen(){
             <Menu />
 
             <h1 className='newsOpen-h1'>Título da notícia</h1>
-            <img src={image}  className='newsOpen-img'/>
+            <img src={image}  className='newsOpen-img' alt="" />
             <p className='newsOpen-p'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum nihil id sequi aliquam officiis illo nobis rem consectetur! Repellat libero laborum distinctio eius vero unde dolorum? Perspiciatis fuga voluptates labore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ad odio vel magni debitis. Culpa, fugit repellendus. Mollitia enim culpa illo quod esse dolor eum eveniet doloribus molestiae? Officia, odio!</p>
 
 

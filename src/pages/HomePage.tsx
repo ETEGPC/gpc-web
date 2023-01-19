@@ -13,14 +13,45 @@ import instagrmaIcon from '../images/icons/instagram2_icon.svg'
 import whatsappIcon from '../images/icons/whatsapp2_icon.svg'
 import chatIcon from '../images/icons/chat2_icon.svg'
 import { Link, useNavigate } from 'react-router-dom';
+import { useReactPWAInstall } from 'react-pwa-install';
 
-export function HomePage(){	
+export function HomePage() {
+	const { pwaInstall, supported, isInstalled } = useReactPWAInstall();
+	let btn: HTMLButtonElement | any = document.getElementById('teste');
+	let deferredprompt: any;
 
-	let currentImage:number = 1;
+	window.addEventListener('beforeinstallprompt', (e) => {
+		e.preventDefault();
+		deferredprompt = e;
+	});
 
-	setInterval(function(){		
-		
-		
+	function teste() {
+		deferredprompt.prompt();
+	}
+
+	// const handleClick = () => {
+	// 	pwaInstall({
+	// 		title: "Install Web App",
+	// 		logo: '',
+	// 		features: (
+	// 			<ul>
+	// 				<li>Cool feature 1</li>
+	// 				<li>Cool feature 2</li>
+	// 				<li>Even cooler feature</li>
+	// 				<li>Works offline</li>
+	// 			</ul>
+	// 		),
+	// 		description: "This is a very good app that does a lot of useful stuff. ",
+	// 	})
+	// 		.then(() => alert("App installed successfully or instructions for install shown"))
+	// 		.catch(() => alert("User opted out from installing"));
+	// };
+
+	let currentImage: number = 1;
+
+	setInterval(function () {
+
+
 		let carouselTitle = document.getElementById('carousel-title') as HTMLParagraphElement;
 		let carouselImages = document.getElementById('carousel-content') as HTMLDivElement;
 		let circle1 = document.getElementById('circle-1') as HTMLDivElement;
@@ -29,42 +60,42 @@ export function HomePage(){
 		let circle4 = document.getElementById('circle-4') as HTMLDivElement;
 		let circle5 = document.getElementById('circle-5') as HTMLDivElement;
 
-		if(currentImage === 1){
+		if (currentImage === 1) {
 
-			carouselImages.style.backgroundImage =  'url("' + imageExample2 + '")';
+			carouselImages.style.backgroundImage = 'url("' + imageExample2 + '")';
 			circle1.style.backgroundColor = 'gray';
 			circle2.style.backgroundColor = '#0076E2';
 			currentImage = 2;
 			carouselTitle.innerText = 'Título 2';
 
-		}else if (currentImage === 2){
+		} else if (currentImage === 2) {
 
-			carouselImages.style.backgroundImage =  'url("' + imageExample3 + '")';
+			carouselImages.style.backgroundImage = 'url("' + imageExample3 + '")';
 			circle2.style.backgroundColor = 'gray';
 			circle3.style.backgroundColor = '#0076E2';
 			currentImage = 3;
 			carouselTitle.innerText = 'Título 3';
 
 
-		}else if (currentImage === 3){
+		} else if (currentImage === 3) {
 
-			carouselImages.style.backgroundImage =  'url("' + imageExample4 + '")';
+			carouselImages.style.backgroundImage = 'url("' + imageExample4 + '")';
 			circle3.style.backgroundColor = 'gray';
 			circle4.style.backgroundColor = '#0076E2';
 			currentImage = 4;
 			carouselTitle.innerText = 'Título 4';
 
-		}else if (currentImage === 4){
+		} else if (currentImage === 4) {
 
-			carouselImages.style.backgroundImage =  'url("' + imageExample5 + '")';
+			carouselImages.style.backgroundImage = 'url("' + imageExample5 + '")';
 			circle4.style.backgroundColor = 'gray';
 			circle5.style.backgroundColor = '#0076E2';
 			currentImage = 5;
 			carouselTitle.innerText = 'Título 5';
 
-		}else if (currentImage === 5){
+		} else if (currentImage === 5) {
 
-			carouselImages.style.backgroundImage =  'url("' + imageExample + '")';
+			carouselImages.style.backgroundImage = 'url("' + imageExample + '")';
 			circle5.style.backgroundColor = 'gray';
 			circle1.style.backgroundColor = '#0076E2';
 			currentImage = 1;
@@ -75,34 +106,34 @@ export function HomePage(){
 
 	let navigater = useNavigate()
 
-	function chat(){
+	function chat() {
 		navigater('/chat');
 	}
 
-	function openSchedule(){
-		navigater('/nossaAgenda');		
+	function openSchedule() {
+		navigater('/nossaAgenda');
 	}
 
-	function openBulletinBoard(){
-		navigater('/muralDeAvisos');		
+	function openBulletinBoard() {
+		navigater('/muralDeAvisos');
 	}
 
-	function openLatestNews(){
-		navigater('/ultimasNoticias');		
+	function openLatestNews() {
+		navigater('/ultimasNoticias');
 	}
 
-	return(
+	return (
 
 		<div className="container">
-			
+
 			<Menu />
 
 			<div className="homePage-container">
 
 				<h1 className="homepage-title">Página inicial</h1>
 
-				
-				
+
+
 				<div className="carousel-content" id="carousel-content">
 
 					<p className="carousel-title" id="carousel-title">Mostra de inovação dos espaços 4.0</p>
@@ -115,68 +146,71 @@ export function HomePage(){
 						<div className="circle" id="circle-4"></div>
 						<div className="circle" id="circle-5"></div>
 
-					</div>					
+					</div>
 
 				</div>
 
 				<div className="links">
 
 					<div className="links-component1" onClick={openSchedule} >
-						
-						<img src={greenSchedule} />
+
+						<img src={greenSchedule} alt="" />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 
 					</div>
 
 					<div className="links-component2" onClick={openBulletinBoard}>
-						
-						<img src={greenBulletinBoard} />
+
+						<img src={greenBulletinBoard} alt="" />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 
 					</div>
 
 					<div className="links-component3" onClick={openLatestNews}>
-						
-						<img src={greenLatestNews} />
+
+						<img src={greenLatestNews} alt="" />
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 
-				</div>
+					</div>
 
 				</div>
 
 				<main className="main-content">
 
 					<h5 className="about-gp">Sobre o Ginásio Permanbucano</h5>
-					<p  className="about-gp-content">Lorem ipsum dolor sit amet consectetur. Fermentum quis sem nulla eget eget neque elementum tristique. Pulvinar volutpat quis massa vestibulum malesuada ultrices hac scelerisque a. Vitae ac nunc mauris nec mattis nibh lorem aenean. Aenean in quis tincidunt urna pharetra quam. Iaculis ultrices sagittis amet ultricies dignissim. Lacus massa id lectus molestie aliquet eleifend facilisis. Sit dui gravida pharetra faucibus at arcu in. Eu quis massa elit enim. Gravida senectus tristique ultrices elementum sit et viverra purus metus. Duis pellentesque malesuada pretium amet justo. Mauris fringilla vitae nam id egestas nibh amet fermentum lectus. Neque volutpat mi aenean neque leo auctor vitae cras eget. Imperdiet sit vulputate in id. In volutpat maecenas dolor odio ullamcorper in leo commodo neque...</p>
+					<p className="about-gp-content">Lorem ipsum dolor sit amet consectetur. Fermentum quis sem nulla eget eget neque elementum tristique. Pulvinar volutpat quis massa vestibulum malesuada ultrices hac scelerisque a. Vitae ac nunc mauris nec mattis nibh lorem aenean. Aenean in quis tincidunt urna pharetra quam. Iaculis ultrices sagittis amet ultricies dignissim. Lacus massa id lectus molestie aliquet eleifend facilisis. Sit dui gravida pharetra faucibus at arcu in. Eu quis massa elit enim. Gravida senectus tristique ultrices elementum sit et viverra purus metus. Duis pellentesque malesuada pretium amet justo. Mauris fringilla vitae nam id egestas nibh amet fermentum lectus. Neque volutpat mi aenean neque leo auctor vitae cras eget. Imperdiet sit vulputate in id. In volutpat maecenas dolor odio ullamcorper in leo commodo neque...</p>
 					<h5 className="contact-forms-title">Formas de contato</h5>
 					<p className="about-contact-forms"><span className="span-contact-forms">Atenção</span> - O horário de atendimento, por todos os meios de comunicação, é de 8h às 17h. Além disso, é recomendado o cadastro e uso do chat do próprio aplicativo caso você seja responsável de algum estudante de nossa escola.</p>
 
-					<div className="contact-forms">				
+					<button id='teste' onClick={teste} >
+						<p>Install pwa</p>
+					</button>
+					<div className="contact-forms">
 
 						<div className="contact-component1">
-							
-							<img src={emailIcon} />
+
+							<img src={emailIcon} alt="" />
 							<Link to="#">E-mail</Link>
 
 						</div>
 
 						<div className="contact-component2">
-							
-							<img src={instagrmaIcon} />
+
+							<img src={instagrmaIcon} alt="" />
 							<Link to="#">Instagram</Link>
 
 						</div>
 
 						<div className="contact-component3">
-							
-							<img src={whatsappIcon} />
+
+							<img src={whatsappIcon} alt="" />
 							<Link to="#">WhatsApp</Link>
 
 						</div>
 
 					</div>
 
-					<button onClick={chat} className="button-chat"><img className="button-chat-img" src={chatIcon} /></button>
+					<button onClick={chat} className="button-chat"><img className="button-chat-img" src={chatIcon} alt="" /></button>
 
 				</main>
 

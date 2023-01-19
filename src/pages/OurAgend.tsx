@@ -22,7 +22,7 @@ export function OurAgend(){
 					<h3 className="event-date" >19</h3>
 					<h4 className="event-title">Evento - núcleo de gênero</h4>
 					<p className="event-description">Lorem ipsum dolor sit amet consectetur. Fermentum quis sem nulla eget eget neque elementum tristique...</p>
-					<img className="event-arrow-img" src={blueArrowIcon} />
+					<img className="event-arrow-img" src={blueArrowIcon} alt=""/>
 
 
 				</div>
