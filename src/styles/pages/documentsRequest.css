@@ -1,11 +1,11 @@
+
 .document-type {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-areas: 
-	'docType selectType';
-	gap: 15px;
-	margin-bottom: 15px;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-direction: column;
 }
+
 
 .documents-h1 {
 	margin: 3% 0% 3% 3%;

@@ -4,26 +4,15 @@
 	font-family: 'Raleway', sans-serif;
 }
 
-/*Código pós api*/
-
 .welcome-screen {
 	display: none;
 }
 
-.welcome-screen h3 {
-
-}
-
-/*Código pós api*/
-
 .form-h1 {
 	color: white;
-	font-size: 30px;
+	font-size: 7vw;
 	margin: 5% auto;
-	width: 17ch;
-	overflow: hidden;
 	text-align: center;
-	transition: 0.4s;	
 }
 
 .eteLogo {
@@ -34,49 +23,80 @@
 
 .form-datas {
   display: flex;
-  justify-content: space-around;
-  margin: 40px auto;
-  width: 80vw;
-  height: 30vh;
+  justify-content: center;
+  margin: 0px auto;
+  width: 310px;
+  height: 190px;
   flex-direction: column;
 }
 
-.email-input {
-  border: 1px solid #fff;
-  background-color: transparent;
-  border-radius: 10px;
-  height: 25%;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 0 0 10px;
-  font-size: 15px;
-  color: #fff;
-  outline: none;
-}
 
 .email-label {
-  color: #fff;
-  font-size: 17px;
-  margin: 10px 0;
+  position: absolute;
+  top: auto;
+  left: 15%;
+  color: white;
+  background-color: #020063;  
 }
 
-.password-input {
-  border: 1px solid #fff;
-  background-color: transparent;
+.email-input {
+  height: 50px;
+  width: 250px;
   border-radius: 10px;
-  height: 25%;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 0 0 10px;
-  font-size: 15px;
-  color: #fff;
+  background-color: transparent;
   outline: none;
+  font-size: 16px;
+  color: white;
+  padding: 0 0 0 6px;
+  border: 1px solid #fff;
 }
 
 .password-label {
-  color: #fff;
-  font-size: 17px;
-  margin: 10px 0;
+  position: absolute;
+  top: auto;
+  left: 15%;
+  color: white;
+  background-color: #020063;  
+}
+
+.password-input {
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: transparent;
+  outline: none;
+  font-size: 16px;
+  color: white;
+  padding: 0 0 0 6px;
+  border: 1px solid #fff;
+}
+
+.email-input:focus ~ .email-label {
+	transform: translateY(-25px);
+	transition: all 0.2s ease-out;
+}
+
+.email-input:valid ~ .email-label {
+	transform: translateY(-25px);
+	transition: all 0.2s ease-out;
+}
+
+.password-input:focus ~ .password-label {
+	transform: translateY(-25px);
+	transition: all 0.2s ease-out;
+}
+
+.password-input:valid ~ .password-label {
+	transform: translateY(-25px);
+	transition: all 0.2s ease-out;
+}
+
+.email-input, .password-input {
+	padding: 0 0 0 6px;
+}
+
+.email-label, .password-label {
+  transition: all 0.2s ease-out;
 }
 
 .form-button {
@@ -84,9 +104,9 @@
   border: none;
   outline: none;
   display: block;
-  width: 80vw;
-  height: 7vh;
-  margin: 50px auto 9% auto;
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
   background-color: #048F36;
   color: white;
   font-size: 20px;
@@ -135,6 +155,13 @@
 	  font-size: 22px;
 	}
 
+	.form-h1 {
+		color: white;
+		font-size: 32px;
+		margin: 5% auto;
+		text-align: center;
+	}
+
 	.login-form {
 	  width: 50%;
 	  height: 100%;
@@ -149,13 +176,13 @@
 	  display: block;
 	}
 
-.form-datas {
-  display: flex;
-  justify-content: space-around;
-  margin: 0 auto 6% auto;
-  width: 310px;
-  height: 220px;
-  flex-direction: column;
+	.form-datas {
+	  display: flex;
+	  justify-content: center;
+	  margin: 0 auto 0% auto;
+	  width: 310px;
+	  height: 190px;
+	  flex-direction: column;
 }
 
 	.form-button {
@@ -163,8 +190,8 @@
 	  border: none;
 	  outline: none;
 	  display: block;
-	  width: 310px;
-	  height: 45px;
+	  width: 250px;
+	  height: 50px;
 	  margin: 0 auto;
 	  background-color: #048F36;
 	  color: white;
@@ -175,4 +202,34 @@
 	}
 
 }
+
+.form-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative	;
+  height: 80px;
+}
+
+.form-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative	;
+  height: 80px;
+}
+
+.password-input {
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: transparent;
+  outline: none;
+  font-size: 16px;
+  color: white;
+  padding: 0 0 0 6px;
+  border: 1px solid #fff;
+}
+
+
 

@@ -12,13 +12,7 @@ export function LoginScreen() {
 	const [cookie, setCookie] = useCookies(['token']);
 	const navigate = useNavigate();
 
-	// let deferredprompt: any;
-
-	document.title = "Login";
-
-	// function teste() {
-	// 	deferredprompt.prompt();
-	// }
+	document.title = "ETEGPC | Login";
 
 	async function handleLogin() {
 		await api.http.post('/parent-login', {
@@ -42,9 +36,6 @@ export function LoginScreen() {
 
 	return (
 		<div className="loginScreen-container">
-
-			{/*Código adicionado pós api*/}
-
 			<div className="welcome-screen">
 
 				<h3 className="welcome-screen-h3">Olá, seja bem vindo novamente!</h3>
@@ -55,25 +46,34 @@ export function LoginScreen() {
 
 			<div className="login-form">
 				<h1 className="form-h1">Olá, seja bem-vindo!</h1>
-				<img className="form-img eteLogo" src={eteLogo} alt="" />
-				<label className="form-label">Usuário</label>
-				<input
-					className="form-input"
-					id="form-input-user"
-					onChange={e => setEmail(e.target.value)}
-				/>
-				<label className="form-label">Senha</label>
-				<input
-					className="form-input"
-					type="password"
-					onChange={e => setPassword(e.target.value)}
-				/>
+
+				<img className="form-img eteLogo" alt='logo-etegpc' src={eteLogo} />
+
+				<div className="form-datas">
+
+					<div className="form-email">
+						<input
+							className="email-input"
+							required
+							onChange={e => setEmail(e.target.value)}
+						/>
+						<label className="email-label">E-mail</label>
+					</div>
+
+					<div className="form-password">
+						<input
+							className="password-input"
+							required
+							type={'password'}
+							onChange={e => setPassword(e.target.value)}
+						/>
+						<label className="password-label">Senha</label>
+					</div>
+
+				</div>
+
 				<button className="form-button" onClick={handleLogin}>Entrar</button>
 			</div>
-
-			{/*Código adicionado pós api*/}
-
 		</div>
 	);
-
 }
