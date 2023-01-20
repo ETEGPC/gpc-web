@@ -1,11 +1,20 @@
 import '../styles/pages/documentsRequest.css';
-//import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Menu } from '../components/Exports';
-//import { useState } from 'react';
+import { useState } from 'react';
+import api from '../services/api';
 
 export function DocumentsRequest() {
 	const schoolClasses: string[] = JSON.parse(String(localStorage.getItem('schoolClasses')));
 	const finalClasses = schoolClasses.filter(schoolClass => schoolClass.includes('3'));
+	const [type, setType] = useState('');
+	const [schoolClass, setSchoolClass] = useState('');
+	const [student, setStudent] = useState('');
+	const [mother, setMother] = useState('');
+	const [father, setFather] = useState('');
+	const [phone, setPhone] = useState('');
+	const status = 'solicitado';
+	const navigate = useNavigate();
 
 	function showOptions() {
 		let select = document.getElementById('documents-documentSelect') as HTMLSelectElement;
@@ -54,7 +63,30 @@ export function DocumentsRequest() {
 			sheet19.style.position = 'absolute';
 			button.style.display = 'none';
 		}
-	}
+	};
+
+	async function handleCreateSolicitation() {
+		const data = {
+			type,
+			schoolClass,
+			status,
+			student,
+			mother,
+			father,
+			phone
+		};
+
+		if (schoolClass === '') {
+			alert('Você precisa selecionar a turma para solicitar um documento.');
+			return;
+		};
+
+		await api.http.post('/solicitation', {
+			...data
+		}).then(() => {
+			navigate('/paginainicial');
+		});
+	};
 
 	return (
 		<div>
@@ -67,7 +99,10 @@ export function DocumentsRequest() {
 
 				<p className="documents-p">Tipo de documento:</p>
 
-				<select className="documents-documentSelect" id="documents-documentSelect" onChange={showOptions} >
+				<select className="documents-documentSelect" id="documents-documentSelect" onChange={e => {
+					showOptions();
+					setType(e.target.value);
+				}}>
 
 					<option className="documents-documentSelect-option" value="Escolha seu documento">Escolha seu documento</option>
 					<option className="documents-documentSelect-option" value="Declaração de matrícula">Declaração de matrícula</option>
@@ -81,7 +116,7 @@ export function DocumentsRequest() {
 			<section className="enrollmentStatement" id="enrollmentStatement">
 				<p className="enrollmentStatement-group">Série/turma:</p>
 
-				<select id="enrollmentStatement-select" className="enrollment-select">
+				<select id="enrollmentStatement-select" className="enrollment-select" onChange={e => setSchoolClass(e.target.value)}>
 					<option className="enrollmentStatement-option" value="">Escolha a sua turma</option>
 					{
 						schoolClasses.map(schoolClass => {
@@ -92,13 +127,13 @@ export function DocumentsRequest() {
 
 				<p className="enrollmentStatement-name">Nome do aluno:</p>
 
-				<input className="enrollmentStatement-name-input" type="text" />
+				<input className="enrollmentStatement-name-input" type="text" onChange={e => setStudent(e.target.value)} />
 
 			</section>
 
 			<section className="frequencyStatement" id="frequencyStatement">
 				<p className="frequencyStatement-group">Série/turma:</p>
-				<select id="frequencyStatement-select" className="frequencyStatement-select">
+				<select id="frequencyStatement-select" className="frequencyStatement-select" onChange={e => setSchoolClass(e.target.value)}>
 					<option className="enrollmentStatement-option" value="">Escolha a sua turma</option>
 					{
 						schoolClasses.map(schoolClass => {
@@ -107,36 +142,36 @@ export function DocumentsRequest() {
 					}
 				</select>
 				<p className="frequencyStatement-name">Nome do aluno:</p>
-				<input className="frequencyStatement-name-input" type="text" />
+				<input className="frequencyStatement-name-input" type="text" onChange={e => setStudent(e.target.value)} />
 			</section>
 
 			<section className="sheet19" id="sheet19">
 				<p className="sheet19-group">Série/turma:</p>
-				<select className="sheet19-select">
-					<option className="frequencyStatement-option" value="">Escolha a sua turma</option>
+				<select className="sheet19-select" onChange={e => setSchoolClass(e.target.value)}>
+					<option className="frequencyStatement-option" value="" >Escolha a sua turma</option>
 					{
 						finalClasses.length === 0 ?
 							<option className="frequencyStatement-option" value="">Não é possível solicitar ficha 19 sem ser terceiranista</option>
-						:
-						finalClasses.map(finalClass => {
-							return <option className="frequencyStatement-option" value={finalClass}>{finalClass}</option>
-						})
+							:
+							finalClasses.map(finalClass => {
+								return <option className="frequencyStatement-option" value={finalClass}>{finalClass}</option>
+							})
 					}
 				</select>
 
 				<p className="sheet19-name">Nome do aluno:</p>
-				<input className="sheet19-name-input" type="text" />
+				<input className="sheet19-name-input" type="text" onChange={e => setStudent(e.target.value)} />
 
 				<p className="sheet19-mother-name">Nome da mãe:</p>
-				<input className="sheet19-mother-name-input" type="text" />
+				<input className="sheet19-mother-name-input" type="text" onChange={e => setMother(e.target.value)} />
 
 				<p className="sheet19-father-name">Nome do pai:</p>
-				<input className="sheet19-father-name-input" type="text" />
+				<input className="sheet19-father-name-input" type="text" onChange={e => setFather(e.target.value)} />
 
 				<p className="sheet19-phone-number">Telefone:</p>
-				<input className="sheet19-phone-number-input" type="number" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} />
+				<input className="sheet19-phone-number-input" type="number" onChange={e => { if (!/[0-9]/.test(e.target.value)) { setPhone(e.target.value) } }} />
 			</section>
-			<button className="documents-button" id="documents-button" onClick={() => console.log(finalClasses)}>Solicitar</button>
+			<button className="documents-button" id="documents-button" onClick={handleCreateSolicitation}>Solicitar</button>
 		</div>
 	);
 }

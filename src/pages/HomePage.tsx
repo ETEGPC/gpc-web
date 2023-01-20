@@ -15,17 +15,6 @@ import chatIcon from '../images/icons/chat2_icon.svg'
 import { Link, useNavigate } from 'react-router-dom';
 
 export function HomePage() {
-	let deferredprompt: any;
-
-	window.addEventListener('beforeinstallprompt', (e) => {
-		e.preventDefault();
-		deferredprompt = e;
-	});
-
-	function teste() {
-		deferredprompt.prompt();
-	}
-
 	// const handleClick = () => {
 	// 	pwaInstall({
 	// 		title: "Install Web App",
@@ -179,9 +168,7 @@ export function HomePage() {
 					<h5 className="contact-forms-title">Formas de contato</h5>
 					<p className="about-contact-forms"><span className="span-contact-forms">Atenção</span> - O horário de atendimento, por todos os meios de comunicação, é de 8h às 17h. Além disso, é recomendado o cadastro e uso do chat do próprio aplicativo caso você seja responsável de algum estudante de nossa escola.</p>
 
-					<button id='teste' onClick={teste} >
-						<p>Install pwa</p>
-					</button>
+					
 					<div className="contact-forms">
 
 						<div className="contact-component1">
