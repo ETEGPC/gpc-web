@@ -1,6 +1,7 @@
 import { Menu } from '../components/Exports';
 import api from '../services/api';
 import '../styles/pages/timesheet.css';
+import { CloseMenu } from '../components/Menu';
 
 export function Timesheet () {
 	const schoolClasses: string[] = JSON.parse(String(localStorage.getItem('schoolClasses')));

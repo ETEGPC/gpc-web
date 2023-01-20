@@ -1,7 +1,6 @@
 export * from '../pages/LatestNews';
 export * from '../pages/LoginScreen';
 export * from './Menu';
-export * from '../pages/NewsOpen';
 export * from '../pages/Chat';
 export * from '../components/CalendarComponent'
 export * from '../pages/OurAgend'
@@ -10,3 +9,4 @@ export * from '../pages/MyProfile';
 export * from '../pages/DocumentsRequest';
 export * from '../pages/BulletinBoard';
 export * from '../pages/Timesheet';
+export * from '../pages/ChangePassword';

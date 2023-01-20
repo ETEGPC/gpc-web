@@ -14,10 +14,7 @@ export function LoginScreen() {
 
 	let deferredprompt: any;
 
-	window.addEventListener('beforeinstallprompt', (e) => {
-		e.preventDefault();
-		deferredprompt = e;
-	});
+	document.title = "Login";
 
 	function teste() {
 		deferredprompt.prompt();
@@ -72,9 +69,6 @@ export function LoginScreen() {
 					onChange={e => setPassword(e.target.value)}
 				/>
 				<button className="form-button" onClick={handleLogin}>Entrar</button>
-				<button id='teste' onClick={teste} >
-						<p>Install pwa</p>
-					</button>
 			</div>
 
 			{/*Código adicionado pós api*/}

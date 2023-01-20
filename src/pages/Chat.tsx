@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Menu } from '../components/Menu';
-//import eteLogo from '../images/eteLogo.svg';
 import send from '../images/icons/send_icon.svg'
 import api from '../services/api';
 import { IMessage } from '../@types';
 import '../styles/pages/chat.css';
+import { CloseMenu } from '../components/Menu';
 
 export function Chat() {
 	const [messageInput, setMessageInput] = useState('');
@@ -15,6 +15,9 @@ export function Chat() {
 		setMessages([...messages, message]);
 	});
 
+	document.title = 'Chat';
+
+
 	async function handleGetEarlierMessages() {
 		await api.http.get('/messages', {
 			params: {
@@ -24,7 +27,6 @@ export function Chat() {
 			setMessages(resp.data);
 		});
 	};
-
 	function handleSendMessage() {
 		api.socket.emit(`message`, {
 			room: `${parentId}-gestao`,
@@ -37,37 +39,33 @@ export function Chat() {
 	useEffect(() => {
 		handleGetEarlierMessages();
 	});
-
 	return (
-
-		<div className='chat-container'>
+		<div className='container'>
 
 			<Menu />
 
-			<h1 className='chat-container-h1'>Chat</h1>
-
-			<div className='chat-subContiner'>
-
-				<header className='chat-header'>
-					<h2 className='chat-header-h2'>ETE Ginásio</h2>
-				</header>
+			<div className="chat-container" onClick={CloseMenu}>
+				<h1 className='container-title'>Chat</h1>
+				<h2 className='chat-school-title'>ETE Ginásio</h2>
 
 				<hr className='chat-hr' />
 
-				{
-					messages.map(message => {
-						return message.author === parentId ?
-							<div className='chat-message2' key={message.id}>
-								<p className='chat-message2-p'>{message.message}</p>
-							</div>
-							:
-							<div className='chat-message1' key={message.id}>
-								<p className='chat-message1-p'>{message.message}</p>
-							</div>
-					})
-				}
+				<div className='chat-content'>
+					{
+						messages.map(message => {
+							return message.author === parentId ?
+								<div className='chat-my-message' key={message.id}>
+									<p className='chat-my-message-content'>{message.message}</p>
+								</div>
+								:
+								<div className='chat-school-menssage' key={message.id}>
+									<p className='chat-school-menssage-content'>{message.message}</p>
+								</div>
+						})
+					}
+				</div>
 
-				<div className='sendMessage'>
+				<div className='send-my-message'>
 					<textarea
 						id="txt"
 						className='chat-textarea'
@@ -83,8 +81,6 @@ export function Chat() {
 					</button>
 				</div>
 			</div>
-
 		</div>
-
 	);
 }
