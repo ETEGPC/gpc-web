@@ -27,13 +27,17 @@ export function LoginScreen(){
 
 				<img className="form-img eteLogo" src={eteLogo} />
 
-				<div className="form-datas">					
-					
-					<label className="email-label">E-mail</label>
-					<input  className="email-input" placeholder="E-mail"/>
+				<div className="form-datas">			
 
-					<label className="password-label">Senha</label>
-					<input className="password-input" type="password"  placeholder="Senha"/>
+					<div className="form-email">
+						<input  className="email-input" required/>
+						<label className="email-label">E-mail</label>
+					</div>
+
+					<div className="form-password">
+						<input  className="password-input" required/>
+						<label className="password-label">Senha</label>
+					</div>
 
 				</div>
 
