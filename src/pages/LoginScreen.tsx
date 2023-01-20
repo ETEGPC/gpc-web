@@ -12,13 +12,13 @@ export function LoginScreen() {
 	const [cookie, setCookie] = useCookies(['token']);
 	const navigate = useNavigate();
 
-	let deferredprompt: any;
+	// let deferredprompt: any;
 
 	document.title = "Login";
 
-	function teste() {
-		deferredprompt.prompt();
-	}
+	// function teste() {
+	// 	deferredprompt.prompt();
+	// }
 
 	async function handleLogin() {
 		await api.http.post('/parent-login', {
