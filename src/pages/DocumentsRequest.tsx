@@ -1,8 +1,7 @@
 import '../styles/pages/documentsRequest.css';
 import { useEffect } from 'react';
 import { Menu } from '../components/Exports';
-import { useState } from 'react';
-
+import { CloseMenu } from '../components/Menu';
 
 export function DocumentsRequest(){          
 
@@ -13,190 +12,230 @@ export function DocumentsRequest(){
             let select = document.getElementById('documents-documentSelect') as HTMLSelectElement;
             let button = document.getElementById('documents-button') as HTMLButtonElement;
 
-            let enrollmentStatement = document.getElementById('enrollmentStatement')!;
-            let frequencyStatement = document.getElementById('frequencyStatement')!;            
-            let sheet19 = document.getElementById('sheet19')!;
-            
+            let enrollmentStatementGroup = document.getElementById('enrollmentStatement-document-group')!;
+            let enrollmentStatementName = document.getElementById('enrollmentStatement-document-name')!;
+            let frequencyStatementGroup = document.getElementById('frequencyStatement')!;            
+            let frequencyStatementName = document.getElementById('frequencyStatement-document-name')!;            
+            let sheet19 = document.getElementById('sheet19')!;            
+
+
             if(select.value === 'Declaração de matrícula'){
 
-                enrollmentStatement.style.visibility = 'initial';
-                enrollmentStatement.style.position = 'relative';
-                frequencyStatement.style.visibility = 'hidden';
-                frequencyStatement.style.position = 'absolute';                                
-                sheet19.style.visibility = 'hidden';
-                sheet19.style.position = 'absolute';
-                button.style.display = 'block';
-                
+                enrollmentStatementGroup.style.display = 'flex';
+                enrollmentStatementName.style.display = 'flex';
+                frequencyStatementGroup.style.display = 'none'
+                frequencyStatementName.style.display = 'none'
+                sheet19.style.display = 'none'            
+                button.style.display = 'block'                  
 
             }else if (select.value === 'Declaração de frequência'){
 
-                enrollmentStatement.style.visibility = 'hidden';
-                enrollmentStatement.style.position = 'absolute';
-                frequencyStatement.style.visibility = 'initial';
-                frequencyStatement.style.position = 'relative';                                   
-                sheet19.style.visibility = 'hidden';
-                sheet19.style.position = 'absolute';                  
-                button.style.display = 'block';
+                enrollmentStatementGroup.style.display = 'none';
+                enrollmentStatementName.style.display = 'none';
+                frequencyStatementGroup.style.display = 'flex'
+                frequencyStatementName.style.display = 'flex'
+                sheet19.style.display = 'none'  
+                button.style.display = 'block'          
 
             }else if (select.value === 'Ficha 19'){
 
-                enrollmentStatement.style.visibility = 'hidden';
-                enrollmentStatement.style.position = 'absolute';
-                frequencyStatement.style.visibility = 'hidden';
-                frequencyStatement.style.position = 'absolute';                                
-                sheet19.style.visibility = 'initial';
-                sheet19.style.position = 'relative';                
-                button.style.display = 'block';
+                enrollmentStatementGroup.style.display = 'none';
+                enrollmentStatementName.style.display = 'none';
+                frequencyStatementGroup.style.display = 'none'
+                frequencyStatementName.style.display = 'none'
+                sheet19.style.display = 'flex'  
+                button.style.display = 'block'            
 
             }else {
 
-                enrollmentStatement.style.visibility = 'hidden';
-                enrollmentStatement.style.position = 'absolute';
-                frequencyStatement.style.visibility = 'hidden';
-                frequencyStatement.style.position = 'absolute';                                
-                sheet19.style.visibility = 'hidden';
-                sheet19.style.position = 'absolute';                
-                button.style.display = 'none';
+                enrollmentStatementGroup.style.display = 'none';
+                enrollmentStatementName.style.display = 'none';
+                frequencyStatementGroup.style.display = 'none'
+                frequencyStatementName.style.display = 'none'
+                sheet19.style.display = 'none'  
+                button.style.display = 'none'            
             }
         }            
 
     return(
 
-        <div>
+        <div className="container">
             
             <Menu />
 
-            <h1 className="documents-h1">Solicitação de documentos</h1>
-            <h2 className="documents-h2">Preencha os campos abaixo para solicitar algum documento</h2>
+            <div className="documentsRequest-container" onClick={CloseMenu}>
 
-            <section className="document-type">
+                <h1 className="documents-h1">Solicitação de documentos</h1>
+                <h2 className="documents-h2">Preencha os campos abaixo para solicitar algum documento</h2>
 
-                <p className="documents-p">Tipo de documento:</p>
+                <section className="documents-container">
 
-                <select className="documents-documentSelect" id="documents-documentSelect" onChange={showOptions} >
-                    
-                    <option className="documents-documentSelect-option" value="Escolha seu documento">Escolha seu documento</option>
-                    <option className="documents-documentSelect-option" value="Declaração de matrícula">Declaração de matrícula</option>
-                    <option className="documents-documentSelect-option"  value="Declaração de frequência">Declaração de frequência</option>                   
-                    <option className="documents-documentSelect-option" value="Ficha 19">Ficha 19</option>
+                    <div className="document-type">
 
-                </select>
+                        <p className="documents-p">Tipo de documento</p>
 
-            </section>
+                        <select className="documents-documentSelect" id="documents-documentSelect" onChange={showOptions} >
+                            
+                            <option className="documents-documentSelect-option" value="Escolha seu documento">Escolha seu documento</option>
+                            <option className="documents-documentSelect-option" value="Declaração de matrícula">Declaração de matrícula</option>
+                            <option className="documents-documentSelect-option"  value="Declaração de frequência">Declaração de frequência</option>                   
+                            <option className="documents-documentSelect-option" value="Ficha 19">Ficha 19</option>
 
-            <section className="enrollmentStatement" id="enrollmentStatement">
+                        </select>
 
-                    <p className="enrollmentStatement-group">Série/turma:</p>
-                    
-                    <select id="enrollmentStatement-select" className="enrollment-select">
+                    </div>
 
-                        <option className="enrollmentStatement-option" value="">Escolha a sua turma</option>    
-                        <option className="enrollmentStatement-option" value="1° ano A - DS">1° ano A - DS</option>
-                        <option className="enrollmentStatement-option" value="1° ano B - DS">1° ano B - DS</option>
-                        <option className="enrollmentStatement-option" value="1° ano A - MM">1° ano A - MM</option>
-                        <option className="enrollmentStatement-option" value="1° ano B - MM">1° ano B - MM</option>
+                  
+                    <div className="enrollmentStatement" id="enrollmentStatement-document-group">
+                        
+                         <p className="enrollmentStatement-group">Série / turma</p>
 
-                        <option className="enrollmentStatement-option" value="2° ano A - DS">2° ano A - DS</option>
-                        <option className="enrollmentStatement-option" value="2° ano B - DS">2° ano B - DS</option>
-                        <option className="enrollmentStatement-option" value="2° ano A - MM">2° ano A - MM</option>
-                        <option className="enrollmentStatement-option" value="2° ano B - MM">2° ano B - MM</option>
+                          <select id="enrollmentStatement-select" className="enrollmentStatement-select">
 
-                        <option className="enrollmentStatement-option" value="3° ano A - DS">3° ano A - DS</option>
-                        <option className="enrollmentStatement-option" value="3° ano B - DS">3° ano B - DS</option>
-                        <option className="enrollmentStatement-option" value="3° ano A - MM">3° ano A - MM</option>
-                        <option className="enrollmentStatement-option" value="3° ano B - MM">3° ano B - MM</option>
+                            <option className="enrollmentStatement-option" value="">Escolha a sua turma</option>    
+                            <option className="enrollmentStatement-option" value="1° ano A - DS">1° ano A - DS</option>
+                            <option className="enrollmentStatement-option" value="1° ano B - DS">1° ano B - DS</option>
+                            <option className="enrollmentStatement-option" value="1° ano A - MM">1° ano A - MM</option>
+                            <option className="enrollmentStatement-option" value="1° ano B - MM">1° ano B - MM</option>
 
-                        <option className="enrollmentStatement-option" value="Módulo I - DS">Módulo I - DS</option>
-                        <option className="enrollmentStatement-option" value="Módulo II - DS">Módulo II - DS</option>
-                        <option className="enrollmentStatement-option" value="Módulo III - DS">Módulo III - DS</option>
-                        <option className="enrollmentStatement-option" value="Módulo I - MM">Módulo I - MM</option>
-                        <option className="enrollmentStatement-option" value="Módulo II - MM">Módulo II - MM</option>
-                        <option className="enrollmentStatement-option" value="Módulo III - MM">Módulo III - MM</option>               
+                            <option className="enrollmentStatement-option" value="2° ano A - DS">2° ano A - DS</option>
+                            <option className="enrollmentStatement-option" value="2° ano B - DS">2° ano B - DS</option>
+                            <option className="enrollmentStatement-option" value="2° ano A - MM">2° ano A - MM</option>
+                            <option className="enrollmentStatement-option" value="2° ano B - MM">2° ano B - MM</option>
 
-                     </select>
+                            <option className="enrollmentStatement-option" value="3° ano A - DS">3° ano A - DS</option>
+                            <option className="enrollmentStatement-option" value="3° ano B - DS">3° ano B - DS</option>
+                            <option className="enrollmentStatement-option" value="3° ano A - MM">3° ano A - MM</option>
+                            <option className="enrollmentStatement-option" value="3° ano B - MM">3° ano B - MM</option>
 
-                    <p className="enrollmentStatement-name">Nome do aluno:</p>
+                            <option className="enrollmentStatement-option" value="Módulo I - DS">Módulo I - DS</option>
+                            <option className="enrollmentStatement-option" value="Módulo II - DS">Módulo II - DS</option>
+                            <option className="enrollmentStatement-option" value="Módulo III - DS">Módulo III - DS</option>
+                            <option className="enrollmentStatement-option" value="Módulo I - MM">Módulo I - MM</option>
+                            <option className="enrollmentStatement-option" value="Módulo II - MM">Módulo II - MM</option>
+                            <option className="enrollmentStatement-option" value="Módulo III - MM">Módulo III - MM</option>               
 
-                    <input className="enrollmentStatement-name-input" type="text" />
+                         </select>
 
-            </section>
+                    </div>
 
-            <section className="frequencyStatement" id="frequencyStatement">
+                    <div className="enrollmentStatement-document-name" id="enrollmentStatement-document-name">
+                        
+                        <input required className="enrollmentStatement-name-input" type="text" />
+                        <label className="enrollmentStatement-name-label">Nome do aluno</label>
 
-                    <p className="frequencyStatement-group">Série/turma:</p>
-                    
-                    <select id="frequencyStatement-select" className="frequencyStatement-select">
-
-                        <option className="frequencyStatement-option" value="">Escolha a sua turma</option>    
-                        <option className="frequencyStatement-option" value="1° ano A - DS">1° ano A - DS</option>
-                        <option className="frequencyStatement-option" value="1° ano B - DS">1° ano B - DS</option>
-                        <option className="frequencyStatement-option" value="1° ano A - MM">1° ano A - MM</option>
-                        <option className="frequencyStatement-option" value="1° ano B - MM">1° ano B - MM</option>
-
-                        <option className="frequencyStatement-option" value="2° ano A - DS">2° ano A - DS</option>
-                        <option className="frequencyStatement-option" value="2° ano B - DS">2° ano B - DS</option>
-                        <option className="frequencyStatement-option" value="2° ano A - MM">2° ano A - MM</option>
-                        <option className="frequencyStatement-option" value="2° ano B - MM">2° ano B - MM</option>
-
-                        <option className="frequencyStatement-option" value="3° ano A - DS">3° ano A - DS</option>
-                        <option className="frequencyStatement-option" value="3° ano B - DS">3° ano B - DS</option>
-                        <option className="frequencyStatement-option" value="3° ano A - MM">3° ano A - MM</option>
-                        <option className="frequencyStatement-option" value="3° ano B - MM">3° ano B - MM</option>
-
-                        <option className="frequencyStatement-option" value="Módulo I - DS">Módulo I - DS</option>
-                        <option className="frequencyStatement-option" value="Módulo II - DS">Módulo II - DS</option>
-                        <option className="frequencyStatement-option" value="Módulo III - DS">Módulo III - DS</option>
-                        <option className="frequencyStatement-option" value="Módulo I - MM">Módulo I - MM</option>
-                        <option className="frequencyStatement-option" value="Módulo II - MM">Módulo II - MM</option>
-                        <option className="frequencyStatement-option" value="Módulo III - MM">Módulo III - MM</option>               
-
-                     </select>
-
-                    <p className="frequencyStatement-name">Nome do aluno:</p>
-
-                    <input className="frequencyStatement-name-input" type="text" />
-
-            </section>        
-            
-
-            <section className="sheet19" id="sheet19">
-
-                    <p className="sheet19-group">Série/turma:</p>
-                    
-                    <select className="sheet19-select">
-
-                        <option className="frequencyStatement-option" value="">Escolha a sua turma</option>    
-                        <option className="enrollmentStatement-option" value="3° ano A - DS">3° ano A - DS</option>
-                        <option className="enrollmentStatement-option" value="3° ano B - DS">3° ano B - DS</option>
-                        <option className="enrollmentStatement-option" value="3° ano A - MM">3° ano A - MM</option>
-                        <option className="enrollmentStatement-option" value="3° ano B - MM">3° ano B - MM</option>
-          
-                    </select>
+                    </div>
+                   
 
 
-                    <p className="sheet19-name">Nome do aluno:</p>
-                    <input className="sheet19-name-input" type="text" />
+                    <div className="frequencyStatement" id="frequencyStatement">
+                        
+                         <p className="frequencyStatement-group">Série / turma</p>
 
+                          <select id="frequencyStatement-select" className="frequencyStatement-select">
 
-                    <p className="sheet19-mother-name">Nome da mãe:</p>
-                    <input className="sheet19-mother-name-input" type="text" />
+                            <option className="frequencyStatement-option" value="">Escolha a sua turma</option>    
+                            <option className="frequencyStatement-option" value="1° ano A - DS">1° ano A - DS</option>
+                            <option className="frequencyStatement-option" value="1° ano B - DS">1° ano B - DS</option>
+                            <option className="frequencyStatement-option" value="1° ano A - MM">1° ano A - MM</option>
+                            <option className="frequencyStatement-option" value="1° ano B - MM">1° ano B - MM</option>
 
+                            <option className="frequencyStatement-option" value="2° ano A - DS">2° ano A - DS</option>
+                            <option className="frequencyStatement-option" value="2° ano B - DS">2° ano B - DS</option>
+                            <option className="frequencyStatement-option" value="2° ano A - MM">2° ano A - MM</option>
+                            <option className="frequencyStatement-option" value="2° ano B - MM">2° ano B - MM</option>
 
-                    <p className="sheet19-father-name">Nome do pai:</p>
-                    <input className="sheet19-father-name-input" type="text" />
+                            <option className="frequencyStatement-option" value="3° ano A - DS">3° ano A - DS</option>
+                            <option className="frequencyStatement-option" value="3° ano B - DS">3° ano B - DS</option>
+                            <option className="frequencyStatement-option" value="3° ano A - MM">3° ano A - MM</option>
+                            <option className="frequencyStatement-option" value="3° ano B - MM">3° ano B - MM</option>
 
-                    <p className="sheet19-phone-number">Telefone:</p>
-                    <input className="sheet19-phone-number-input" type="number"  onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} />                                                      
+                            <option className="frequencyStatement-option" value="Módulo I - DS">Módulo I - DS</option>
+                            <option className="frequencyStatement-option" value="Módulo II - DS">Módulo II - DS</option>
+                            <option className="frequencyStatement-option" value="Módulo III - DS">Módulo III - DS</option>
+                            <option className="frequencyStatement-option" value="Módulo I - MM">Módulo I - MM</option>
+                            <option className="frequencyStatement-option" value="Módulo II - MM">Módulo II - MM</option>
+                            <option className="frequencyStatement-option" value="Módulo III - MM">Módulo III - MM</option>               
 
-                    <p className="sheet19-entry-year">Ano de entrada:</p>
-                    <input placeholder="Ex.: 2020" className="sheet19-entry-year-input" type="number"  onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} />                                                      
+                         </select>
 
-                    <p className="sheet19-outgoing-year">Ano de conclusão:</p>
-                    <input placeholder="Ex.: 2023" className="sheet19-outgoing-year-input" type="number"  onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} />                                                      
+                    </div>
 
-            </section>
+                    <div className="frequencyStatement-document-name" id="frequencyStatement-document-name">
+                        
+                        <input required className="frequencyStatement-name-input" type="text" />
+                        <label className="frequencyStatement-name-label">Nome do aluno</label>
 
-            <button  className="documents-button" id="documents-button">Solicitar</button>
+                    </div>
+
+                    <div className="sheet19" id="sheet19">
+                        
+                        <div className="sheet19-group" >
+                            
+
+                            <p className="sheet19-group-p">Série / turma</p>
+                            
+                            <select className="sheet19-select">
+
+                                <option className="frequencyStatement-option" value="">Escolha a sua turma</option>    
+                                <option className="enrollmentStatement-option" value="3° ano A - DS">3° ano A - DS</option>
+                                <option className="enrollmentStatement-option" value="3° ano B - DS">3° ano B - DS</option>
+                                <option className="enrollmentStatement-option" value="3° ano A - MM">3° ano A - MM</option>
+                                <option className="enrollmentStatement-option" value="3° ano B - MM">3° ano B - MM</option>
+                  
+                            </select>
+
+                        </div>
+
+                        <div className="sheet19-student-name">
+                            
+                            <input required className="sheet19-student-name-input" type="text" />
+                            <label className="sheet19-student-name-label">Nome do aluno</label>
+
+                        </div>
+
+                        <div className="sheet19-mother-name">
+                            
+                            <input required className="sheet19-mother-name-input" type="text" />
+                            <label className="sheet19-mother-name-label">Nome da mãe</label>
+
+                        </div>
+
+                        <div className="sheet19-father-name">
+                            
+                            <input required className="sheet19-father-name-input" type="text" />
+                            <label className="sheet19-father-name-label">Nome do pai</label>
+
+                        </div>
+
+                        <div className="sheet19-phone-number">
+                            
+                            <input required className="sheet19-phone-number-input" type="number"  onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} /> 
+                            <label className="sheet19-phone-number-label">Telefone</label>
+
+                        </div>
+
+                        <div className="sheet19-entry-year">
+                            
+                            <input required className="sheet19-entry-year-input" type="number"  onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} /> 
+                            <label className="sheet19-entry-year-label">Ano de entrada</label>
+
+                        </div>
+
+                        <div className="sheet19-outgoing-year">
+                            
+                            <input required className="sheet19-outgoing-year-input" type="number"  onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} /> 
+                            <label className="sheet19-outgoing-year-label">Ano de conclusão</label>
+
+                        </div>
+
+                    </div>
+
+                </section>             
+
+                <button  className="documents-button" id="documents-button">Solicitar</button>
+
+            </div>
 
         </div>
 
