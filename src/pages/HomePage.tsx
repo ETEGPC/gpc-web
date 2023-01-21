@@ -34,13 +34,11 @@ export function HomePage() {
 	// 		.catch(() => alert("User opted out from installing"));
 	// };
 
-	let currentImage: number = 1;
-
 	setInterval(function () {
 
-	document.title = 'Página inicial';
+		document.title = 'ETE GPC | Página inicial';
 
-	let currentImage:number = 1;	
+		let currentImage: number = 1;
 
 		let carouselTitle = document.getElementById('carousel-title') as HTMLParagraphElement;
 		let carouselImages = document.getElementById('carousel-content') as HTMLDivElement;
@@ -111,7 +109,7 @@ export function HomePage() {
 	function openLatestNews() {
 		navigater('/ultimasNoticias');
 	}
-	
+
 
 	return (
 
@@ -174,7 +172,7 @@ export function HomePage() {
 					<h5 className="contact-forms-title">Formas de contato</h5>
 					<p className="about-contact-forms"><span className="span-contact-forms">Atenção</span> - O horário de atendimento, por todos os meios de comunicação, é de 8h às 17h. Além disso, é recomendado o cadastro e uso do chat do próprio aplicativo caso você seja responsável de algum estudante de nossa escola.</p>
 
-					
+
 					<div className="contact-forms">
 
 						<div className="contact-component1">

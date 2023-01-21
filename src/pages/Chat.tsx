@@ -15,7 +15,7 @@ export function Chat() {
 		setMessages([...messages, message]);
 	});
 
-	document.title = 'Chat';
+	document.title = 'ETE GPC | Chat';
 
 
 	async function handleGetEarlierMessages() {

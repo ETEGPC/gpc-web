@@ -6,7 +6,7 @@ import { CloseMenu } from '../components/Menu';
 
 export function LatestNews(){
 
-    document.title = 'Últimas notícias';
+    document.title = 'ETE GPC | Últimas notícias';
     
     return (
 
@@ -22,7 +22,7 @@ export function LatestNews(){
 
                     <div className="latestNews-content">
 
-                        <img src={image} className="content-img" />                    
+                        <img src={image} className="content-img" alt="imagem referente à notícia"/>                    
                         <h2 className="content-h2">Mostra de Inovação - Armazém da Criatividade - <Link to='#' className="latestNews-p" >Ler matéria</Link></h2>
                         
                     </div>                  

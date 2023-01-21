@@ -5,7 +5,7 @@ import { CloseMenu } from '../components/Menu';
 
 export function OurAgend(){
 
-	document.title = 'Nossa agenda';
+	document.title = 'ETE GPC | Nossa agenda';
 
 	return(
 
@@ -26,7 +26,7 @@ export function OurAgend(){
 						<h3 className="new-event-date" >19</h3>
 						<h4 className="new-event-title">Evento - núcleo de gênero</h4>
 						<p className="new-event-description">Lorem ipsum dolor sit amet consectetur. Fermentum quis sem nulla eget eget neque elementum tristique...</p>
-						<img className="new-event-arrow-img" src={blueArrowIcon} />
+						<img className="new-event-arrow-img" alt='ver evento' src={blueArrowIcon} />
 
 					</div>	
 

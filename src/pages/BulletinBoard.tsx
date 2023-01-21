@@ -9,7 +9,7 @@ export function BulletinBoard() {
 	const schoolClasses: string[] = JSON.parse(String(localStorage.getItem('schoolClasses')));
 	const [notices, setNotices] = useState<INotice[]>([]);
 	const [selectedClass, setSelectedClass] = useState<string>(schoolClasses[0]);
-	document.title = 'Mural de avisos';
+	document.title = 'ETE GPC | Mural de avisos';
 
 	async function handleGetNotices(schoolClass: string) {
 		await api.http.get('/notices', {

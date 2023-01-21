@@ -5,7 +5,7 @@ import { CloseMenu } from '../components/Menu';
 
 export function MyProfile(){
 
-	document.title = 'ETEGPC | Meu perfil';
+	document.title = 'ETE GPC | Meu perfil';
 
 	return(
 

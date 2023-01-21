@@ -12,7 +12,7 @@ export function LoginScreen() {
 	const [cookie, setCookie] = useCookies(['token']);
 	const navigate = useNavigate();
 
-	document.title = "ETEGPC | Login";
+	document.title = "ETE GPC | Login";
 
 	async function handleLogin() {
 		await api.http.post('/parent-login', {
