@@ -193,6 +193,7 @@
 	  padding: 0 0 0 19px;
 	  margin: auto 0;
 	  text-decoration: none;
+	  transition: 2s all ease-out;
 	}
 
 	.desktop-menu-main hr {

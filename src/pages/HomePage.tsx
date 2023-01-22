@@ -19,8 +19,9 @@ export function HomePage(){
 
 	document.title = 'Página inicial';
 
-	let currentImage:number = 1;	
 
+	//Function to change carousel images
+	let currentImage:number = 1;	
 	setInterval(function(){		
 		
 		
@@ -35,16 +36,16 @@ export function HomePage(){
 		if(currentImage === 1){
 
 			carouselImages.style.backgroundImage =  'url("' + imageExample2 + '")';
-			circle1.style.backgroundColor = 'gray';
-			circle2.style.backgroundColor = '#0076E2';
+			circle1.style.backgroundColor = 'transparent';
+			circle2.style.backgroundColor = '#fff';
 			currentImage = 2;
 			carouselTitle.innerText = 'Título 2';
 
 		}else if (currentImage === 2){
 
 			carouselImages.style.backgroundImage =  'url("' + imageExample3 + '")';
-			circle2.style.backgroundColor = 'gray';
-			circle3.style.backgroundColor = '#0076E2';
+			circle2.style.backgroundColor = 'transparent';
+			circle3.style.backgroundColor = '#fff';
 			currentImage = 3;
 			carouselTitle.innerText = 'Título 3';
 
@@ -52,48 +53,50 @@ export function HomePage(){
 		}else if (currentImage === 3){
 
 			carouselImages.style.backgroundImage =  'url("' + imageExample4 + '")';
-			circle3.style.backgroundColor = 'gray';
-			circle4.style.backgroundColor = '#0076E2';
+			circle3.style.backgroundColor = 'transparent';
+			circle4.style.backgroundColor = '#fff';
 			currentImage = 4;
 			carouselTitle.innerText = 'Título 4';
 
 		}else if (currentImage === 4){
 
 			carouselImages.style.backgroundImage =  'url("' + imageExample5 + '")';
-			circle4.style.backgroundColor = 'gray';
-			circle5.style.backgroundColor = '#0076E2';
+			circle4.style.backgroundColor = 'transparent';
+			circle5.style.backgroundColor = '#fff';
 			currentImage = 5;
 			carouselTitle.innerText = 'Título 5';
 
 		}else if (currentImage === 5){
 
 			carouselImages.style.backgroundImage =  'url("' + imageExample + '")';
-			circle5.style.backgroundColor = 'gray';
-			circle1.style.backgroundColor = '#0076E2';
+			circle5.style.backgroundColor = 'transparent';
+			circle1.style.backgroundColor = '#fff';
 			currentImage = 1;
 			carouselTitle.innerText = 'Título 1';
 		}
 
 	}, 3000)
 
+
+	// Function to redirect to other pages
 	let navigater = useNavigate()
-
-	function chat(){
-		navigater('/chat');
-	}
-
-	function openSchedule(){
-		navigater('/nossaAgenda');		
-	}
-
-	function openBulletinBoard(){
-		navigater('/muralDeAvisos');		
-	}
-
-	function openLatestNews(){
-		navigater('/ultimasNoticias');		
+	const redirectTopage = (pageName:string) => {
+		navigater(pageName);
 	}
 	
+	//Function to redirec to the means of contact
+	function openInstagram(){
+		window.open('https://www.instagram.com/eteginasiopec/', '_blank');
+	}	
+
+	function openEmail(){
+		window.open('mailto:eteginasiopernambucano@gmail.com', '_blank');
+		
+	}
+
+	function openWhatsApp(){
+		window.open('https://wa.me/5581997841403', '_blank');		
+	}
 
 	return(
 
@@ -126,21 +129,21 @@ export function HomePage(){
 
 				<div className="links">
 
-					<div className="links-component1" onClick={openSchedule} >
+					<div className="links-component1" onClick={() => redirectTopage('/nossaAgenda')} >
 						
 						<img src={greenSchedule} />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 
 					</div>
 
-					<div className="links-component2" onClick={openBulletinBoard}>
+					<div className="links-component2" onClick={() => redirectTopage('/muralDeAvisos')}>
 						
 						<img src={greenBulletinBoard} />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 
 					</div>
 
-					<div className="links-component3" onClick={openLatestNews}>
+					<div className="links-component3" onClick={() => redirectTopage('/ultimasNoticias')}>
 						
 						<img src={greenLatestNews} />
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
@@ -158,21 +161,21 @@ export function HomePage(){
 
 					<div className="contact-forms">				
 
-						<div className="contact-component1">
+						<div className="contact-component1" onClick={openEmail}>
 							
 							<img src={emailIcon} />
 							<Link to="#">E-mail</Link>
 
 						</div>
 
-						<div className="contact-component2">
+						<div className="contact-component2" onClick={openInstagram}>
 							
 							<img src={instagrmaIcon} />
 							<Link to="#">Instagram</Link>
 
 						</div>
 
-						<div className="contact-component3">
+						<div className="contact-component3" onClick={openWhatsApp}>
 							
 							<img src={whatsappIcon} />
 							<Link to="#">WhatsApp</Link>
@@ -181,7 +184,7 @@ export function HomePage(){
 
 					</div>
 
-					<button onClick={chat} className="button-chat"><img className="button-chat-img" src={chatIcon} /></button>
+					<button onClick={() => redirectTopage('/chat')} className="button-chat"><img className="button-chat-img" src={chatIcon} /></button>
 
 				</main>
 
