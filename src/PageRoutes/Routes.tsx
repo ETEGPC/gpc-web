@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes as Rts} from 'react-router-dom';
-import { LoginScreen, LatestNews, Chat, OurAgend, HomePage, MyProfile, DocumentsRequest, BulletinBoard,Timesheet, ChangePassword } from '../components/Exports';
+import { LoginScreen, LatestNews, Chat, OurAgend, HomePage, MyProfile, DocumentsRequest,
+	 BulletinBoard,Timesheet, ChangePassword, AboutGP } from '../components/Exports';
 
 
 export function Routes(){
@@ -8,6 +9,7 @@ export function Routes(){
 		<BrowserRouter>
 			<Rts>
 				<Route path="" element={<LoginScreen />} />
+				<Route path='*' element={<HomePage/>} />
 				<Route path="/ultimasNoticias" element={<LatestNews />} />
 				<Route path="/chat" element={<Chat/>}></Route>
 				<Route path="/nossaAgenda" element={<OurAgend />}></Route>
@@ -17,6 +19,7 @@ export function Routes(){
 				<Route path="/muralDeAvisos" element={<BulletinBoard />} />
 				<Route path="/quadroDeHorarios" element={<Timesheet />} />
 				<Route path="/redefinirSenha" element={<ChangePassword />} />
+				<Route path="/sobreOGinasioPernambucano" element={<AboutGP />} />
 			</Rts>
 		</BrowserRouter>
 

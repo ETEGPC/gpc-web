@@ -1,0 +1,15 @@
+.container-content {
+    margin: 0 3%;    
+}
+
+@media screen and (min-width: 800px) and (min-height: 497px){  
+    .container {
+       display: flex;
+       justify-content: space-between;
+     }
+ 
+     .aboutGP-container {
+         width: 76%;
+         margin-top: 10vh;
+     }
+}
