@@ -1,15 +1,13 @@
 * {
-    font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
-.chat-container {
-
-}
+/* .chat-container {} */
 
 .container-title {
-    margin: 3% 0% 3% 3%;
-    font-size: 32px;
-    text-decoration: underline;
+  margin: 3% 0% 3% 3%;
+  font-size: 32px;
+  text-decoration: underline;
 }
 
 .chat-content {
@@ -24,9 +22,9 @@
 }
 
 .chat-school-title {
-    text-align: center;
-    font-weight: 600;
-    margin: 10px 0;
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
 }
 
 .chat-hr {
@@ -39,38 +37,159 @@
   height: 1px;
 }
 
- .chat-school-menssage {
-    background-color: #020054;
-    border-radius: 4px;
-    width: 90%;
-    align-self: start;
-    height: auto;
+.chat-school-menssage {
+  background-color: #020054;
+  border-radius: 4px;
+  width: 90%;
+  align-self: start;
+  height: auto;
 }
 
 .chat-school-menssage-content {
-    font-size: 13px;
-    color: white;
-    padding: 6px;
+  font-size: 13px;
+  color: white;
+  padding: 6px;
 }
 
 .chat-my-message {
-    background-color: #03007E;
-    border-radius: 4px;
-    align-self: end;
-    max-width: 90%;
-    height: auto;
+  background-color: #03007E;
+  border-radius: 4px;
+  align-self: end;
+  max-width: 90%;
+  height: auto;
 }
 
 .chat-my-message-content {
-    font-size: 13px;
-    color: white;
-    padding: 6px
+  font-size: 13px;
+  color: white;
+  padding: 6px
 }
 
 .chat-textarea {
+  background-color: white;
+  outline: none;
+  width: 80%;
+  font-size: 16px;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  resize: none;
+  box-shadow: 1px 1px 4px #cacaca;
+  border-radius: 7px;
+}
+
+.send-my-message {
+  display: flex;
+  width: 100%;
+  align-self: center;
+  background-color: #f4f4f4;
+  position: fixed;
+  margin: auto 0;
+  bottom: 0;
+  align-items: center;
+  align-content: center;
+  height: 55px;
+  justify-content: space-around;
+}
+
+
+.chat-button {
+  outline: none;
+  border: none;
+  display: flex;
+  width: 60px;
+  cursor: pointer;
+  background: white;
+  height: 42px;
+  border-radius: 60px;
+  box-shadow: 1px 1px 4px #cacaca;
+}
+
+.chat-button-img {
+  width: 25px;
+  padding: 2px;
+  margin: auto;
+}
+
+@media screen and (min-width: 800px) and (min-height: 497px) {
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .chat-container {
+    width: 76%;
+    margin-top: 10vh;
+    height: 100vh;
+  }
+
+  .chat-content {
+    width: 93%;
+    margin: 0 auto;
+    border-radius: 4px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .chat-school-menssage {
+    background-color: #020054;
+    border-radius: 4px;
+    max-width: 450px;
+    margin: 3% 0;
+    align-self: start;
+    min-height: 1ch;
+  }
+
+  .chat-my-message {
+    background-color: #03007E;
+    border-radius: 4px;
+    margin: 3% 0;
+    align-self: end;
+    width: 450px;
+    min-height: 1ch;
+  }
+
+  .chat-school-menssage-content {
+    font-size: 16px;
+    color: white;
+    padding: 8px;
+  }
+
+  .chat-my-message-content {
+    font-size: 16px;
+    color: white;
+    padding: 8px;
+  }
+
+  .send-my-message {
+    display: flex;
+    width: 76%;
+    gap: 15px;
+    align-self: center;
+    background-color: #f4f4f4;
+    position: fixed;
+    margin: auto 0;
+    bottom: 0;
+    align-items: center;
+    align-content: center;
+    height: 66px;
+    justify-content: space-around;
+  }
+
+  textarea::placeholder {
+    padding-top: 13px;
+    padding-left: 10px;
+  }
+
+  .chat-textarea {
     background-color: white;
     outline: none;
-    width: 80%;
+    width: 87%;
     font-size: 16px;
     border-bottom: none;
     border-top: none;
@@ -79,139 +198,17 @@
     resize: none;
     box-shadow: 1px 1px 4px #cacaca;
     border-radius: 7px;
-}
+  }
 
-.send-my-message {
-    display: flex;
-    width: 100%;
-    align-self: center;
-    background-color: #f4f4f4;
-    position: fixed;
-    margin: auto 0;
-    bottom: 0;
-    align-items: center;
-    align-content: center;
-    height: 55px;
-    justify-content: space-around;
-}
-
-
-.chat-button {
+  .chat-button {
     outline: none;
     border: none;
     display: flex;
-    width: 60px;
+    width: 80px;
     cursor: pointer;
     background: white;
     height: 42px;
     border-radius: 60px;
     box-shadow: 1px 1px 4px #cacaca;
-}
-
-.chat-button-img {
-    width: 25px;
-    padding: 2px;
-    margin: auto;
-}
-
-@media screen and (min-width: 800px) and (min-height: 497px){ 
-
-    .container {
-       display: flex;
-      justify-content: space-between;
-    }
-
-    .chat-container {
-        width: 76%;
-        margin-top: 10vh;
-        height: 100vh;  
-    }
-
-    .chat-content {
-      width: 93%;
-      margin: 0 auto;
-      border-radius: 4px;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      gap: 20px;      
-    }
-
-    .chat-school-menssage {
-        background-color: #020054;
-        border-radius: 4px;
-        max-width: 450px;
-        margin: 3% 0;
-        align-self: start;
-        min-height: 1ch;
-    }
-
-    .chat-my-message {
-      background-color: #03007E;
-      border-radius: 4px;
-      margin: 3% 0;
-      align-self: end;
-      width: 450px;
-      min-height: 1ch;
-    }
-
-    .chat-school-menssage-content {
-      font-size: 16px;
-      color: white;
-      padding: 8px;
-    }
-
-    .chat-my-message-content {
-      font-size: 16px;
-      color: white;
-      padding: 8px;
-    }
-
-    .send-my-message {
-        display: flex;
-        width: 76%;
-        gap: 15px;
-        align-self: center;
-        background-color: #f4f4f4;
-        position: fixed;
-        margin: auto 0;
-        bottom: 0;
-        align-items: center;
-        align-content: center;
-        height: 66px;
-        justify-content: space-around;
-    }
-
-    textarea::placeholder {
-      padding-top: 13px;
-      padding-left: 10px;
-    }
-
-    .chat-textarea {
-        background-color: white;
-        outline: none;
-        width: 87%;
-        font-size: 16px;
-        border-bottom: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        resize: none;
-        box-shadow: 1px 1px 4px #cacaca;
-        border-radius: 7px;
-    }
-
-    .chat-button {
-      outline: none;
-      border: none;
-      display: flex;
-      width: 80px;
-      cursor: pointer;
-      background: white;
-      height: 42px;
-      border-radius: 60px;
-      box-shadow: 1px 1px 4px #cacaca;
-    }
-
+  }
 }

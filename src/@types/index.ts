@@ -1,4 +1,4 @@
-import { IPicker } from "./components";
-import { IMessage, INotice, ISchedules } from "./api";
+import { ICalendar } from "./components";
+import { IMessage, INotice, ISchedules, IEvent } from "./api";
 
-export type { IPicker, IMessage, INotice, ISchedules };
+export type { ICalendar, IMessage, INotice, ISchedules, IEvent };

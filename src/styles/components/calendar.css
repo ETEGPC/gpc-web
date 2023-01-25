@@ -1,0 +1,28 @@
+.fc {
+  width: 90vw;
+  margin: 20px 5vw;
+}
+
+.fc-toolbar-title {
+  font: 20px 'Raleway', sans-serif;
+}
+
+.fc-next-button {
+  background-color: '#020063';
+}
+
+@media screen and (min-width: 800px) and (min-height: 497px) {
+  .fc {
+    width: 60vw;
+    height: 60vh;
+  }
+
+  .fc-header-toolbar {
+    height: 70px;
+  }
+
+  .fc-scrollgrid {
+    width: 60vw;
+    height: 60vh
+  }
+}

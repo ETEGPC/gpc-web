@@ -1,37 +1,60 @@
-import { CalendarComponent, Menu } from '../components/Exports';
-import blueArrowIcon from '../images/icons/blueArrow_icon.svg'
+import { Menu } from '../components/Exports';
 import '../styles/pages/ourAgend.css';
 import { CloseMenu } from '../components/Menu';
+import Calendar2 from '../components/Calendar';
+import api from '../services/api';
+import { IEvent } from '../@types';
+import { useState } from 'react';
 
-export function OurAgend(){
+export function OurAgend() {
+	const [events, setEvents] = useState<IEvent[]>([]);
+
+	async function handleGetEvents(month: string, year: string) {
+		await api.http.get('/events', {
+			params: {
+				month,
+				year
+			}
+		}).then(resp => {
+			setEvents(resp.data);
+		}).catch(err => {
+			console.error(err);
+			alert('Houve um erro ao buscar os eventos.')
+		})
+	};
 
 	document.title = 'ETE GPC | Nossa agenda';
 
-	return(
+	return (
 
 		<div className="container">
-			
+
 			<Menu />
 
 			<div className="ourAgend-container" onClick={CloseMenu}>
 
 				<h1 className="container-title">Nossa agenda</h1>
-				
-				<CalendarComponent />
 
-				<div className="container-events">
+				<Calendar2
+					events={events}
+					onChangeMonth={(month, year) => {
+						handleGetEvents(String(month + 1), year);
+					}}
+				/>
 
-					<div className="new-event">					
-
-						<h3 className="new-event-date" >19</h3>
-						<h4 className="new-event-title">Evento - núcleo de gênero</h4>
-						<p className="new-event-description">Lorem ipsum dolor sit amet consectetur. Fermentum quis sem nulla eget eget neque elementum tristique...</p>
-						<img className="new-event-arrow-img" alt='ver evento' src={blueArrowIcon} />
-
-					</div>	
-
+				<div className="container-events">					
+						{
+							events.map(event => {
+								return (
+									<div className="new-event" key={event.id}>
+										<h3 className="new-event-date" >{String(new Date(event.date).getDay())}</h3>
+										<h4 className="new-event-title">{event.title}</h4>
+										<p className="new-event-description">{event.description}</p>
+									</div>
+								);
+							})
+						}
 				</div>
-
 			</div>
 		</div>
 	);

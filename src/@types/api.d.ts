@@ -18,4 +18,11 @@ interface ISchedules {
   schoolClass: string
 };
 
-export { IMessage, INotice, ISchedules };
+interface IEvent {
+  id: string,
+  title: string,
+  description: string,
+  date: Date
+};
+
+export { IMessage, INotice, ISchedules, IEvent };
