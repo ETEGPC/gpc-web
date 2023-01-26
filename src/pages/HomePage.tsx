@@ -131,21 +131,21 @@ export function HomePage() {
 
 					<div className="links-component1" onClick={() => redirectTopage('/nossaAgenda')} >
 
-						<img src={greenSchedule} />
+						<img src={greenSchedule} alt="Ícone da nossa agenda"/>
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 
 					</div>
 
 					<div className="links-component2" onClick={() => redirectTopage('/muralDeAvisos')}>
 
-						<img src={greenBulletinBoard} />
+						<img src={greenBulletinBoard} alt="Ícone do mural de avisos"/>
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 
 					</div>
 
 					<div className="links-component3" onClick={() => redirectTopage('/ultimasNoticias')}>
 
-						<img src={greenLatestNews} />
+						<img src={greenLatestNews} alt="Ícone das últimas notícias"/>
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 
 					</div>
@@ -163,28 +163,28 @@ export function HomePage() {
 
 						<div className="contact-component1" onClick={openEmail}>
 
-							<img src={emailIcon} />
+							<img src={emailIcon} alt="Ícone do e-mail"/>
 							<Link to="#">E-mail</Link>
 
 						</div>
 
 						<div className="contact-component2" onClick={openInstagram}>
 
-							<img src={instagrmaIcon} />
+							<img src={instagrmaIcon} alt="Ícone do Instagram"/>
 							<Link to="#">Instagram</Link>
 
 						</div>
 
 						<div className="contact-component3" onClick={openWhatsApp}>
 
-							<img src={whatsappIcon} />
+							<img src={whatsappIcon} alt="Ícone do WhatsApp"/>
 							<Link to="#">WhatsApp</Link>
 
 						</div>
 
 					</div>
 
-					<button onClick={() => redirectTopage('/chat')} className="button-chat"><img className="button-chat-img" src={chatIcon} /></button>
+					<button onClick={() => redirectTopage('/chat')} className="button-chat"><img className="button-chat-img" src={chatIcon} alt="Ícone do chat"/></button>
 
 				</main>
 

@@ -1,5 +1,4 @@
 import '../styles/pages/documentsRequest.css';
-import { useEffect } from 'react';
 import { Menu } from '../components/Exports';
 import { CloseMenu } from '../components/Menu';
 

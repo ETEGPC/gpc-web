@@ -28,6 +28,7 @@
 	align-self: center;
 }
 
+
 .menu-header-button {
 	background-color: transparent;
 	border: none;
@@ -103,8 +104,7 @@
 
 .menu-img-gp {
 	margin: 0 auto;
-	padding: 10px;
-	max-width: 14vw;
+	max-width: 20vw;
 }
 
 
@@ -141,8 +141,7 @@
 
 	.menu-img-gp {
 	  margin: 0 0 0 1%;
-	  padding: 5px;
-	  width: 4%;
+	  width: 80px;
 	}
 
 	.menu-school-title {

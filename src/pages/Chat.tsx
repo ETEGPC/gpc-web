@@ -1,5 +1,4 @@
 import { Menu } from '../components/Menu';
-import eteLogo from '../images/eteLogo.svg';
 import send from '../images/icons/send_icon.svg'
 import '../styles/pages/chat.css';
 import { CloseMenu } from '../components/Menu';
@@ -42,7 +41,7 @@ export function Chat(){
                     <div className='send-my-message'>
 
                             <textarea  id="txt" className='chat-textarea' placeholder="Digite algo"></textarea>
-                            <button className='chat-button'><img className='chat-button-img' src={send} /></button>                    
+                            <button className='chat-button'><img className='chat-button-img' src={send} alt="Ícone de envio da mensagem" /></button>                    
 
                     </div>                
 
