@@ -1,10 +1,5 @@
 import { Menu } from '../components/Exports';
 import '../styles/pages/homePage.css'
-import imageExample from '../images/imageExample.png'
-import imageExample2 from '../images/imageExample2.svg'
-import imageExample3 from '../images/imageExample3.svg'
-import imageExample4 from '../images/imageExample4.svg'
-import imageExample5 from '../images/imageExample5.svg'
 import greenSchedule from '../images/icons/greenSchedule_icon.svg'
 import greenBulletinBoard from '../images/icons/greenBulletinBoard_icon.svg'
 import greenLatestNews from '../images/icons/greenLatestNews_icon.svg'
@@ -14,68 +9,11 @@ import whatsappIcon from '../images/icons/whatsapp2_icon.svg'
 import chatIcon from '../images/icons/chat2_icon.svg'
 import { Link, useNavigate } from 'react-router-dom';
 import { CloseMenu } from '../components/Menu';
-
+import { Carousel } from '../components/Carousel';
+ 
 export function HomePage() {
 
 	document.title = 'Página inicial';
-
-
-	//Function to change carousel images
-	let currentImage: number = 1;
-	setInterval(function () {
-
-
-		let carouselTitle = document.getElementById('carousel-title') as HTMLParagraphElement;
-		let carouselImages = document.getElementById('carousel-content') as HTMLDivElement;
-		let circle1 = document.getElementById('circle-1') as HTMLDivElement;
-		let circle2 = document.getElementById('circle-2') as HTMLDivElement;
-		let circle3 = document.getElementById('circle-3') as HTMLDivElement;
-		let circle4 = document.getElementById('circle-4') as HTMLDivElement;
-		let circle5 = document.getElementById('circle-5') as HTMLDivElement;
-
-		if (currentImage === 1) {
-
-			carouselImages.style.backgroundImage = 'url("' + imageExample2 + '")';
-			circle1.style.backgroundColor = 'transparent';
-			circle2.style.backgroundColor = '#fff';
-			currentImage = 2;
-			carouselTitle.innerText = 'Título 2';
-
-		} else if (currentImage === 2) {
-
-			carouselImages.style.backgroundImage = 'url("' + imageExample3 + '")';
-			circle2.style.backgroundColor = 'transparent';
-			circle3.style.backgroundColor = '#fff';
-			currentImage = 3;
-			carouselTitle.innerText = 'Título 3';
-
-
-		} else if (currentImage === 3) {
-
-			carouselImages.style.backgroundImage = 'url("' + imageExample4 + '")';
-			circle3.style.backgroundColor = 'transparent';
-			circle4.style.backgroundColor = '#fff';
-			currentImage = 4;
-			carouselTitle.innerText = 'Título 4';
-
-		} else if (currentImage === 4) {
-
-			carouselImages.style.backgroundImage = 'url("' + imageExample5 + '")';
-			circle4.style.backgroundColor = 'transparent';
-			circle5.style.backgroundColor = '#fff';
-			currentImage = 5;
-			carouselTitle.innerText = 'Título 5';
-
-		} else if (currentImage === 5) {
-
-			carouselImages.style.backgroundImage = 'url("' + imageExample + '")';
-			circle5.style.backgroundColor = 'transparent';
-			circle1.style.backgroundColor = '#fff';
-			currentImage = 1;
-			carouselTitle.innerText = 'Título 1';
-		}
-
-	}, 3000)
 
 
 	// Function to redirect to other pages
@@ -107,25 +45,9 @@ export function HomePage() {
 
 			<div className="homePage-container" id="container" onClick={CloseMenu}>
 
-				<h1 className="homepage-title">Página inicial</h1>
+				<h1 className="homepage-title">Página inicial</h1>			
 
-
-
-				<div className="carousel-content" id="carousel-content">
-
-					<p className="carousel-title" id="carousel-title">Mostra de inovação dos espaços 4.0</p>
-
-					<div className="carousel-circles">
-
-						<div className="circle" id="circle-1"></div>
-						<div className="circle" id="circle-2"></div>
-						<div className="circle" id="circle-3"></div>
-						<div className="circle" id="circle-4"></div>
-						<div className="circle" id="circle-5"></div>
-
-					</div>
-
-				</div>
+				<Carousel />
 
 				<div className="links">
 

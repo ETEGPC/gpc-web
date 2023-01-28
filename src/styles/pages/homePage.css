@@ -26,24 +26,6 @@
 	align-self: center;
 }
 
-.carousel-circles {
-	margin: auto;
-}
-
-.circle {
-	width: 8px;
-	height: 8px;
-	background-color: transparent;
-	border-radius: 100%;
-	display: inline-block;
-	margin: 0px 1px 0px 1px;
-	transition: all 0.2s ease-out;
-	border: 1px solid #fff;
-}
-
-#circle-1 {
-	background-color: #fff;
-}
 
 .links {
 	display: flex;

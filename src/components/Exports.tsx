@@ -11,3 +11,4 @@ export * from '../pages/BulletinBoard';
 export * from '../pages/Timesheet';
 export * from '../pages/ChangePassword';
 export * from '../pages/AboutGP';
+export * from '../components/Carousel';
