@@ -2,10 +2,6 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.latestNews-container {
-    
-}
-
 .latestNews-h1 {
     margin: 3% 0% 3% 3%;
     font-size: 32px;    
@@ -21,7 +17,8 @@
 }
 
 .latestNews-content {
-  width: 95%;
+  width: 90%;
+  max-width: 500px;
   align-self: center;
   border-radius: 7px;
   box-shadow: 2px 2px 8px #cacaca;
@@ -68,7 +65,6 @@
     .latestNews-container {
         width: 76%;
         margin-top: 10vh;
-        height: 100vh;  
     }
 
     .latestNews-content {

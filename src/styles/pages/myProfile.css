@@ -5,18 +5,23 @@
 }
 
 .my-datas {
-  background-color: #fff;
-  box-shadow: 1px 1px 4px #cacaca;
-  border-radius: 10px;
-  width: 90%;
-  height: 135px;
-  margin: 3% auto;
+	background-color: #fff;
+	box-shadow: 1px 1px 4px #cacaca;
+	border-radius: 10px;
+	max-width: 500px;
+	height: 22vh;
+	margin: 3% auto;
+	padding: 20px;
+	max-height: 190px;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 .container-h2 {
 	font-size: 20px;
 	text-align: center;
-	margin: 3% 0 0 0;
 }
 
 
@@ -24,7 +29,6 @@
 	text-align: center;
 	color: #616161;
 	font-size: 16px;	
-	margin-bottom: 50px;
 }
 
 .container-button {
@@ -32,13 +36,14 @@
 	outline: none;
 	display: block;
 	width: 80%;
-	height: 7vh;
-	margin: 29px auto 20px auto;
+	height: 50px;
+	margin: 20px auto 20px auto;
 	background-color: #DF000C;
 	color: white;
 	font-size: 20px;
 	font-weight: 600;
-	border-radius: 10px;		
+	border-radius: 10px;
+	max-width: 500px;	
 }
 
 .continer-link {
@@ -57,7 +62,6 @@
     .myProfile-container {
         width: 76%;
         margin-top: 10vh;
-        height: 100vh;  
     }
 
 	.container-h2 {
@@ -71,7 +75,7 @@
 	  box-shadow: 1px 1px 4px #cacaca;
 	  border-radius: 10px;
 	  width: 400px;
-	  height: 150px;
+	  height: 180px;
 	  margin: 3% auto;
 	}
 
@@ -85,9 +89,9 @@
 	  border: none;
 	  outline: none;
 	  display: block;
-	  width: 310px;
+	  width: 400px;
 	  height: 45px;
-	  margin: 29px auto 20px auto;
+	  margin: 20px auto 20px auto;
 	  background-color: #DF000C;
 	  color: white;
 	  font-size: 20px;

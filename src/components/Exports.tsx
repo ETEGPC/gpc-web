@@ -10,3 +10,4 @@ export * from '../pages/BulletinBoard';
 export * from '../pages/Timesheet';
 export * from '../pages/ChangePassword';
 export * from './Calendar';
+export * from '../pages/AboutGP';

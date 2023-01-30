@@ -4,11 +4,6 @@
   text-decoration: underline;
 }
 
-
-.homePage-container {
-
-}
-
 .carousel-content {
 	display: grid;
 	background-image: url(http://localhost:3000/static/media/imageExample.d4d901719c0f147d994a.png);
@@ -23,7 +18,6 @@
 .carousel-title {
 	margin: 3%;
 	color: white;
-
 }
 
 .carousel-image {
@@ -39,15 +33,16 @@
 .circle {
 	width: 8px;
 	height: 8px;
-	background-color: gray;
+	background-color: transparent;
 	border-radius: 100%;
 	display: inline-block;
 	margin: 0px 1px 0px 1px;
-	transition: 0.2s;
+	transition: all 0.2s ease-out;
+	border: 1px solid #fff;
 }
 
 #circle-1 {
-	background-color: #0076E2;
+	background-color: #fff;
 }
 
 .links {
@@ -62,7 +57,12 @@
 	width: 18vw;
 	box-shadow: 2px 2px 8px #cacaca;
 	border-radius: 10px;
-	cursor: pointer;
+	cursor: pointer;	
+  transition: 0.2s;
+}
+
+.links-component1:hover, .links-component2:hover, .links-component3:hover{
+	transform: translateY(-2px) translateX(4px);
 }
 
 .links-component1 a {
@@ -144,8 +144,13 @@
 
 .contact-component1, .contact-component2, .contact-component3 {
 	width: 18vw;
+	cursor: pointer;
+	transition: 0.2s;
 }
 
+.contact-component1:hover, .contact-component2:hover, .contact-component3:hover{
+	transform: translateY(-2px) translateX(4px);	
+}
 
 .contact-component1 img {
 	width: 9vw;
@@ -221,7 +226,6 @@
 	.homePage-container {
     width: 76%;
     margin-top: 10vh;
-    height: 100vh;
 	}
 
 	.carousel-content {

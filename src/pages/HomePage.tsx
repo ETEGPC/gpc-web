@@ -16,30 +16,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { CloseMenu } from '../components/Menu';
 
 export function HomePage() {
-	// const handleClick = () => {
-	// 	pwaInstall({
-	// 		title: "Install Web App",
-	// 		logo: '',
-	// 		features: (
-	// 			<ul>
-	// 				<li>Cool feature 1</li>
-	// 				<li>Cool feature 2</li>
-	// 				<li>Even cooler feature</li>
-	// 				<li>Works offline</li>
-	// 			</ul>
-	// 		),
-	// 		description: "This is a very good app that does a lot of useful stuff. ",
-	// 	})
-	// 		.then(() => alert("App installed successfully or instructions for install shown"))
-	// 		.catch(() => alert("User opted out from installing"));
-	// };
-
+	let currentImage: number = 1;
 	setInterval(function () {
-
-		document.title = 'ETE GPC | Página inicial';
-
-		let currentImage: number = 1;
-
 		let carouselTitle = document.getElementById('carousel-title') as HTMLParagraphElement;
 		let carouselImages = document.getElementById('carousel-content') as HTMLDivElement;
 		let circle1 = document.getElementById('circle-1') as HTMLDivElement;
@@ -51,16 +29,16 @@ export function HomePage() {
 		if (currentImage === 1) {
 
 			carouselImages.style.backgroundImage = 'url("' + imageExample2 + '")';
-			circle1.style.backgroundColor = 'gray';
-			circle2.style.backgroundColor = '#0076E2';
+			circle1.style.backgroundColor = 'transparent';
+			circle2.style.backgroundColor = '#fff';
 			currentImage = 2;
 			carouselTitle.innerText = 'Título 2';
 
 		} else if (currentImage === 2) {
 
 			carouselImages.style.backgroundImage = 'url("' + imageExample3 + '")';
-			circle2.style.backgroundColor = 'gray';
-			circle3.style.backgroundColor = '#0076E2';
+			circle2.style.backgroundColor = 'transparent';
+			circle3.style.backgroundColor = '#fff';
 			currentImage = 3;
 			carouselTitle.innerText = 'Título 3';
 
@@ -68,48 +46,49 @@ export function HomePage() {
 		} else if (currentImage === 3) {
 
 			carouselImages.style.backgroundImage = 'url("' + imageExample4 + '")';
-			circle3.style.backgroundColor = 'gray';
-			circle4.style.backgroundColor = '#0076E2';
+			circle3.style.backgroundColor = 'transparent';
+			circle4.style.backgroundColor = '#fff';
 			currentImage = 4;
 			carouselTitle.innerText = 'Título 4';
 
 		} else if (currentImage === 4) {
 
 			carouselImages.style.backgroundImage = 'url("' + imageExample5 + '")';
-			circle4.style.backgroundColor = 'gray';
-			circle5.style.backgroundColor = '#0076E2';
+			circle4.style.backgroundColor = 'transparent';
+			circle5.style.backgroundColor = '#fff';
 			currentImage = 5;
 			carouselTitle.innerText = 'Título 5';
 
 		} else if (currentImage === 5) {
 
 			carouselImages.style.backgroundImage = 'url("' + imageExample + '")';
-			circle5.style.backgroundColor = 'gray';
-			circle1.style.backgroundColor = '#0076E2';
+			circle5.style.backgroundColor = 'transparent';
+			circle1.style.backgroundColor = '#fff';
 			currentImage = 1;
 			carouselTitle.innerText = 'Título 1';
 		}
 
 	}, 3000)
 
+	// Function to redirect to other pages
 	let navigater = useNavigate()
-
-	function chat() {
-		navigater('/chat');
+	const redirectTopage = (pageName: string) => {
+		navigater(pageName);
 	}
 
-	function openSchedule() {
-		navigater('/nossaAgenda');
+	//Function to redirec to the means of contact
+	function openInstagram() {
+		window.open('https://www.instagram.com/eteginasiopec/', '_blank');
 	}
 
-	function openBulletinBoard() {
-		navigater('/muralDeAvisos');
+	function openEmail() {
+		window.open('mailto:eteginasiopernambucano@gmail.com', '_blank');
+
 	}
 
-	function openLatestNews() {
-		navigater('/ultimasNoticias');
+	function openWhatsApp() {
+		window.open('https://wa.me/5581997841403', '_blank');
 	}
-
 
 	return (
 
@@ -142,23 +121,23 @@ export function HomePage() {
 
 				<div className="links">
 
-					<div className="links-component1" onClick={openSchedule} >
+					<div className="links-component1" onClick={() => redirectTopage('/nossaAgenda')} >
 
-						<img src={greenSchedule} alt="" />
+						<img src={greenSchedule} />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 
 					</div>
 
-					<div className="links-component2" onClick={openBulletinBoard}>
+					<div className="links-component2" onClick={() => redirectTopage('/muralDeAvisos')}>
 
-						<img src={greenBulletinBoard} alt="" />
+						<img src={greenBulletinBoard} />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 
 					</div>
 
-					<div className="links-component3" onClick={openLatestNews}>
+					<div className="links-component3" onClick={() => redirectTopage('/ultimasNoticias')}>
 
-						<img src={greenLatestNews} alt="" />
+						<img src={greenLatestNews} />
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 
 					</div>
@@ -168,43 +147,36 @@ export function HomePage() {
 				<main className="main-content">
 
 					<h5 className="about-gp">Sobre o Ginásio Permanbucano</h5>
-					<p className="about-gp-content">Lorem ipsum dolor sit amet consectetur. Fermentum quis sem nulla eget eget neque elementum tristique. Pulvinar volutpat quis massa vestibulum malesuada ultrices hac scelerisque a. Vitae ac nunc mauris nec mattis nibh lorem aenean. Aenean in quis tincidunt urna pharetra quam. Iaculis ultrices sagittis amet ultricies dignissim. Lacus massa id lectus molestie aliquet eleifend facilisis. Sit dui gravida pharetra faucibus at arcu in. Eu quis massa elit enim. Gravida senectus tristique ultrices elementum sit et viverra purus metus. Duis pellentesque malesuada pretium amet justo. Mauris fringilla vitae nam id egestas nibh amet fermentum lectus. Neque volutpat mi aenean neque leo auctor vitae cras eget. Imperdiet sit vulputate in id. In volutpat maecenas dolor odio ullamcorper in leo commodo neque...</p>
+					<p className="about-gp-content">Lorem ipsum dolor sit amet consectetur. Fermentum quis sem nulla eget eget neque elementum tristique. Pulvinar volutpat quis massa vestibulum malesuada ultrices hac scelerisque a. Vitae ac nunc mauris nec mattis nibh lorem aenean. Aenean in quis tincidunt urna pharetra quam. Iaculis ultrices sagittis amet ultricies dignissim. Lacus massa id lectus molestie aliquet eleifend facilisis. Sit dui gravida pharetra faucibus at arcu in. Eu quis massa elit enim. Gravida senectus tristique ultrices elementum sit et viverra purus metus. Duis pellentesque malesuada pretium amet justo. Mauris fringilla vitae nam id egestas nibh amet fermentum lectus. Neque volutpat mi aenean neque leo auctor vitae cras eget. Imperdiet sit vulputate in id. In volutpat maecenas dolor odio ullamcorper in leo commodo neque...<Link to="/sobreOGinasioPernambucano">Ler completo.</Link></p>
 					<h5 className="contact-forms-title">Formas de contato</h5>
 					<p className="about-contact-forms"><span className="span-contact-forms">Atenção</span> - O horário de atendimento, por todos os meios de comunicação, é de 8h às 17h. Além disso, é recomendado o cadastro e uso do chat do próprio aplicativo caso você seja responsável de algum estudante de nossa escola.</p>
 
-
 					<div className="contact-forms">
-
-						<div className="contact-component1">
-
-							<img src={emailIcon} alt="" />
+						<div className="contact-component1" onClick={openEmail}>
+							<img src={emailIcon} />
 							<Link to="#">E-mail</Link>
-
 						</div>
 
-						<div className="contact-component2">
-
-							<img src={instagrmaIcon} alt="" />
+						<div className="contact-component2" onClick={openInstagram}>
+							<img src={instagrmaIcon} />
 							<Link to="#">Instagram</Link>
-
 						</div>
 
-						<div className="contact-component3">
-
-							<img src={whatsappIcon} alt="" />
+						<div className="contact-component3" onClick={openWhatsApp}>
+							<img src={whatsappIcon} />
 							<Link to="#">WhatsApp</Link>
-
 						</div>
 
 					</div>
 
-					<button onClick={chat} className="button-chat"><img className="button-chat-img" src={chatIcon} alt="" /></button>
+					<button onClick={() => redirectTopage('/chat')} className="button-chat">
+						<img className="button-chat-img" src={chatIcon} />
+					</button>
 
 				</main>
 
 			</div>
 
 		</div>
-
 	);
 }

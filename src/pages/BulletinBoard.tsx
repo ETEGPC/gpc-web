@@ -35,25 +35,26 @@ export function BulletinBoard() {
 
 			<div className="bulletinBoard-container" onClick={CloseMenu}>
 
-				<main className="BulletinBoard-content">
+				<h1 className='container-title'>Mural de avisos</h1>
 
-					<h3 style={{ margin: 10 }}>Selecione a turma abaixo</h3>
-					<div className='bulletinBoard-schoolClasses'>
-						{
-							schoolClasses.map(schoolClass => {
-								return <h4 style={{ textDecoration: 'underline' }} onClick={() => setSelectedClass(schoolClass)} key={schoolClass}>Turma: {schoolClass}</h4>
-							})
-						}
-					</div>
+				<h3 style={{ margin: 10 }}>Selecione a turma abaixo</h3>
+				<div className='bulletinBoard-schoolClasses'>
+					{
+						schoolClasses.map(schoolClass => {
+							return <h4 style={{ textDecoration: 'underline', marginRight: 10 }} onClick={() => setSelectedClass(schoolClass)} key={schoolClass}>Turma: {schoolClass}</h4>
+						})
+					}
+				</div>
+				<main className="container-content">
 
 					<div className="content">
 						{
 							notices.map(notice => {
 								return (
-									<>
+									<div className='new-warning'>
 										<h4>{notice.title}</h4>
 										<p>{notice.description}</p>
-									</>
+									</div>
 								);
 							})
 						}

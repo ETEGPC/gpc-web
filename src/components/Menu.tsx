@@ -40,10 +40,20 @@ export function Menu() {
 
 	function openInstagram() {
 		window.open('https://www.instagram.com/eteginasiopec/', '_blank');
+	}
+
+	function openEmail() {
+		window.open('mailto:eteginasiopernambucano@gmail.com', '_blank');
 
 	}
 
+	function openWhatsApp() {
+		window.open('https://wa.me/5581997841403', '_blank');
+	}
+
+
 	return (
+
 		<div className="menu-container">
 			<div className="menu-open" id="menu">
 
@@ -96,14 +106,14 @@ export function Menu() {
 
 
 					<div className="menu-component-8">
-						<img alt="" src={whatsapp} />
-						<Link to="#">WhatsApp</Link>
+						<img src={whatsapp} />
+						<Link onClick={openWhatsApp} to="#">WhatsApp</Link>
 					</div>
 
 
 					<div className="menu-component-9">
-						<img alt="" src={email} />
-						<Link to="#">E-mail</Link>
+						<img src={email} />
+						<Link to="#" onClick={openEmail}>E-mail</Link>
 					</div>
 
 
@@ -188,14 +198,14 @@ export function Menu() {
 
 
 					<div className="desktop-menu-component-8">
-						<img alt="" src={whatsapp} />
-						<Link to="#">WhatsApp</Link>
+						<img src={whatsapp} />
+						<Link to="#" onClick={openWhatsApp}>WhatsApp</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-9">
-						<img alt="" src={email} />
-						<Link to="#">E-mail</Link>
+						<img src={email} />
+						<Link to="#" onClick={openEmail}>E-mail</Link>
 					</div>
 
 

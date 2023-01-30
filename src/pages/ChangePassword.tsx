@@ -16,13 +16,21 @@ export function ChangePassword(){
 				
 				<h2 className="container-subTitle">Preencha os campos abaixo para alterar a sua senha atual</h2>
 
-				<div className="changePassword-content">
-					
-					<p className="content-newPassword">Digite a nova senha:</p>
-					<input className="content-newPassword-input" />
+				<div className="changePassword-datas">
 
-					<p className="content-newPassword-confirm">Confirme sua senha:</p>
-					<input className="content-newPassword-input-confirm" />					
+					<div className="new-password">
+						
+						<input required className="content-newPassword-input" />
+						<label className="content-newPassword">Digite a nova senha</label>
+
+					</div>
+
+					<div className="confirm-password">
+
+						<input required className="content-newPassword-input-confirm" />					
+						<label className="content-newPassword-confirm">Confirme sua senha</label>
+
+					</div>
 
 				</div>
 

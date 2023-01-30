@@ -4,6 +4,11 @@
   flex-direction: column;
 }
 
+.react-calendar {
+	width: 90%;
+	max-width: 500px;
+}
+
 .new-event {
 	display: grid;
 	grid-template-columns: 1fr 5fr 1fr;
@@ -73,7 +78,6 @@
     .ourAgend-container {
         width: 76%;
         margin-top: 10vh;
-        height: 100vh;  
     }
 
 	.react-calendar {
