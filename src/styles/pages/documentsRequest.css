@@ -1,17 +1,54 @@
+:root {
+	--selects-width: 240px;
+	--selcts-text-align: center;
+	--selects-font-size: 16px;
+	--selects-border: 1px solid #171717;
+	--selects-outline: none;
+	--selects-background-color: transparent;
+	--selects-height: 30px;
+	--selcts-border-radius: 10px;
+
+	--inputs-width: 100%;
+	--inputs-height: 50px;
+	--inputs-border-radius: 10px;
+	--inputs-background-color: transparent;
+	--inputs-border: 1px solid #171717;
+	--inputs-padding: 0 0 0 2%;
+	--inputs-outline: none;
+	--inputs-font-size: 16px;
+	--inputs-margin-top: 10px;
+
+	--labels-display: inline;
+	--labels-font-weight: 600;
+	--labels-font-size: 16px;
+	--labels-position: absolute;
+	--labels-top: 26px;
+	--labels-left: 2%;
+	--labels-backgroundColor: #fff;
+	--labels-transition: all 0.2s ease-out;
+
+}
+
+.container-title {
+  margin: 3% 0% 3% 3%;
+  text-decoration: underline;
+  font-size: var(--h1-font-size);
+}
+
 .documentsRequest-container {
   width: 100%;
 }
 
-
 .documents-h1 {
 	margin: 3% 0% 3% 3%;
-  font-size: 32px;
+  font-size: var(--h1-font-size);
   text-decoration: underline;
 }
 
 .documents-h2 {
 	font-weight: 600;
 	margin: 3% 0% 9% 3%;
+	font-size: var(--h2-font-size);
 }
 
 
@@ -36,15 +73,15 @@
 .documents-p {
 	display: inline;
 	font-weight: 600;
-	font-size: 16px;
+	font-size: var(--p-font-size);
 	width: 35%;
 }
 
 .documents-documentSelect {
 	display: block;
-	width: 240px;
+	width: var(--selects-width);
 	text-align: center;
-	font-size: 16px;
+	font-size: var(--p-font-size);
 	height: 30px;
 	background-color: transparent;
 	border-radius: 10px;
@@ -62,15 +99,15 @@
 .enrollmentStatement-group {
 	display: inline;
 	font-weight: 600;
-	font-size: 16px;
+	font-size: var(--p-font-size);
 	width: 35%;
 }
 
 .enrollmentStatement-select {
 	display: block;
-	width: 240px;
+	width: var(--selects-width);
 	text-align: center;
-	font-size: 16px;
+	font-size: var(--p-font-size);
 	height: 30px;
 	background-color: transparent;
 	border-radius: 10px;
@@ -90,26 +127,26 @@
 }
 
 .enrollmentStatement-name-input {
-  height: 50px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 18px;
-  padding: 0 0 0 2%;
-  border: 1px solid black;
-  margin-top: 10px;
+  height: var(--inputs-height);
+  width: var(--inputs-width);
+  border-radius: var(--inputs-border-radius);
+  background-color: var(--inputs-background-color);
+  outline: var(--inputs-padding);
+  font-size: var(--inputs-font-size);
+  padding: var(--inputs-padding);
+  border: var(--inputs-border);
+  margin-top: var(--inputs-margin-top);
 }
 
 .enrollmentStatement-name-label {
-	display: inline;
-  font-weight: 600;
-  font-size: 16px;
-  position: absolute;
-  top: 26px;
-  left: 2%;
-  background-color: #fff;
-  transition: all 0.2s ease-out;
+	display: var(--labels-display);
+  font-weight: var(--labels-font-weight);
+  font-size: var(--labels-font-size);
+  position: var(--labels-position);
+  top: var(--labels-top);
+  left: var(--labels-left);
+  background-color: var(--labels-backgroundColor);
+  transition: var(--labels-transition);
 }
 
 .enrollmentStatement-name-input:focus ~ .enrollmentStatement-name-label {
@@ -132,20 +169,20 @@
 .frequencyStatement-group {
 	display: inline;
 	font-weight: 600;
-	font-size: 16px;
+	font-size: var(--p-font-size);
 	width: 35%;
 }
 
 .frequencyStatement-select {
 	display: block;
-	width: 240px;
-	text-align: center;
-	font-size: 16px;
-	height: 30px;
-	background-color: transparent;
-	border-radius: 10px;
-	outline: none;
-	border: 1px solid black;
+	width: var(--selects-width);
+	text-align: var(--selcts-text-align);
+	font-size: var(--selects-font-size);
+	height: var(--selects-heighte);
+	background-color: var(--selects-background-color);
+	border-radius: var(--selcts-border-radius);
+	outline: var(--selects-outline);
+	border:	var(--selects-border);
 }
 
 
@@ -160,26 +197,26 @@
 }
 
 .frequencyStatement-name-input {
-  height: 50px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 18px;
-  padding: 0 0 0 2%;
-  border: 1px solid black;
-  margin-top: 10px;
+  height: var(--inputs-height);
+  width: var(--inputs-width);
+  border-radius: var(--inputs-border-radius);
+  background-color: var(--inputs-background-color);
+  outline: var(--inputs-padding);
+  font-size: var(--inputs-font-size);
+  padding: var(--inputs-padding);
+  border: var(--inputs-border);
+  margin-top: var(--inputs-margin-top);
 }
 
 .frequencyStatement-name-label {
-	display: inline;
-  font-weight: 600;
-  font-size: 16px;
-  position: absolute;
-  top: 26px;
-  left: 2%;
-  background-color: #fff;
-  transition: all 0.2s ease-out;
+	display: var(--labels-display);
+  font-weight: var(--labels-font-weight);
+  font-size: var(--labels-font-size);
+  position: var(--labels-position);
+  top: var(--labels-top);
+  left: var(--labels-left);
+  background-color: var(--labels-backgroundColor);
+  transition: var(--labels-transition);
 }
 
 .frequencyStatement-name-input:focus ~ .frequencyStatement-name-label {
@@ -194,14 +231,14 @@
 
 .enrollment-select {
 	display: block;
-	width: 240px;
-	text-align: center;
-	font-size: 16px;
-	height: 30px;
-	background-color: transparent;
-	border-radius: 10px;
-	outline: none;
-	border: 1px solid black;
+	width: var(--selects-width);
+	text-align: var(--selcts-text-align);
+	font-size: var(--selects-font-size);
+	height: var(--selects-heighte);
+	background-color: var(--selects-background-color);
+	border-radius: var(--selcts-border-radius);
+	outline: var(--selects-outline);
+	border:	var(--selects-border);
 }
 
 .sheet19 {
@@ -221,20 +258,20 @@
 .sheet19-group-p {
 	display: inline;
 	font-weight: 600;
-	font-size: 16px;
+	font-size: var(--p-font-size);
 	width: 35%;
 }
 
 .sheet19-select {
 	display: block;
-	width: 240px;
-	text-align: center;
-	font-size: 16px;
-	height: 30px;
-	background-color: transparent;
-	border-radius: 10px;
-	outline: none;
-	border: 1px solid black;
+	width: var(--selects-width);
+	text-align: var(--selcts-text-align);
+	font-size: var(--selects-font-size);
+	height: var(--selects-heighte);
+	background-color: var(--selects-background-color);
+	border-radius: var(--selcts-border-radius);
+	outline: var(--selects-outline);
+	border:	var(--selects-border);
 }
 
 
@@ -248,26 +285,26 @@
 }
 
 .sheet19-student-name-input {
-	height: 50px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 18px;
-  padding: 0 0 0 2%;
-  border: 1px solid black;
-  margin-top: 10px;
+  height: var(--inputs-height);
+  width: var(--inputs-width);
+  border-radius: var(--inputs-border-radius);
+  background-color: var(--inputs-background-color);
+  outline: var(--inputs-padding);
+  font-size: var(--inputs-font-size);
+  padding: var(--inputs-padding);
+  border: var(--inputs-border);
+  margin-top: var(--inputs-margin-top);
 }
 
 .sheet19-student-name-label {
-	display: inline;
-  font-weight: 600;
-  font-size: 16px;
-  position: absolute;
-  top: 26px;
-  left: 2%;
-  background-color: #fff;
-  transition: all 0.2s ease-out;
+	display: var(--labels-display);
+  font-weight: var(--labels-font-weight);
+  font-size: var(--labels-font-size);
+  position: var(--labels-position);
+  top: var(--labels-top);
+  left: var(--labels-left);
+  background-color: var(--labels-backgroundColor);
+  transition: var(--labels-transition);
 }
 
 .sheet19-student-name-input:focus ~ .sheet19-student-name-label {
@@ -290,26 +327,26 @@
 }
 
 .sheet19-mother-name-input {
-	height: 50px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 18px;
-  padding: 0 0 0 2%;
-  border: 1px solid black;
-  margin-top: 10px;
+  height: var(--inputs-height);
+  width: var(--inputs-width);
+  border-radius: var(--inputs-border-radius);
+  background-color: var(--inputs-background-color);
+  outline: var(--inputs-padding);
+  font-size: var(--inputs-font-size);
+  padding: var(--inputs-padding);
+  border: var(--inputs-border);
+  margin-top: var(--inputs-margin-top);
 }
 
 .sheet19-mother-name-label {
-	display: inline;
-  font-weight: 600;
-  font-size: 16px;
-  position: absolute;
-  top: 26px;
-  left: 2%;
-  background-color: #fff;
-  transition: all 0.2s ease-out;
+	display: var(--labels-display);
+  font-weight: var(--labels-font-weight);
+  font-size: var(--labels-font-size);
+  position: var(--labels-position);
+  top: var(--labels-top);
+  left: var(--labels-left);
+  background-color: var(--labels-backgroundColor);
+  transition: var(--labels-transition);
 }
 
 .sheet19-mother-name-input:focus ~ .sheet19-mother-name-label {
@@ -332,26 +369,26 @@
 }
 
 .sheet19-father-name-input {
-	height: 50px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 18px;
-  padding: 0 0 0 2%;
-  border: 1px solid black;
-  margin-top: 10px;
+  height: var(--inputs-height);
+  width: var(--inputs-width);
+  border-radius: var(--inputs-border-radius);
+  background-color: var(--inputs-background-color);
+  outline: var(--inputs-padding);
+  font-size: var(--inputs-font-size);
+  padding: var(--inputs-padding);
+  border: var(--inputs-border);
+  margin-top: var(--inputs-margin-top);
 }
 
 .sheet19-father-name-label {
-	display: inline;
-  font-weight: 600;
-  font-size: 16px;
-  position: absolute;
-  top: 26px;
-  left: 2%;
-  background-color: #fff;
-  transition: all 0.2s ease-out;
+	display: var(--labels-display);
+  font-weight: var(--labels-font-weight);
+  font-size: var(--labels-font-size);
+  position: var(--labels-position);
+  top: var(--labels-top);
+  left: var(--labels-left);
+  background-color: var(--labels-backgroundColor);
+  transition: var(--labels-transition);
 }
 
 .sheet19-father-name-input:focus ~ .sheet19-father-name-label {
@@ -374,26 +411,26 @@
 }
 
 .sheet19-phone-number-input {
-	height: 50px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 18px;
-  padding: 0 0 0 2%;
-  border: 1px solid black;
-  margin-top: 10px;
+  height: var(--inputs-height);
+  width: var(--inputs-width);
+  border-radius: var(--inputs-border-radius);
+  background-color: var(--inputs-background-color);
+  outline: var(--inputs-padding);
+  font-size: var(--inputs-font-size);
+  padding: var(--inputs-padding);
+  border: var(--inputs-border);
+  margin-top: var(--inputs-margin-top);
 }
 
 .sheet19-phone-number-label {
-	display: inline;
-  font-weight: 600;
-  font-size: 16px;
-  position: absolute;
-  top: 26px;
-  left: 2%;
-  background-color: #fff;
-  transition: all 0.2s ease-out;
+	display: var(--labels-display);
+  font-weight: var(--labels-font-weight);
+  font-size: var(--labels-font-size);
+  position: var(--labels-position);
+  top: var(--labels-top);
+  left: var(--labels-left);
+  background-color: var(--labels-backgroundColor);
+  transition: var(--labels-transition);
 }
 
 .sheet19-phone-number-input:focus ~ .sheet19-phone-number-label {
@@ -421,26 +458,26 @@
 }
 
 .sheet19-entry-year-input {
-	height: 50px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 18px;
-  padding: 0 0 0 2%;
-  border: 1px solid black;
-  margin-top: 10px;
+  height: var(--inputs-height);
+  width: var(--inputs-width);
+  border-radius: var(--inputs-border-radius);
+  background-color: var(--inputs-background-color);
+  outline: var(--inputs-padding);
+  font-size: var(--inputs-font-size);
+  padding: var(--inputs-padding);
+  border: var(--inputs-border);
+  margin-top: var(--inputs-margin-top);
 }
 
 .sheet19-entry-year-label {
-	display: inline;
-  font-weight: 600;
-  font-size: 16px;
-  position: absolute;
-  top: 26px;
-  left: 2%;
-  background-color: #fff;
-  transition: all 0.2s ease-out;
+	display: var(--labels-display);
+  font-weight: var(--labels-font-weight);
+  font-size: var(--labels-font-size);
+  position: var(--labels-position);
+  top: var(--labels-top);
+  left: var(--labels-left);
+  background-color: var(--labels-backgroundColor);
+  transition: var(--labels-transition);
 }
 
 .sheet19-entry-year-input:focus ~ .sheet19-entry-year-label {
@@ -463,26 +500,26 @@
 }
 
 .sheet19-outgoing-year-input {
-	height: 50px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 18px;
-  padding: 0 0 0 2%;
-  border: 1px solid black;
-  margin-top: 10px;
+  height: var(--inputs-height);
+  width: var(--inputs-width);
+  border-radius: var(--inputs-border-radius);
+  background-color: var(--inputs-background-color);
+  outline: var(--inputs-padding);
+  font-size: var(--inputs-font-size);
+  padding: var(--inputs-padding);
+  border: var(--inputs-border);
+  margin-top: var(--inputs-margin-top);
 }
 
 .sheet19-outgoing-year-label {
-	display: inline;
-  font-weight: 600;
-  font-size: 16px;
-  position: absolute;
-  top: 26px;
-  left: 2%;
-  background-color: #fff;
-  transition: all 0.2s ease-out;
+	display: var(--labels-display);
+  font-weight: var(--labels-font-weight);
+  font-size: var(--labels-font-size);
+  position: var(--labels-position);
+  top: var(--labels-top);
+  left: var(--labels-left);
+  background-color: var(--labels-backgroundColor);
+  transition: var(--labels-transition);
 }
 
 .sheet19-outgoing-year-input:focus ~ .sheet19-outgoing-year-label {
@@ -506,19 +543,18 @@ input[type=number] {
 }
 
 .documents-button {
-	color: #fff;
-	border: none;
-	outline: none;
+	color: var(--buttons-text-color);
+	border: var(--buttons-border);
+	outline: var(--buttons-outline);
 	display: none;
 	width: 96%;
-	height: 50px;
-	margin: 0 auto 20px auto;
-	background-color: #048F36;
-	color: white;
-	font-size: 20px;
-	font-weight: 600;
-	border-radius: 10px;
-	cursor: pointer;
+	height: var(--buttons-height);
+	margin: var(--buttons-margin);
+	background-color: var(--green-buttons-backgroundcolor);
+	font-size: var(--buttons-font-size);
+	font-weight: var(--buttons-font-weight);
+	border-radius: var(--buttons-border-radius);
+	cursor: var(--buttons-cursor);
 	max-width: 470px;
 }
 

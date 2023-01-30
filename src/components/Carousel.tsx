@@ -65,7 +65,7 @@ export function Carousel(){
 			}, 350)
 
 		})
-
+		
 		circles[2].addEventListener('click', () => {
 
 			carouselImages.style.transform = `translateX(-40%)`;

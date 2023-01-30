@@ -103,10 +103,10 @@
 }
 
 .menu-img-gp {
-	margin: 0 auto;
-	max-width: 20vw;
+  margin: 0 auto;
+  max-width: 15vw;
+  padding: 1px;
 }
-
 
 .desktop-menu {
 	display: none;
@@ -146,7 +146,7 @@
 
 	.menu-school-title {
 	  color: #fff;
-	  font-size: 21px;
+	  font-size: var(--h2-font-size);
 	  margin-left: 1%;
 	  display: block;
 	}

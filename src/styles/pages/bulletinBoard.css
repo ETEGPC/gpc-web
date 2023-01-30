@@ -1,7 +1,7 @@
 .container-title {
-  margin: 3% 0% 3% 3%;
-  font-size: 32px;
-  text-decoration: underline;
+    margin: 3% 0% 3% 3%;
+    text-decoration: underline;
+    font-size: var(--h1-font-size);
 }
 
 .container-content {
@@ -12,22 +12,24 @@
 
 .container-class {
   margin: 3% 0% 0% 3%;
+  font-size: var(--h4-font-size);
 }
 
 .new-warning {
-  width: 95vw;
+  width: 90vw;
   margin: 10px auto;
   border-radius: 10px;
   box-shadow: 1px 3px 8px #cacaca;
   height: auto;
 }
 
-.new-warning h4 {
+.new-warning h5 {
 	margin: 3% 0% 0% 3%;	
+  font-size: var(--h5-font-size);
 }
 
 .new-warning p {
-  font-size: 14px;
+  font-size: var(--p-font-size);
   margin: 2% 3%;
 }
 
@@ -61,6 +63,7 @@
 
   .container-class {
     margin: 0% 0% 0% 3%;
+    font-size: var(--h4-font-size);
   }
 
 }

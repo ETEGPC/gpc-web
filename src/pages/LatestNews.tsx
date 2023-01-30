@@ -23,13 +23,12 @@ export function LatestNews(){
                     <div className="latestNews-content">
 
                         <img src={image} className="content-img" alt="Imagem da notícia"/>                    
-                        <h2 className="content-h2">Mostra de Inovação - Armazém da Criatividade - <Link to='#' className="latestNews-p" >Ler matéria</Link></h2>
+                        <h4 className="content-h4">Mostra de Inovação - Armazém da Criatividade - <Link to='#' className="latestNews-p" >Ler matéria</Link></h4>
                         
                     </div>                  
 
                 </div>
-
-
+                
             </div>
 
         </div>

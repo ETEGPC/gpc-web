@@ -18,7 +18,7 @@ export function Timesheet(){
 
 				<main className="timeSheet-content">
 
-					<h3>Click no link abaixo  para acessar o quadro de horários de sua turma.</h3>
+					<h4>Click no link abaixo  para acessar o quadro de horários de sua turma.</h4>
 					<p>Link</p>
 
 				</main>

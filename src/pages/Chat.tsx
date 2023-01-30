@@ -15,35 +15,35 @@ export function Chat(){
 
             <div className="chat-container" onClick={CloseMenu}>
 
-                <h1 className='container-title'>Chat</h1>
+                    <h1 className='container-title'>Chat</h1>
 
                     <h2 className='chat-school-title'>ETE Ginásio</h2>
 
                     <hr className='chat-hr' />
 
-                <div className='chat-content'>
 
-                    <div className='chat-school-menssage'>
+                <div className="chat-menssages">
 
-                        <p className='chat-school-menssage-content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sed provident dolores qui deserunt doloribus quae quos ipsam impedit quo.</p>
+                    <div className='chat-content'>
+
+                        <div className='chat-school-menssage'>
+                            <p className='chat-school-menssage-content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sed provident dolores qui deserunt doloribus quae quos ipsam impedit quo.</p>
+                        </div>
+
+                        <div className='chat-my-message'>
+                            <p className='chat-my-message-content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sed provident dolores qui deserunt doloribus quae quos ipsam impedit quo.</p>
+                        </div>
 
                     </div>
-
-                    <div className='chat-my-message'>
-
-                        <p className='chat-my-message-content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sed provident dolores qui deserunt doloribus quae quos ipsam impedit quo.</p>
-
-                    </div>
- 
 
                 </div>
 
-                    <div className='send-my-message'>
+                <div className='send-my-message'>
 
-                            <textarea  id="txt" className='chat-textarea' placeholder="Digite algo"></textarea>
-                            <button className='chat-button'><img className='chat-button-img' src={send} alt="Ícone de envio da mensagem" /></button>                    
+                        <textarea  id="txt" className='chat-textarea' placeholder="Digite algo"></textarea>
+                        <button className='chat-button'><img className='chat-button-img' src={send} alt="Ícone de envio da mensagem" /></button>                
 
-                    </div>                
+                </div>                
 
             </div>
 

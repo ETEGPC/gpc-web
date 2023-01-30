@@ -76,9 +76,9 @@ export function HomePage() {
 
 				<main className="main-content">
 
-					<h5 className="about-gp">Sobre o Ginásio Permanbucano</h5>
+					<h2 className="about-gp">Sobre o Ginásio Permanbucano</h2>
 					<p className="about-gp-content">Lorem ipsum dolor sit amet consectetur. Fermentum quis sem nulla eget eget neque elementum tristique. Pulvinar volutpat quis massa vestibulum malesuada ultrices hac scelerisque a. Vitae ac nunc mauris nec mattis nibh lorem aenean. Aenean in quis tincidunt urna pharetra quam. Iaculis ultrices sagittis amet ultricies dignissim. Lacus massa id lectus molestie aliquet eleifend facilisis. Sit dui gravida pharetra faucibus at arcu in. Eu quis massa elit enim. Gravida senectus tristique ultrices elementum sit et viverra purus metus. Duis pellentesque malesuada pretium amet justo. Mauris fringilla vitae nam id egestas nibh amet fermentum lectus. Neque volutpat mi aenean neque leo auctor vitae cras eget. Imperdiet sit vulputate in id. In volutpat maecenas dolor odio ullamcorper in leo commodo neque...<Link to="/sobreOGinasioPernambucano">Ler completo.</Link></p>
-					<h5 className="contact-forms-title">Formas de contato</h5>
+					<h2 className="contact-forms-title">Formas de contato</h2>
 					<p className="about-contact-forms"><span className="span-contact-forms">Atenção</span> - O horário de atendimento, por todos os meios de comunicação, é de 8h às 17h. Além disso, é recomendado o cadastro e uso do chat do próprio aplicativo caso você seja responsável de algum estudante de nossa escola.</p>
 
 					<div className="contact-forms">

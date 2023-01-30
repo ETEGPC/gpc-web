@@ -1,5 +1,12 @@
+.container-title {
+    margin: 3% 0% 3% 3%;
+    text-decoration: underline;
+    font-size: var(--h1-font-size);
+}
+
 .container-content {
     margin: 0 3%;    
+    font-size: var(--p-font-size);
 }
 
 @media screen and (min-width: 800px) and (min-height: 497px){  

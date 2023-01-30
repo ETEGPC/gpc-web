@@ -10,11 +10,13 @@
 
 .container-title {
   margin: 3% 0% 3% 3%;
-  text-decoration: underline;	
+  text-decoration: underline;
+  font-size: var(--h1-font-size);
 }
 
-.timeSheet-content h3 {
+.timeSheet-content h4 {
   margin: 3%;
+  font-size: var(--h4-font-size);
 }
 
 .timeSheet-content p {
@@ -22,6 +24,7 @@
 	text-decoration: underline;
 	cursor: pointer;
 	cursor: #010030;
+  font-size: var(--p-font-size);
 }
 
 @media screen and (min-width: 800px) and (min-height: 497px){ 

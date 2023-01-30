@@ -5,7 +5,33 @@
 	overflow: auto;
 }
 
-
 html, body, #root, .App{
 	height: 100%;
+}
+
+/* Global style variables */
+
+:root {
+
+	/*Global styles for all pages*/
+	--h1-font-size: 32px;
+	--h2-font-size: 25px;
+	--h3-font-size: 22px;
+	--h4-font-size: 18px;
+	--h5-font-size: 17px;
+	--p-font-size: 16px;
+
+	--green-buttons-backgroundcolor: #048F36;
+	--red-buttons-backgroundColor: #DF000C;
+
+	--buttons-text-color: #fff;
+	--buttons-font-size: 20px;
+	--buttons-height: 50px;
+	--buttons-border-radius: 10px;
+	--buttons-font-weight: 600;
+	--buttons-cursor: pointer;
+	--buttons-margin: 20px auto 20px auto;
+	--buttons-border: none;
+	--buttons-outline: none;
+
 }

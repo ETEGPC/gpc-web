@@ -22,7 +22,7 @@ export function BulletinBoard(){
 
 					<div className="new-warning">
 						
-						<h4>Atenção - recesso escolar</h4>
+						<h5>Atenção - recesso escolar</h5>
 						<p>Do dia 30/06 ao dia 15/07 de 2023 a nossa escola entrará em recesso, ou seja, não haverá aulas nem nenhuma atividade extra curricular nesse período.</p>
 
 					</div>

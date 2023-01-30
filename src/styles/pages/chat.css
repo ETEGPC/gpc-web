@@ -2,6 +2,12 @@
     font-family: 'Raleway', sans-serif;
 }
 
+.container-title {
+    margin: 3% 0% 3% 3%;
+    text-decoration: underline;
+    font-size: var(--h1-font-size);
+}
+
 .chat-container {
 
 }
@@ -48,7 +54,7 @@
 }
 
 .chat-school-menssage-content {
-    font-size: 13px;
+    font-size: var(--p-font-size);
     color: white;
     padding: 6px;
 }
@@ -61,8 +67,13 @@
     height: auto;
 }
 
+.chat-menssages {
+  width: auto;
+  margin-bottom: 60px;
+}
+
 .chat-my-message-content {
-    font-size: 13px;
+    font-size: var(--p-font-size);
     color: white;
     padding: 6px
 }
@@ -79,6 +90,8 @@
     resize: none;
     box-shadow: 1px 1px 4px #cacaca;
     border-radius: 7px;
+    padding: 5px;
+    margin-left: 10px;
 }
 
 .send-my-message {
@@ -93,6 +106,7 @@
     align-content: center;
     height: 55px;
     justify-content: space-around;
+    gap: 10px;
 }
 
 
@@ -103,9 +117,10 @@
     width: 60px;
     cursor: pointer;
     background: white;
-    height: 42px;
+    height: 47px;
     border-radius: 60px;
     box-shadow: 1px 1px 4px #cacaca;
+    margin-right: 10px;
 }
 
 .chat-button-img {
@@ -156,13 +171,13 @@
     }
 
     .chat-school-menssage-content {
-      font-size: 16px;
+      font-size: var(--p-font-size);
       color: white;
       padding: 8px;
     }
 
     .chat-my-message-content {
-      font-size: 16px;
+      font-size: var(--p-font-size);
       color: white;
       padding: 8px;
     }
@@ -199,6 +214,7 @@
         resize: none;
         box-shadow: 1px 1px 4px #cacaca;
         border-radius: 7px;
+        padding: 5px;
     }
 
     .chat-button {
@@ -208,9 +224,10 @@
       width: 80px;
       cursor: pointer;
       background: white;
-      height: 42px;
+      height: 47px;
       border-radius: 60px;
       box-shadow: 1px 1px 4px #cacaca;
+
     }
 
 }

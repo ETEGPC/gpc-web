@@ -31,6 +31,7 @@
   color: white;
   top: 10px;
   left: 10px;
+  font-size: var(--h3-font-size);
 }
 
 .carousel-img p {
@@ -39,6 +40,7 @@
   top: 40px;
   left: 10px;
   width: auto;
+  font-size: var(--p-font-size);
 }
 
 .circles {
