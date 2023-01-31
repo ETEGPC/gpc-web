@@ -17,6 +17,17 @@
 	transition: 0.2s;
 }
 
+.install-app-container {
+	align-items: center;
+}
+
+.install-app-label {
+	color: #FFF;
+	font-family: 'Raleway', sans-serif;
+	margin-left: 20px;
+	font-weight: bold;
+}
+
 .menu-header {
 	height: 7vh;
 	display: flex;
@@ -27,6 +38,7 @@
 	max-height: 3vh;
 	align-self: center;
 }
+
 
 .menu-header-button {
 	background-color: transparent;
@@ -48,7 +60,7 @@
 .menu-main {
  	background-color: #010030;
   height: 93vh;
-	 display: flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 }
@@ -102,11 +114,10 @@
 }
 
 .menu-img-gp {
-	margin: 0 auto;
-	padding: 10px;
-	max-width: 14vw;
+  margin: 0 auto;
+  max-width: 15vw;
+  padding: 1px;
 }
-
 
 .desktop-menu {
 	display: none;
@@ -141,13 +152,12 @@
 
 	.menu-img-gp {
 	  margin: 0 0 0 1%;
-	  padding: 5px;
-	  width: 4%;
+	  width: 80px;
 	}
 
 	.menu-school-title {
 	  color: #fff;
-	  font-size: 21px;
+	  font-size: var(--h2-font-size);
 	  margin-left: 1%;
 	  display: block;
 	}

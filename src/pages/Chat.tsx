@@ -17,7 +17,6 @@ export function Chat() {
 
 	document.title = 'ETE GPC | Chat';
 
-
 	async function handleGetEarlierMessages() {
 		await api.http.get('/messages', {
 			params: {
@@ -27,6 +26,7 @@ export function Chat() {
 			setMessages(resp.data);
 		});
 	};
+
 	function handleSendMessage() {
 		api.socket.emit(`message`, {
 			room: `${parentId}-gestao`,
@@ -41,7 +41,6 @@ export function Chat() {
 	});
 	return (
 		<div className='container'>
-
 			<Menu />
 
 			<div className="chat-container" onClick={CloseMenu}>
@@ -50,20 +49,23 @@ export function Chat() {
 
 				<hr className='chat-hr' />
 
-				<div className='chat-content'>
-					{
-						messages.map(message => {
-							return message.author === parentId ?
-								<div className='chat-my-message' key={message.id}>
-									<p className='chat-my-message-content'>{message.message}</p>
-								</div>
-								:
-								<div className='chat-school-menssage' key={message.id}>
-									<p className='chat-school-menssage-content'>{message.message}</p>
-								</div>
-						})
-					}
+				<div className="chat-menssages">
+					<div className='chat-content'>
+						{
+							messages.map(message => {
+								return message.author === parentId ?
+									<div className='chat-my-message' key={message.id}>
+										<p className='chat-my-message-content'>{message.message}</p>
+									</div>
+									:
+									<div className='chat-school-menssage' key={message.id}>
+										<p className='chat-school-menssage-content'>{message.message}</p>
+									</div>
+							})
+						}
+					</div>
 				</div>
+
 
 				<div className='send-my-message'>
 					<textarea
@@ -80,7 +82,7 @@ export function Chat() {
 						/>
 					</button>
 				</div>
-			</div>
-		</div>
+			</div >
+		</div >
 	);
 }

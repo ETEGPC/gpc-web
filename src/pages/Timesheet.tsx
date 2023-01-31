@@ -1,9 +1,9 @@
-import { Menu } from '../components/Exports';
+import { CloseMenu, Menu } from '../components/Exports';
 import api from '../services/api';
 import '../styles/pages/timesheet.css';
 // import { CloseMenu } from '../components/Menu';
 
-export function Timesheet () {
+export function Timesheet() {
 	const schoolClasses: string[] = JSON.parse(String(localStorage.getItem('schoolClasses')));
 
 	async function handleOpenSchedule(schoolClass: string) {
@@ -12,18 +12,30 @@ export function Timesheet () {
 		});
 	}
 
-	return(
+	return (
 		<div>
 			<Menu />
-			<main className="timeSheet-content">
-				<h1>Quadro de horários</h1>
-				<h3>Click no link abaixo  para acessar o quadro de horários de sua turma.</h3>
+
+			<div className="timeSheet-container" onClick={CloseMenu}>
+
+				<h1 className="container-title">Quadro de horários</h1>
+
 				{
 					schoolClasses.map(schoolClass => {
-						return <p onClick={() => handleOpenSchedule(schoolClass)}>Horário da turma: {schoolClass}</p>
+						return (
+							<main className="timeSheet-content">
+
+								<h4>Click no link abaixo  para acessar o quadro de horários da turma {schoolClass}.</h4>
+								<p onClick={() => handleOpenSchedule(schoolClass)}>Link</p>
+
+							</main>
+
+							)
 					})
 				}
-			</main>
+
+			</div>
+
 		</div>
 	);
 }

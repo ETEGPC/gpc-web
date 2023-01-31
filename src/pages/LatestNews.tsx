@@ -3,36 +3,58 @@ import image from '../images/imageExample.png'
 import { Link } from "react-router-dom";
 import '../styles/pages/latestNews.css';
 import { CloseMenu } from '../components/Menu';
+import api from "../services/api";
+import { INews } from "../@types/api";
+import { useEffect, useState} from "react";
 
-export function LatestNews(){
+export function LatestNews() {
+	document.title = 'ETE GPC | Últimas notícias';
 
-    document.title = 'ETE GPC | Últimas notícias';
-    
-    return (
+	const [latestNews, setLatestNews] = useState<INews[]>([]);
 
-        <div className="container">
+	async function getLatestNews() {
+		await api.http.get('/news').then(resp => {
+			setLatestNews(resp.data);
+		}).catch(err => {
+			console.error(err);
+			alert('Houve um erro ao buscar os dados')
+		})
+	}
 
-            <Menu />
+	useEffect(() => {
+		getLatestNews();
+	})
 
-            <div className="latestNews-container" onClick={CloseMenu}>              
-            
-                <h1 className="latestNews-h1" >Últimas notícias</h1>
+	return (
 
-                <div className="latestNews-news">
+		<div className="container">
 
-                    <div className="latestNews-content">
+			<Menu />
 
-                        <img src={image} className="content-img" alt="imagem referente à notícia"/>                    
-                        <h2 className="content-h2">Mostra de Inovação - Armazém da Criatividade - <Link to='#' className="latestNews-p" >Ler matéria</Link></h2>
-                        
-                    </div>                  
+			<div className="latestNews-container" onClick={CloseMenu}>
 
-                </div>
+				<h1 className="latestNews-h1" >Últimas notícias</h1>
+				{
+					latestNews.map(news => {
+						return (
+								<div key={news.id} className="latestNews-news">
 
+									<div className="latestNews-content">
 
-            </div>
+										<img src={news.image.imageUrl} className="content-img" alt="Imagem da notícia" />
+										<h4 className="content-h4">{news.title} <a href={news.url} target="_blank" className="latestNews-p" >Ler matéria</a></h4>
 
-        </div>
+									</div>
 
-    );
+								</div>
+
+							);
+					})
+				}
+
+			</div>
+
+		</div>
+
+	);
 }

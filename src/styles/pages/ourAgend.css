@@ -1,3 +1,9 @@
+.container-title {
+  margin: 3% 0% 3% 3%;
+  text-decoration: underline;
+  font-size: var(--h1-font-size);
+}
+
 .container-events {
   margin: 0 3%;
   display: flex;
@@ -20,6 +26,7 @@
 	box-shadow: 1px 3px 8px #cacaca;
 	padding: 5px;
 	gap: 5px;
+	max-width: 500px;
 }
 
 .container-title {
@@ -31,17 +38,18 @@
 .new-event-date {
 	grid-area: date;
 	margin: auto;
+	font-size: var(--h3-font-size);
 }
 
 .new-event-title {
   grid-area: ti;
   margin: auto 0;
-  font-size: 18px;
+  font-size: var(--h4-font-size);
 }
 
 .new-event-description {
 	grid-area: de;
-	font-size: 3vw;
+	font-size: var(--p-font-size);
 	margin: auto;
 }
 
@@ -66,7 +74,6 @@
        display: flex;
       justify-content: space-between;
     }
-
 
 	.container-events {
 	  margin: 0 3%;
@@ -107,12 +114,12 @@
 	.new-event-title {
 	  grid-area: ti;
 	  margin: auto 0;
-	  font-size: 18px;
+	  font-size: var(--h4-font-size);
 	}
 
 	.new-event-description {
 	  grid-area: de;
-	  font-size: 14px;
+	  font-size: var(--p-font-size);
 	  margin: auto;
 	}
 

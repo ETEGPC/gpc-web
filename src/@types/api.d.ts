@@ -25,4 +25,17 @@ interface IEvent {
   date: Date
 };
 
-export { IMessage, INotice, ISchedules, IEvent };
+interface IImage {
+  id: string,
+  imageUrl: string
+}
+
+interface INews {
+  id: string,
+  title: string,
+  url: string,
+  date: Date,
+  image: IImage
+}
+
+export { IMessage, INotice, ISchedules, IEvent, INews };

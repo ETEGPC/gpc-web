@@ -2,12 +2,11 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.latestNews-h1 {
+.container-title {
     margin: 3% 0% 3% 3%;
-    font-size: 32px;    
-    text-decoration: underline;    
+    text-decoration: underline;
+    font-size: var(--h1-font-size);
 }
-
 
 .latestNews-news {    
     display: flex;
@@ -22,24 +21,24 @@
   align-self: center;
   border-radius: 7px;
   box-shadow: 2px 2px 8px #cacaca;
-
 }
 
 .content-img {
   max-width: 90%;
+  max-height: 200px;
   display: block;
   margin: 10px auto;
 }
 
-.content-h2 {
-  font-size: 20px;
+.content-h4 {
+  font-size: var(--h4-font-size);
   display: inline-block;
   margin: 0 5%;
 }
 
 .latestNews-p {
     display: inline;
-    font-size: 18px;
+    font-size: var(--p-font-size);
     font-weight: 600;    
     color: #020063;
     cursor: pointer;
@@ -80,8 +79,8 @@
       margin: 10px auto;
     }
 
-    .content-h2 {
-      font-size: 20px;
+    .content-h4 {
+      font-size: var(--h4-font-size);
       display: inline-block;
       margin: 0 5%;
     }

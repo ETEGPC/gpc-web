@@ -1,16 +1,30 @@
+:root {
+	--login-screen-background-color: #020063;	
+	--login-screen-left-div-background-color: #fff;
+	--login-screen-right-div-background-color: #020063;
+	--login-screen-h3-color: #303030;
+}
+
+.container-title {
+  margin: 3% 0% 3% 3%;
+  text-decoration: underline;
+  font-size: var(--h1-font-size);
+}
+
+
 .loginScreen-container {
-	background-color: #020063;
+	background-color: var(--login-screen-background-color);
 	height: 100%;
 	font-family: 'Raleway', sans-serif;
 }
 
 .welcome-screen {
-	display: none;
+	display: none;	
 }
 
 .form-h1 {
 	color: white;
-	font-size: 7vw;
+	font-size: var(--h1-font-size);
 	margin: 5% auto;
 	text-align: center;
 }
@@ -19,6 +33,22 @@
   width: 70%;
   margin: 14% auto 6% auto;
   display: block;
+}
+
+.form-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative	;
+  height: 80px;
+}
+
+.form-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative	;
+  height: 80px;
 }
 
 .form-datas {
@@ -31,8 +61,7 @@
 	max-width: 330px;
 }
 
-
-.email-label {
+.email-label, .password-label {
   position: absolute;
   top: auto;
   left: 15%;
@@ -40,7 +69,7 @@
   background-color: #020063;  
 }
 
-.email-input {
+.email-input, .password-input {
   height: 50px;
   width: 250px;
   border-radius: 10px;
@@ -52,25 +81,6 @@
   border: 1px solid #fff;
 }
 
-.password-label {
-  position: absolute;
-  top: auto;
-  left: 15%;
-  color: white;
-  background-color: #020063;  
-}
-
-.password-input {
-  height: 50px;
-  width: 250px;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 16px;
-  color: white;
-  padding: 0 0 0 6px;
-  border: 1px solid #fff;
-}
 
 .email-input:focus ~ .email-label {
 	transform: translateY(-25px);
@@ -101,33 +111,40 @@
 }
 
 .form-button {
-  color: #fff;
-  border: none;
-  outline: none;
+  color: var(--buttons-text-color);
+  border: var(--buttons-border);
+  outline: var(--buttons-outline);
   display: block;
   width: 250px;
-  height: 50px;
-  margin: 0 auto;
-  background-color: #048F36;
+  height: var(--buttons-height);
+  margin: var(--buttons-margin);
+  background-color: var(--green-buttons-backgroundcolor);
   color: white;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 10px;
-  cursor: pointer;
+  font-size: var(--buttons-font-size);
+  font-weight: var(--buttons-font-weight);
+  border-radius: var(--buttons-border-radius);
+  cursor: var(--buttons-cursor);
 }
 
 .form-link {
-  	display: block;
-  	text-align: center;
-  	margin: 0% 0 1% 0;
-  	color: #DBDBDB;
-  	cursor: pointer;
+	display: block;
+	text-align: center;
+	margin: 0% 0 1% 0;
+	color: #DBDBDB;
+	cursor: pointer;
 }
 
 @media screen and (min-width: 800px) and (min-height: 497px){
 
+	:root {
+		--login-screen-background-color: #010030;	
+		--login-screen-left-div-background-color: #fff;
+		--login-screen-right-div-background-color: #020063;
+		--login-screen-h3-color: #303030;
+	}
+
 	.loginScreen-container {
-	  background-color: #010030;
+	  background-color: var(--login-screen-background-color);
 	  height: 100%;
 	  font-family: 'Raleway', sans-serif;
 	  display: flex;
@@ -138,7 +155,7 @@
 
 	.welcome-screen {
 	  width: 50%;
-	  background-color: #fff;
+	  background-color: var(--login-screen-left-div-background-color);
 	  height: 100%;
 	  border-top-left-radius: 4px;
 	  border-bottom-left-radius: 4px;
@@ -150,15 +167,15 @@
 	}
 
 	.welcome-screen h3 {
-	  color: #303030;
+	  color: var(--login-screen-h3-color);
 	  padding: 0 2% 0 2%;
 	  text-align: center;
-	  font-size: 22px;
+	  font-size: var(--h3-font-size);
 	}
 
 	.form-h1 {
 		color: white;
-		font-size: 32px;
+		font-size: var(--h1-font-size);
 		margin: 5% auto;
 		text-align: center;
 	}
@@ -166,7 +183,7 @@
 	.login-form {
 	  width: 50%;
 	  height: 100%;
-	  background-color: #020063;
+	  background-color: var(--login-screen-right-div-background-color);
 	  border-top-right-radius: 4px;
 	  border-bottom-right-radius: 4px;
 	}
@@ -188,7 +205,7 @@
 		height: 200px;
 	}
 
-	.email-label {
+	.email-label, .password-label {
 	  position: absolute;
 	  top: auto;
 	  left: 7%;
@@ -196,58 +213,26 @@
 	  background-color: #020063;
 	}
 
-	.password-label {
-	  position: absolute;
-	  top: auto;
-	  left: 7%;
-	  color: white;
-	  background-color: #020063;
-	}
 	.form-button {
-	  color: #fff;
-	  border: none;
-	  outline: none;
+	  color: var(--buttons-text-color);
+	  border: var(--buttons-border);
+	  outline: var(--buttons-outline);
 	  display: block;
 	  width: 250px;
-	  height: 50px;
-	  margin: 0 auto;
-	  background-color: #048F36;
-	  color: white;
-	  font-size: 20px;
-	  font-weight: 600;
-	  border-radius: 10px;
-	  cursor: pointer;
+	  height: var(--buttons-height);
+	  margin: var(--buttons-margin);
+  	background-color: var(--green-buttons-backgroundcolor);
+	  background-color: var();
+	  font-size: var(--buttons-font-size);
+	  font-weight: var(--buttons-font-weight);
+	  border-radius: var(--buttons-border-radius);
+	  cursor: var(--buttons-cursor);
 	}
 
 }
 
-.form-email {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative	;
-  height: 80px;
-}
 
-.form-password {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative	;
-  height: 80px;
-}
 
-.password-input {
-  height: 50px;
-  width: 250px;
-  border-radius: 10px;
-  background-color: transparent;
-  outline: none;
-  font-size: 16px;
-  color: white;
-  padding: 0 0 0 6px;
-  border: 1px solid #fff;
-}
 
 
 

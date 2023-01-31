@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
-import gpIcon from '../images/icons/gp_icon.svg'
 import menuIcon from '../images/icons/menu_icon.svg'
 import '../styles/components/Menu.css';
-import greenArrow from '../images/icons/greenArrow_icon.svg'
+import whiteArrow from '../images/icons/whiteArrow_icon.svg'
 import user from '../images/icons/user_icon.svg'
 import latestNews from '../images/icons/latestNews_icon.svg'
 import bulletinBoard from '../images/icons/bulletinBoard_icon.svg'
 import schedule from '../images/icons/schedule_icon.svg'
 import chat from '../images/icons/chat_icon.svg'
+import download from '../images/icons/download_icon.svg'
 import instagram from '../images/icons/instagram_icon.svg'
 import whatsapp from '../images/icons/whatsapp_icon.svg'
 import email from '../images/icons/email_icon.svg'
@@ -16,6 +16,9 @@ import documents from '../images/icons/documents_icon.svg'
 import termOfUse from '../images/icons/termsOfUse_icon.svg'
 import privacyPolicy from '../images/icons/privacyPolicy_icon.svg'
 import initialPage from '../images/icons/initialPage_icon.svg'
+import eteLogo from '../images/eteLogo.svg';
+
+//export function CloseMenu(){
 
 export function CloseMenu() {
 
@@ -25,6 +28,7 @@ export function CloseMenu() {
 }
 
 export function Menu() {
+	let deferredPrompt: any;
 
 	function OpenMenu() {
 
@@ -51,6 +55,15 @@ export function Menu() {
 		window.open('https://wa.me/5581997841403', '_blank');
 	}
 
+	window.addEventListener('beforeinstallprompt', (e) => {
+		e.preventDefault();
+		deferredPrompt = e;
+	});
+
+	function installPwa() {
+		deferredPrompt.prompt();
+	}
+
 
 	return (
 
@@ -58,85 +71,91 @@ export function Menu() {
 			<div className="menu-open" id="menu">
 
 				<header className="menu-header">
-					<button onClick={CloseMenu} className="menu-header-button"><img alt="" className="menu-header-img" src={greenArrow} /></button>
+					<button onClick={CloseMenu} className="menu-header-button"><img className="menu-header-img" id="menu-header-img" alt="Ícone do menu" src={whiteArrow} /></button>
 					<h1 className="menu-header-h1">Menu</h1>
+
 				</header>
 
 				<main className="menu-main">
 
+					<div onClick={installPwa} className="install-app-container">
+						<img src={download} alt="Ícone da página inicial" />
+						<p className='install-app-label'>Instalar aplicativo</p>
+					</div>
+
 					<div className="menu-component-0">
-						<img alt="" src={initialPage} />
+						<img src={initialPage} alt="Ícone da página inicial" />
 						<Link to="/paginaInicial">Página inicial</Link>
 					</div>
 
 					<div className="menu-component-1">
-						<img alt="" src={user} />
+						<img src={user} alt="Ícone da página meu perfil" />
 						<Link to="/meuPerfil">Meu perfi</Link>
 					</div>
 
 
 					<div className="menu-component-2">
-						<img alt="" src={latestNews} />
+						<img src={latestNews} alt="Ícone da página últimas notícias" />
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 					</div>
 
 
 					<div className="menu-component-3">
-						<img alt="" src={bulletinBoard} />
-						<Link to={`/muralDeAvisos`} >Mural de avisos</Link>
+						<img src={bulletinBoard} alt="Ícone da página mural de avisos" />
+						<Link to="/muralDeAvisos">Mural de avisos</Link>
 					</div>
 
 
 					<div className="menu-component-4">
-						<img alt="" src={schedule} />
+						<img src={schedule} alt="Ícone da página nossa agenda" />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 					</div>
 
 
 					<div className="menu-component-5">
-						<img alt="" src={chat} />
+						<img src={chat} alt="Ícone da página chat" />
 						<Link to="/chat">Chat</Link>
 					</div>
 
 
 					<div className="menu-component-7">
-						<img alt="" src={instagram} />
+						<img src={instagram} alt="Ícone do Instagram" />
 						<Link onClick={openInstagram} to="#">Instagram</Link>
 					</div>
 
 
 					<div className="menu-component-8">
-						<img src={whatsapp} />
+						<img src={whatsapp} alt="Ícone do WhatsApp" />
 						<Link onClick={openWhatsApp} to="#">WhatsApp</Link>
 					</div>
 
 
 					<div className="menu-component-9">
-						<img src={email} />
+						<img src={email} alt="Ícone do e-mail" />
 						<Link to="#" onClick={openEmail}>E-mail</Link>
 					</div>
 
 
 					<div className="menu-component-10">
-						<img alt="" src={timeline} />
+						<img src={timeline} alt="Ícone da página quadro de horários" />
 						<Link to="/quadroDeHorarios">Quadro de horários</Link>
 					</div>
 
 
 					<div className="menu-component-11">
-						<img alt="" src={documents} />
+						<img src={documents} alt="Ícone da página solicitação de documentos" />
 						<Link to="/solicitacaoDeDocumentos">Solicitação de documentos</Link>
 					</div>
 
 					<hr />
 
 					<div className="menu-component-12">
-						<img alt="" src={termOfUse} />
+						<img src={termOfUse} alt="Ícone da página termos de uso" />
 						<Link to="#">Termos de uso</Link>
 					</div>
 
 					<div className="menu-component-13">
-						<img alt="" src={privacyPolicy} />
+						<img src={privacyPolicy} alt="Ícone da página política de privacidade" />
 						<Link to="#">Política de privacidade</Link>
 					</div>
 
@@ -146,8 +165,8 @@ export function Menu() {
 
 
 			<div className="menu-closed">
-				<button onClick={OpenMenu} className="menu-button"><img alt="" className="menu-img-menu" src={menuIcon} /></button>
-				<img alt="" className="menu-img-gp" src={gpIcon} />
+				<button onClick={OpenMenu} className="menu-button"><img className="menu-img-menu" src={menuIcon} alt="Ícone do menu" /></button>
+				<img className="menu-img-gp" src={eteLogo} alt="Ícone da ETE" />
 				<h2 className="menu-school-title">ETE Ginásio Permanbucano</h2>
 			</div>
 
@@ -156,79 +175,79 @@ export function Menu() {
 				<main className="desktop-menu-main">
 
 					<div className="desktop-menu-component-0">
-						<img alt="" src={initialPage} />
+						<img src={initialPage} alt="Ícone da página inicial" />
 						<Link to="/paginaInicial">Página inicial</Link>
 					</div>
 
 					<div className="desktop-menu-component-1">
-						<img alt="" src={user} />
+						<img src={user} alt="Ícone da página meu perfil" />
 						<Link to="/meuPerfil">Meu perfi</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-2">
-						<img alt="" src={latestNews} />
+						<img src={latestNews} alt="Ícone da página últimas notícias" />
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-3">
-						<img alt="" src={bulletinBoard} />
+						<img src={bulletinBoard} alt="Ícone da página mural de avisos" />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-4">
-						<img alt="" src={schedule} />
+						<img src={schedule} alt="Ícone da página nossa agenda" />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-5">
-						<img alt="" src={chat} />
+						<img src={chat} alt="Ícone da página chat" />
 						<Link to="/chat">Chat</Link>
 					</div>
 
 
 
 					<div className="desktop-menu-component-7">
-						<img alt="" src={instagram} />
+						<img src={instagram} alt="Ícone do Instagram" />
 						<Link onClick={openInstagram} to="#">Instagram</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-8">
-						<img src={whatsapp} />
+						<img src={whatsapp} alt="Ícone do WhatsApp" />
 						<Link to="#" onClick={openWhatsApp}>WhatsApp</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-9">
-						<img src={email} />
+						<img src={email} alt="Ícone do e-mail" />
 						<Link to="#" onClick={openEmail}>E-mail</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-10">
-						<img alt="" src={timeline} />
+						<img src={timeline} alt="Ícone da página quadro de horários" />
 						<Link to="/quadroDeHorarios">Quadro de horários</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-11">
-						<img alt="" src={documents} />
+						<img src={documents} alt="Ícone da página solicitação de documentos" />
 						<Link to="/solicitacaoDeDocumentos">Solicitação de documentos</Link>
 					</div>
 
 					<hr />
 
 					<div className="desktop-menu-component-12">
-						<img alt="" src={termOfUse} />
+						<img src={termOfUse} alt="Ícone da página termos de uso" />
 						<Link to="#">Termos de uso</Link>
 					</div>
 
 					<div className="desktop-menu-component-13">
-						<img alt="" src={privacyPolicy} />
+						<img src={privacyPolicy} alt="Ícone da página política de privacidade" />
 						<Link to="#">Política de privacidade</Link>
 					</div>
 
