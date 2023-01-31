@@ -6,7 +6,7 @@ import { useCookies, } from 'react-cookie';
 
 export function MyProfile() {
 	document.title = 'ETE GPC | Meu perfil';
-	const [cookie, setCookie, removeCookie] = useCookies(['token']);
+	const removeCookie = useCookies(['token'])[2];
 
 	function handleDeleteToken() {
 		removeCookie('token');

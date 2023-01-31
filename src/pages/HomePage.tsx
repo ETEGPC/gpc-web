@@ -10,7 +10,6 @@ import chatIcon from '../images/icons/chat2_icon.svg'
 import { Link, useNavigate } from 'react-router-dom';
 import { CloseMenu } from '../components/Menu';
 import { Carousel } from '../components/Carousel';
-import { useEffect } from 'preact/hooks';
  
 export function HomePage() {
 	document.title = 'Página inicial';
@@ -103,7 +102,7 @@ export function HomePage() {
 					</div>
 
 					<button onClick={() => redirectTopage('/chat')} className="button-chat">
-						<img className="button-chat-img" src={chatIcon} />
+						<img alt='button chat icon' className="button-chat-img" src={chatIcon} />
 					</button>
 
 				</main>

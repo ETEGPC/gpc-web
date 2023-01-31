@@ -1,6 +1,6 @@
 import { Menu } from "../components/Menu";
-import image from '../images/imageExample.png'
-import { Link } from "react-router-dom";
+// import image from '../images/imageExample.png'
+// import { Link } from "react-router-dom";
 import '../styles/pages/latestNews.css';
 import { CloseMenu } from '../components/Menu';
 import api from "../services/api";
@@ -42,7 +42,7 @@ export function LatestNews() {
 									<div className="latestNews-content">
 
 										<img src={news.image.imageUrl} className="content-img" alt="Imagem da notícia" />
-										<h4 className="content-h4">{news.title} <a href={news.url} target="_blank" className="latestNews-p" >Ler matéria</a></h4>
+										<h4 className="content-h4">{news.title} <a href={news.url} rel='noreferrer' target="_blank" className="latestNews-p" >Ler matéria</a></h4>
 
 									</div>
 

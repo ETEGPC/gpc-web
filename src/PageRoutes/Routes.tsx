@@ -16,7 +16,7 @@ import {
 } from '../components/Exports';
 
 export function Routes() {
-	const [cookie, setCookie] = useCookies(['token']);
+	const [cookie] = useCookies(['token']);
 
 	return (
 		<BrowserRouter>

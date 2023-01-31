@@ -38,7 +38,7 @@ export function ChangePassword() {
 				'x-access-token': cookie.token
 			}
 		}).then(resp => {
-			if (resp.status == 200) {
+			if (resp.status === 200) {
 				setCookie('token', resp.data.token);
 				alert('Senha alterada com sucesso.');
 				navigate('/');
