@@ -10,6 +10,7 @@ import chatIcon from '../images/icons/chat2_icon.svg'
 import { Link, useNavigate } from 'react-router-dom';
 import { CloseMenu } from '../components/Menu';
 import { Carousel } from '../components/Carousel';
+import { useEffect } from 'react';
  
 export function HomePage() {
 	document.title = 'Página inicial';
@@ -35,6 +36,13 @@ export function HomePage() {
 		window.open('https://wa.me/5581997841403', '_blank');
 	}
 
+	// function requestNotificationPermission() {
+	// 	Notification.requestPermission().then(result => {
+	// 		console.log(result)
+	// 	})
+		
+	// }
+
 	return (
 
 
@@ -47,7 +55,6 @@ export function HomePage() {
 				<h1 className="homepage-title">Página inicial</h1>			
 
 				<Carousel />
-
 				<div className="links">
 
 					<div className="links-component1" onClick={() => redirectTopage('/nossaAgenda')} >

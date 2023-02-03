@@ -11,6 +11,7 @@ export function LoginScreen() {
 	const [password, setPassword] = useState('');
 	const [cookie, setCookie] = useCookies(['token']);
 	const navigate = useNavigate();
+	const broadcast = new BroadcastChannel('push');
 
 	document.title = "ETE GPC | Login";
 
@@ -22,7 +23,10 @@ export function LoginScreen() {
 			setCookie('token', resp.data.token);
 			localStorage.setItem('parentId', resp.data.id);
 			localStorage.setItem('schoolClasses', JSON.stringify(resp.data.schoolClasses));
-			navigate('/paginainicial');
+			broadcast.postMessage({
+				parentId: resp.data.id
+			})
+			navigate('/');
 		}).catch(err => {
 			console.error(err);
 		});
@@ -30,7 +34,7 @@ export function LoginScreen() {
 
 	useEffect(() => {
 		if (cookie.token) {
-			navigate('/paginainicial');
+			navigate('/');
 		}
 	});
 

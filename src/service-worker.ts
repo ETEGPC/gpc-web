@@ -13,6 +13,8 @@ import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
+import api from './services/api';
+//import api from './services/api';
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -23,6 +25,7 @@ clientsClaim();
 // This variable must be present somewhere in your service worker file,
 // even if you decide not to use precaching. See https://cra.link/PWA
 precacheAndRoute(self.__WB_MANIFEST);
+const broadcast = new BroadcastChannel('push');
 
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
@@ -77,4 +80,60 @@ self.addEventListener('message', (event) => {
   }
 });
 
+broadcast.onmessage = async (logged) => {
+  let subscription = await self.registration.pushManager.getSubscription();
+  const parentId = logged.data.parentId
+
+  if (!subscription) {
+    //const publicKey = await api.http.get('/push/publicKey');
+    await self.registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: 'BKqNcUViP-4xKjL6_Smp3vRTUQWjTByIABcKpRO-Ho6zaHVBDS0qBfCLlxyWUT_a0QslPrbHO5WNF8yDVdkpKEw'
+    });
+  }
+
+  // await api.http.post('/push/register', {
+  //   subscription,
+  //   parentId
+  // });
+
+  const data = {
+    subscription,
+    parentId
+  }
+
+  await fetch(`${process.env.REACT_APP_API_BASE_URL}/push/register`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  });
+
+  console.log(subscription)
+  console.log(parentId)
+}
+
 // Any other custom service worker logic can go here.
+self.addEventListener('push', async (event) => {
+  const body = event.data?.text();
+
+  event.waitUntil(
+    self.registration.showNotification('ETE GPC', {
+      body
+    })
+  );
+  // let subscription = await self.registration.pushManager.getSubscription();
+  // const t = window.localStorage.getItem('parentId');
+
+  // if (!subscription) {
+  //   //const publicKey = await api.http.get('/push/publicKey');
+
+  //   await self.registration.pushManager.subscribe({
+  //     userVisibleOnly: true,
+  //     applicationServerKey: 'BKqNcUViP-4xKjL6_Smp3vRTUQWjTByIABcKpRO-Ho6zaHVBDS0qBfCLlxyWUT_a0QslPrbHO5WNF8yDVdkpKEw'
+  //   });
+  // }
+  // console.log(subscription)
+  // console.log(t)
+})
