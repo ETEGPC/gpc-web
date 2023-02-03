@@ -152,14 +152,14 @@ export function Carousel() {
 			<div className="carousel-images" id="carousel-images">
 
 				<div className="carousel-img">
-					<h3>{carouselData[0].title}</h3>
+					<h3>{carouselData[0]?.title}</h3>
 					<p>{carouselData[0].description}</p>
 					<p style={{ marginTop: 30 }}>Turma: {carouselData[0].schoolClass}</p>
 					<img src={noticesPlaceHolder} alt="Imagem do carrossel" />
 				</div>
 
 				<div className="carousel-img">
-					<h3>{carouselData[1].title}</h3>
+					<h3>{carouselData[1]?.title}</h3>
 					<p>{carouselData[1].description}</p>
 					<p style={{ marginTop: 30 }}>Turma: {carouselData[0].schoolClass}</p>
 					<img src={noticesPlaceHolder} alt="Imagem do carrossel" />
@@ -167,7 +167,7 @@ export function Carousel() {
 
 
 				<div className="carousel-img">
-					<h3>{carouselData[2].title}</h3>
+					<h3>{carouselData[2]?.title}</h3>
 					<p>{carouselData[2].description}</p>
 					<p style={{ marginTop: 30 }}>Turma: {carouselData[0].schoolClass}</p>
 					<img src={noticesPlaceHolder} alt="Imagem do carrossel" />
@@ -175,7 +175,7 @@ export function Carousel() {
 
 
 				<div className="carousel-img">
-					<h3>{carouselData[3].title}</h3>
+					<h3>{carouselData[3]?.title}</h3>
 					<p style={{ marginTop: 20 }}>{carouselData[3].description}</p>
 					<p style={{ marginTop: 50 }}>Data: { carouselData[3].date ? new Date(carouselData[3].date).toLocaleDateString() : 'Não há a data deste evento'}</p>
 					<img src={eventsPlaceHolder} alt="Imagem do carrossel" />
@@ -184,9 +184,9 @@ export function Carousel() {
 
 				<div className="carousel-img">
 					<a href={carouselData[4].url} target="_blank" rel='noreferrer'>
-						<h3>{carouselData[4].title}</h3>
+						<h3>{carouselData[4]?.title}</h3>
 					</a>
-					<img src={carouselData[4].image?.imageUrl} height={250} alt={carouselData[4].title} />
+					<img src={carouselData[4].image?.imageUrl} height={250} alt={carouselData[4]?.title} />
 				</div>
 
 			</div>
