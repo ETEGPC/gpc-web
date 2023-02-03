@@ -32,12 +32,13 @@
   top: 10px;
   left: 10px;
   font-size: var(--h3-font-size);
+  margin-bottom: 30px;
 }
 
 .carousel-img p {
   position: absolute;
   color: white;
-  top: 40px;
+  top: 70px;
   left: 10px;
   width: auto;
   font-size: var(--p-font-size);

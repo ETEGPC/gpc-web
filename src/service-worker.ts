@@ -13,8 +13,6 @@ import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
-import api from './services/api';
-//import api from './services/api';
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -92,11 +90,6 @@ broadcast.onmessage = async (logged) => {
     });
   }
 
-  // await api.http.post('/push/register', {
-  //   subscription,
-  //   parentId
-  // });
-
   const data = {
     subscription,
     parentId
@@ -120,20 +113,7 @@ self.addEventListener('push', async (event) => {
 
   event.waitUntil(
     self.registration.showNotification('ETE GPC', {
-      body
+      body,
     })
   );
-  // let subscription = await self.registration.pushManager.getSubscription();
-  // const t = window.localStorage.getItem('parentId');
-
-  // if (!subscription) {
-  //   //const publicKey = await api.http.get('/push/publicKey');
-
-  //   await self.registration.pushManager.subscribe({
-  //     userVisibleOnly: true,
-  //     applicationServerKey: 'BKqNcUViP-4xKjL6_Smp3vRTUQWjTByIABcKpRO-Ho6zaHVBDS0qBfCLlxyWUT_a0QslPrbHO5WNF8yDVdkpKEw'
-  //   });
-  // }
-  // console.log(subscription)
-  // console.log(t)
 })
