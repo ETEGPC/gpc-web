@@ -128,7 +128,7 @@ export function Carousel() {
 
 	setInterval(carousel, 2300);
 
-	if (carouselData.length === 0) {
+	if (carouselData.length < 5) {
 		return (
 			<div className="carousel-container">
 
