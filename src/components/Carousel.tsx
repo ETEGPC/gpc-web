@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import api from '../services/api';
 
 interface ICarrossel {
-	title: string,
+	title?: string,
 	description?: string,
 	url?: string,
 	schoolClass?: string,
