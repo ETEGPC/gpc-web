@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import api from '../services/api';
 
 interface ICarrossel {
+	id: string,
 	title?: string,
 	description?: string,
 	url?: string,
@@ -128,7 +129,7 @@ export function Carousel() {
 
 	setInterval(carousel, 2300);
 
-	if (carouselData.length < 5) {
+	if (carouselData.length === 0) {
 		return (
 			<div className="carousel-container">
 
@@ -151,7 +152,19 @@ export function Carousel() {
 
 			<div className="carousel-images" id="carousel-images">
 
-				<div className="carousel-img">
+				{carouselData.map(item => {
+					return (
+						<div className="carousel-img" key={item.id}>
+							<h3>{item?.title}</h3>
+							{item.description ? <p style={{ marginTop: 30 }}>{item.description}</p> : <></>}
+							{item.schoolClass ? <p style={{ marginTop: 50 }}>Turma: {item.schoolClass}</p> : <></>}
+							{item.date ? <p style={{ marginTop: 70 }}>Data: {new Date(item.date).toLocaleDateString()}</p> : <></>}
+							<img src={item.image?.imageUrl ? item.image?.imageUrl : ( item.schoolClass ? noticesPlaceHolder : eventsPlaceHolder)} alt="Imagem do carrossel" />
+						</div>
+					);
+				})}
+
+				{/* <div className="carousel-img">
 					<h3>{carouselData[0]?.title}</h3>
 					<p>{carouselData[0].description}</p>
 					<p style={{ marginTop: 30 }}>Turma: {carouselData[0].schoolClass}</p>
@@ -187,16 +200,19 @@ export function Carousel() {
 						<h3>{carouselData[4]?.title}</h3>
 					</a>
 					<img src={carouselData[4].image?.imageUrl} height={250} alt={carouselData[4]?.title} />
-				</div>
+				</div> */}
 
 			</div>
 
 			<div className="circles">
-				<div className="circle" id="circle1"></div>
+				{carouselData.map(item => {
+					return <div key={item.id} className="circle" id={`circle${carouselData.indexOf(item) + 1}`}></div>
+				})}
+				{/* <div className="circle" id="circle1"></div>
 				<div className="circle" id="circle2"></div>
 				<div className="circle" id="circle3"></div>
 				<div className="circle" id="circle4"></div>
-				<div className="circle" id="circle5"></div>
+				<div className="circle" id="circle5"></div> */}
 			</div>
 		</div>
 	);
