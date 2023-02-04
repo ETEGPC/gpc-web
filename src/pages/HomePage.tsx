@@ -13,7 +13,7 @@ import { Carousel } from '../components/Carousel';
 import { useEffect } from 'react';
 
 export function HomePage() {
-	document.title = 'Página inicial';
+	document.title = 'ETE Ginásio Pernambucano';
 
 	// Function to redirect to other pages
 	let navigater = useNavigate()

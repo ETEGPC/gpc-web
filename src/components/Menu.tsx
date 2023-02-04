@@ -80,7 +80,9 @@ export function Menu() {
 
 					<div onClick={installPwa} className="install-app-container">
 						<img src={download} alt="Ícone da página inicial" />
-						<p className='install-app-label'>Instalar aplicativo</p>
+						<button style={{ marginLeft: 10, backgroundColor: '#1270B0' }}>
+							<p className='install-app-label'>Instalar aplicativo</p>
+						</button>
 					</div>
 
 					<div className="menu-component-0">

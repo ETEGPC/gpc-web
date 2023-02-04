@@ -114,6 +114,7 @@ self.addEventListener('push', async (event) => {
   event.waitUntil(
     self.registration.showNotification('ETE GPC', {
       body,
+      vibrate: [200, 100, 200]
     })
   );
 })
