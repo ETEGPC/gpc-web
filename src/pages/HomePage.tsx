@@ -38,11 +38,13 @@ export function HomePage() {
 	function requestNotificationPermission() {
 		if (Notification.permission !== 'granted') {
 			Notification.requestPermission();
-		}
+		};
 	};
 
 	useEffect(() => {
-		requestNotificationPermission();
+		if (!navigator.userAgent.includes('iPhone')) {
+			requestNotificationPermission();
+		}
 	})
 
 	return (
