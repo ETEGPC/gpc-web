@@ -49,14 +49,17 @@ export function BulletinBoard() {
 
 					<div className="content">
 						{
-							notices.map(notice => {
-								return (
-									<div className='new-warning'>
-										<h4>{notice.title}</h4>
-										<p>{notice.description}</p>
-									</div>
-								);
-							})
+							notices.length === 0 ?
+								<p>Ops... Parece que ainda não foi adicionado nenhum aviso para a turma solicitada.</p>
+								:
+								notices.map(notice => {
+									return (
+										<div className='new-warning'>
+											<h4>{notice.title}</h4>
+											<p>{notice.description}</p>
+										</div>
+									);
+								})
 						}
 					</div>
 

@@ -159,7 +159,7 @@ export function Carousel() {
 							{item.description ? <p style={{ marginTop: 30 }}>{item.description}</p> : <></>}
 							{item.schoolClass ? <p style={{ marginTop: 50 }}>Turma: {item.schoolClass}</p> : <></>}
 							{item.date ? <p style={{ marginTop: 70 }}>Data: {new Date(item.date).toLocaleDateString()}</p> : <></>}
-							<img src={item.image?.imageUrl ? item.image?.imageUrl : ( item.schoolClass ? noticesPlaceHolder : eventsPlaceHolder)} alt="Imagem do carrossel" />
+							<img height={250} src={item.image?.imageUrl ? item.image?.imageUrl : ( item.schoolClass ? noticesPlaceHolder : eventsPlaceHolder)} alt="Imagem do carrossel" />
 						</div>
 					);
 				})}

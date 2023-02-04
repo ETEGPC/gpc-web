@@ -22,7 +22,11 @@ export function LoginScreen() {
 		}).then(resp => {
 			setCookie('token', resp.data.token);
 			localStorage.setItem('parentId', resp.data.id);
-			localStorage.setItem('schoolClasses', JSON.stringify(resp.data.schoolClasses));
+			let schoolClasses: string[] = []
+			resp.data.schoolClasses.map((schoolClass: string) => {
+				if (!schoolClasses.includes(schoolClass)) schoolClasses.push(schoolClass);
+			})
+			localStorage.setItem('schoolClasses', JSON.stringify(schoolClasses));
 			broadcast.postMessage({
 				parentId: resp.data.id
 			})

@@ -42,8 +42,11 @@ export function OurAgend() {
 					}}
 				/>
 
-				<div className="container-events">					
-						{
+				<div className="container-events">
+					{
+						events.length === 0 ?
+							<p>Ops... Parece que ainda não há nenhum evento. Tente novamente mais tarde.</p>
+							:
 							events.map(event => {
 								return (
 									<div className="new-event" key={event.id}>
@@ -53,7 +56,7 @@ export function OurAgend() {
 									</div>
 								);
 							})
-						}
+					}
 				</div>
 			</div>
 		</div>

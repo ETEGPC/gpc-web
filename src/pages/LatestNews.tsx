@@ -5,7 +5,7 @@ import '../styles/pages/latestNews.css';
 import { CloseMenu } from '../components/Menu';
 import api from "../services/api";
 import { INews } from "../@types/api";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 export function LatestNews() {
 	document.title = 'ETE GPC | Últimas notícias';
@@ -35,8 +35,11 @@ export function LatestNews() {
 
 				<h1 className="latestNews-h1" >Últimas notícias</h1>
 				{
-					latestNews.map(news => {
-						return (
+					latestNews.length === 0 ?
+						<p>Ops... Parece que ainda não há nenhuma notícia. Tente novamente mais tarde.</p>
+						:
+						latestNews.map(news => {
+							return (
 								<div key={news.id} className="latestNews-news">
 
 									<div className="latestNews-content">
@@ -49,7 +52,7 @@ export function LatestNews() {
 								</div>
 
 							);
-					})
+						})
 				}
 
 			</div>
