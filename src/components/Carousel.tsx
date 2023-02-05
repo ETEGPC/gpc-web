@@ -1,4 +1,3 @@
-import React from 'react';
 import noticesPlaceHolder from '../images/imageExample3.svg';
 import eventsPlaceHolder from '../images/imageExample4.svg';
 import '../styles/components/carousel.css';
@@ -50,7 +49,7 @@ export function Carousel() {
 		carouselImages.style.transform = `translateX(${-currentImage * 20}%)`;
 
 		//Variable to storage all circles of carousel
-		let circles: any = document.querySelectorAll('.circles div');
+		let circles: NodeListOf<HTMLDivElement> = document.querySelectorAll('.circles div');
 
 		if (currentCircle < circles.length && currentCircle >= 1) {
 

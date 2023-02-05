@@ -17,6 +17,7 @@ import termOfUse from '../images/icons/termsOfUse_icon.svg'
 import privacyPolicy from '../images/icons/privacyPolicy_icon.svg'
 import initialPage from '../images/icons/initialPage_icon.svg'
 import eteLogo from '../images/eteLogo.svg';
+import { useState } from 'react';
 
 //export function CloseMenu(){
 
@@ -29,6 +30,7 @@ export function CloseMenu() {
 
 export function Menu() {
 	let deferredPrompt: any;
+	const [canInstall, setCanInstall] = useState(false)
 
 	function OpenMenu() {
 
@@ -58,6 +60,7 @@ export function Menu() {
 	window.addEventListener('beforeinstallprompt', (e) => {
 		e.preventDefault();
 		deferredPrompt = e;
+		setCanInstall(true)
 	});
 
 	function installPwa() {
@@ -78,12 +81,16 @@ export function Menu() {
 
 				<main className="menu-main">
 
-					<div onClick={installPwa} className="install-app-container">
-						<img src={download} alt="Ícone da página inicial" />
-						<button style={{ marginLeft: 10, backgroundColor: '#1270B0' }}>
-							<p className='install-app-label'>Instalar aplicativo</p>
-						</button>
-					</div>
+					{!navigator.userAgent.includes('iPhone') && canInstall?
+						<></>
+						:
+						<div onClick={installPwa} className="install-app-container">
+							<img src={download} alt="Ícone da página inicial" />
+							<button style={{ marginLeft: 10, backgroundColor: '#1270B0' }}>
+								<p className='install-app-label'>Instalar aplicativo</p>
+							</button>
+						</div>
+					}
 
 					<div className="menu-component-0">
 						<img src={initialPage} alt="Ícone da página inicial" />

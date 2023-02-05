@@ -33,6 +33,7 @@ export function LoginScreen() {
 			navigate('/');
 		}).catch(err => {
 			console.error(err);
+			alert('Email ou senha incorretos.')
 		});
 	};
 
