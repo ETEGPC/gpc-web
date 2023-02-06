@@ -558,8 +558,15 @@ input[type=number] {
 	max-width: 470px;
 }
 
-@media screen and (min-width: 800px) and (min-height: 497px){ 
+.solicitations {
+	padding: 0 10px;
+}
 
+.solicitations-list {
+	margin-top: 10px;
+}
+
+@media screen and (min-width: 800px) and (min-height: 497px){ 
     .container {
        display: flex;
       justify-content: space-between;
@@ -599,4 +606,9 @@ input[type=number] {
 	  width: 100%;
 	}
 
+	.solicitations-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }

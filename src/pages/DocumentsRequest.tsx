@@ -1,10 +1,16 @@
 import '../styles/pages/documentsRequest.css';
 import { useNavigate } from 'react-router-dom';
 import { CloseMenu, Menu } from '../components/Exports';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../services/api';
 import SolicitationCard from '../components/SolicitationCard';
-//import SolicitationCard from '../components/SolicitationCard';
+
+interface ISolicitation {
+	id: string,
+	student: string,
+	status: string,
+	type: string
+}
 
 export function DocumentsRequest() {
 	const schoolClasses: string[] = JSON.parse(String(localStorage.getItem('schoolClasses')));
@@ -20,9 +26,9 @@ export function DocumentsRequest() {
 	const status = 'solicitado';
 	const navigate = useNavigate();
 	const parentId = localStorage.getItem('parentId');
+	const [lastSolicitations, setLastSolicitations] = useState([]);
 
 	function showOptions() {
-
 		let select = document.getElementById('documents-documentSelect') as HTMLSelectElement;
 		let button = document.getElementById('documents-button') as HTMLButtonElement;
 
@@ -104,6 +110,19 @@ export function DocumentsRequest() {
 			alert('Houve um erro ao enviar sua solicitação.')
 		})
 	};
+
+	async function handleGetLastSolicitations() {
+		await api.http.get(`/solicitations/${parentId}`).then(resp => {
+			setLastSolicitations(resp.data);
+		}).catch(err => {
+			console.error(err);
+			alert('Houve um erro ao buscar suas últimas solicitações.');
+		})
+	};
+
+	useEffect(() => {
+		handleGetLastSolicitations()
+	});
 
 	return (
 		<div className="container">
@@ -302,10 +321,24 @@ export function DocumentsRequest() {
 				<button className="documents-button" id="documents-button" onClick={handleCreateSolicitation}>Solicitar</button>
 
 				<div className='solicitations-list-container'>
-					<h3>Status de suas últimas solicitações:</h3>
 
-					<div className="solicitations-list">
-						<SolicitationCard />
+					<div className="solicitations">
+						<h3>Status de suas últimas solicitações:</h3>
+
+						<div className="solicitations-list">
+							{
+								lastSolicitations.map((solicitation: ISolicitation) => {
+									return (
+										<SolicitationCard
+											key={solicitation.id}
+											status={solicitation.status}
+											student={solicitation.student}
+											type={solicitation.type}
+										/>
+									);
+								})
+							}
+						</div>
 					</div>
 				</div>
 			</div>

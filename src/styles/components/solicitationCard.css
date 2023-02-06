@@ -1,0 +1,23 @@
+.solicitation-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  padding: 10px 5px;
+  background-color: #fff;
+  box-shadow: 1px 3px 8px #cacaca;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+}
+
+.solicitation-card-container h4 {
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 800px) and (min-height: 497px) {
+  .solicitation-card-container {
+    width: 400px;
+    margin-right: 10px;
+  }
+}
