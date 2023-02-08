@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu } from '../components/Menu';
 import send from '../images/icons/send_icon.svg'
 import api from '../services/api';
@@ -10,10 +10,12 @@ export function Chat() {
 	const [messageInput, setMessageInput] = useState('');
 	const [messages, setMessages] = useState<IMessage[]>([]);
 	const parentId = localStorage.getItem('parentId');
+	const messagesDiv = useRef<HTMLDivElement>(null)
 
-	api.socket.on(`${parentId}-gestao`, (message: IMessage) => {
-		setMessages([...messages, message]);
-	});
+		api.socket.on(`${parentId}-gestao`, (message: IMessage) => {
+			setMessages([...messages, message]);
+			messagesDiv.current?.scrollIntoView({ behavior: 'smooth' });
+		});
 
 	document.title = 'ETE GPC | Chat';
 
@@ -50,19 +52,21 @@ export function Chat() {
 				<hr className='chat-hr' />
 
 				<div className="chat-menssages">
-					<div className='chat-content'>
+					<div className='chat-content' >
 						{
 							messages.map(message => {
 								return message.author === parentId ?
-									<div className='chat-my-message' key={message.id}>
+									<div className='chat-my-message' id={message.id} key={message.id}>
 										<p className='chat-my-message-content'>{message.message}</p>
 									</div>
 									:
-									<div className='chat-school-menssage' key={message.id}>
+									<div className='chat-school-menssage' id={message.id} key={message.id}>
 										<p className='chat-school-menssage-content'>{message.message}</p>
 									</div>
 							})
 						}
+
+						<div ref={messagesDiv} />
 					</div>
 				</div>
 
