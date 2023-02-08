@@ -10,12 +10,23 @@ export function Chat() {
 	const [messageInput, setMessageInput] = useState('');
 	const [messages, setMessages] = useState<IMessage[]>([]);
 	const parentId = localStorage.getItem('parentId');
-	const messagesDiv = useRef<HTMLDivElement>(null)
+	const messagesDiv = useRef<HTMLDivElement>(null);
+	const input = useRef<HTMLTextAreaElement>(null);
+	const sendButton = useRef<HTMLButtonElement>(null);
 
-		api.socket.on(`${parentId}-gestao`, (message: IMessage) => {
-			setMessages([...messages, message]);
-			messagesDiv.current?.scrollIntoView({ behavior: 'smooth' });
-		});
+	input.current?.addEventListener('keypress', (e) => {
+		if (e.key === 'Enter') {
+			e.preventDefault();
+			if (messageInput !== '') {
+				sendButton.current?.click();
+			}
+		}
+	})
+
+	api.socket.on(`${parentId}-gestao`, (message: IMessage) => {
+		setMessages([...messages, message]);
+		messagesDiv.current?.scrollIntoView({ behavior: 'smooth' });
+	});
 
 	document.title = 'ETE GPC | Chat';
 
@@ -79,9 +90,10 @@ export function Chat() {
 						placeholder="Digite algo"
 						onChange={e => setMessageInput(e.target.value)}
 						value={messageInput}
+						ref={input}
 					/>
-					<button className='chat-button' disabled={ messageInput === '' ? true : false} onClick={handleSendMessage}>
-						<IoSend color={ messageInput === '' ? '#616161' : '#048F36'} size={28}/>
+					<button ref={sendButton} className='chat-button' disabled={messageInput === '' ? true : false} onClick={handleSendMessage}>
+						<IoSend color={messageInput === '' ? '#616161' : '#048F36'} size={28} />
 					</button>
 				</div>
 			</div >
