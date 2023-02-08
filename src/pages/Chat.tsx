@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Menu } from '../components/Menu';
-import send from '../images/icons/send_icon.svg'
+import { IoSend } from 'react-icons/io5';
 import api from '../services/api';
 import { IMessage } from '../@types';
 import '../styles/pages/chat.css';
@@ -41,6 +41,7 @@ export function Chat() {
 	useEffect(() => {
 		handleGetEarlierMessages();
 	});
+
 	return (
 		<div className='container'>
 			<Menu />
@@ -79,11 +80,8 @@ export function Chat() {
 						onChange={e => setMessageInput(e.target.value)}
 						value={messageInput}
 					/>
-					<button className='chat-button' onClick={handleSendMessage}>
-						<img className='chat-button-img'
-							src={send}
-							alt="send-button-icon"
-						/>
+					<button className='chat-button' disabled={ messageInput === '' ? true : false} onClick={handleSendMessage}>
+						<IoSend color={ messageInput === '' ? '#616161' : '#048F36'} size={28}/>
 					</button>
 				</div>
 			</div >
