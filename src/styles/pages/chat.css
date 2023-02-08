@@ -186,7 +186,7 @@
     align-self: center;
     background-color: #f4f4f4;
     position: fixed;
-    margin: auto 0;
+    margin: auto 5px;
     bottom: 0;
     align-items: center;
     align-content: center;
@@ -310,7 +310,7 @@
       align-self: center;
       background-color: #f4f4f4;
       position: fixed;
-      margin: auto 0;
+      margin: auto 5px;
       bottom: 0;
       align-items: center;
       align-content: center;
