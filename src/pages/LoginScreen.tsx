@@ -1,10 +1,11 @@
 import '../styles/pages/loginScreen.css';
 import eteLogo from '../images/eteLogo.svg';
 import '../styles/global.css';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from '../services/api';
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
+import { IoArrowBack } from 'react-icons/io5';
 
 export function LoginScreen() {
 	const [email, setEmail] = useState('');
@@ -25,6 +26,7 @@ export function LoginScreen() {
 			let schoolClasses: string[] = []
 			resp.data.schoolClasses.map((schoolClass: string) => {
 				if (!schoolClasses.includes(schoolClass)) schoolClasses.push(schoolClass);
+				return schoolClass;
 			})
 			localStorage.setItem('schoolClasses', JSON.stringify(schoolClasses));
 			broadcast.postMessage({
@@ -47,6 +49,7 @@ export function LoginScreen() {
 		<div className="loginScreen-container">
 			<div className="welcome-screen">
 
+
 				<h3 className="welcome-screen-h3">Olá, seja bem vindo novamente!</h3>
 				<h3 className="welcome-screen-h3">Quer ficar por dentro de tudo que está acontecendo em nossa escola? O que está esperando? Entre com seu usuário e senha.</h3>
 				<h3 className="welcome-screen-h3">O GP faz a diferença!</h3>
@@ -54,9 +57,15 @@ export function LoginScreen() {
 			</div>
 
 			<div className="login-form">
+				<Link to={'/'} >
+					<IoArrowBack color='#FFF' size={32} />
+				</Link>
+
 				<h1 className="form-h1">Olá, seja bem-vindo!</h1>
 
-				<img className="form-img eteLogo" alt='logo-etegpc' src={eteLogo} />
+				<Link to={'/'}>
+					<img className="form-img eteLogo" alt='logo-etegpc' src={eteLogo} />
+				</Link>
 
 				<div className="form-datas">
 

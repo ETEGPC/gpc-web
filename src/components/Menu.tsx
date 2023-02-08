@@ -176,7 +176,7 @@ export function Menu() {
 			<div className="menu-closed">
 				<button onClick={OpenMenu} className="menu-button"><img className="menu-img-menu" src={menuIcon} alt="Ícone do menu" /></button>
 				<img className="menu-img-gp" src={eteLogo} alt="Ícone da ETE" />
-				<h2 className="menu-school-title">ETE Ginásio Permanbucano</h2>
+				<h2 className="menu-school-title">ETE Ginásio Pernambucano</h2>
 			</div>
 
 			<div className="desktop-menu">

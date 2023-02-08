@@ -5,6 +5,10 @@
 	--login-screen-h3-color: #303030;
 }
 
+.login-form {
+	padding: 10px;
+}
+
 .container-title {
   margin: 3% 0% 3% 3%;
   text-decoration: underline;
