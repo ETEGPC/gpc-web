@@ -13,3 +13,4 @@ export * from './Calendar';
 export * from '../pages/AboutGP';
 export * from '../components/Carousel';
 export * from './SolicitationCard';
+export * from '../pages/CreateAccount';

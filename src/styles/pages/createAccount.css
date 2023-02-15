@@ -7,13 +7,12 @@
 	font-family: 'Raleway', sans-serif;
 	font-size: 32px;
 	text-decoration: underline;
-	padding: 7% 0 5% 5%;
+	margin: 3%;
 }
 
 .createAccount-p {
 	font-family: 'Raleway', sans-serif;
-	padding: 1% 0 1% 5%;
-	max-width: 320px;
+	margin: 3%;
 	font-size: 16px;
 }
 
@@ -21,65 +20,116 @@
 	margin: 20px 0 0 0;
 }
 
-.createAccount-label {
-	font-family: 'Raleway', sans-serif;
-	display: block;
-	padding: 12% 0 2% 5%;
-	font-size: 22px;
-	font-weight: 400;
-
+.createAccount-user-name, .createAccount-password {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 85%;
+	max-width: 500px;
+	margin: 0 auto;
+	height: 80px;
 }
 
-.createAccount-input {
-	margin: 1% 0 0 5%;
-	width: 248px;
-	height: 29px;
-	display: block;
-	font-size: 16px;
-	background-color: transparent;
-	border-top: none;
-	border-right: none;
-	border-left: none;
-	outline: none;
-	border-bottom: 1px black solid;
-	color: black;
-} 
+.createAccount-user-name-input, .createAccount-password-input {
+	height: var(--inputs-height);
+	border-radius: var(--inputs-border-radius);
+	background-color: var(--inputs-background-color);
+	outline: var(--inputs-padding);
+	font-size: var(--inputs-font-size);
+	padding: var(--inputs-padding);
+	border: var(--inputs-border);
+	margin-top: var(--inputs-margin-top);
+	max-width: 500px;
+	width: 100%;
+}
 
+.createAccount-user-name-label, .createAccount-password-label {
+	display: var(--labels-display);
+	font-weight: var(--labels-font-weight);
+	font-size: var(--labels-font-size);
+	position: var(--labels-position);
+	top: 42%;
+	left: var(--labels-left);
+	background-color: var(--labels-backgroundColor);
+	transition: var(--labels-transition);
+}
+
+.createAccount-user-name-input:focus ~ .createAccount-user-name-label {
+	transform: translateY(-160%);
+	transition: all 0.2s ease-out;
+}
+
+.createAccount-user-name-input:valid ~ .createAccount-user-name-label {
+	transform: translateY(-160%);
+	transition: all 0.2s ease-out;
+}
+
+.createAccount-password-input:focus ~ .createAccount-password-label {
+	transform: translateY(-160%);
+	transition: all 0.2s ease-out;
+}
+
+.createAccount-password-input:valid ~ .createAccount-password-label {
+	transform: translateY(-160%);
+	transition: all 0.2s ease-out;
+}
 
 .buttonCreacteAccount {
-	background-color: #048F36;
-	color: white;
-	font-weight: 600;
+	background-color: var(--green-buttons-backgroundcolor);
+	color: var(--buttons-text-color);
+	font-weight: var(--buttons-font-weight);
 	display: block;
-	width: 274px;
-	border: none;
-	outline: none;
-	height: 35px;
-	font-size: 20px;
-	border-radius: 3px;
-	margin: 60px auto -11px auto;
-	cursor: pointer;
-
+	width: 85%;
+	border: var(--buttons-border);
+	outline: var(--buttons-outline);
+	height: var(--buttons-height);
+	font-size: var(--buttons-font-size);
+	border-radius: var(--buttons-border-radius);
+	margin: var(--buttons-margin);
+	cursor: var(--buttons-cursor);
+	max-width: 500px;
 }
 
 .buttonLoginWithGoogle {
-	color: black;
-	font-weight: 600;
+	background-color: transparent;
+	font-weight: var(--buttons-font-weight);
+	display: block;
+	width: 85%;
+	border: 1px solid #cacaca;
+	height: var(--buttons-height);
+	font-size: var(--buttons-font-size);
+	border-radius: var(--buttons-border-radius);
+	margin: var(--buttons-margin);
+	cursor: var(--buttons-cursor);
+	max-width: 500px;
 	display: flex;
-	margin: 30px auto;
-	width: 274px;
-	border: 1px solid black;
-	outline: none;
-	height: 35px;
-	font-size: 20px;
-	border-radius: 3px;
 	justify-content: space-evenly;
 	align-items: center;
-	background-color: transparent;
-	cursor: pointer;
 }
 
 .googleLogo {
 	width: 23px;
-	align-self: center;
+}
+
+
+@media screen and (min-width: 800px) and (min-height: 497px){ 
+	.container {
+		display: flex;
+	   justify-content: space-between;
+	 }
+ 
+	 .createAccount-container {
+		 width: 76%;
+		 margin-top: 10vh;
+	 }
+
+	 .createAccount-main {
+		box-shadow: 1px 1px 4px #cacaca;
+		height: 320px;
+		width: 50%;
+		max-width: 500px;
+		margin: 20px auto;
+		border-radius: 10px;
+	 }
 }

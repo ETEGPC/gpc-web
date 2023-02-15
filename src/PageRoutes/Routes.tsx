@@ -12,7 +12,8 @@ import {
 	BulletinBoard,
 	Timesheet,
 	ChangePassword,
-	AboutGP
+	AboutGP,
+	CreateAccount
 } from '../components/Exports';
 
 export function Routes() {
@@ -23,6 +24,7 @@ export function Routes() {
 			<Rts>
 				<Route path="" element={<HomePage />} />
 				<Route path='*' element={<HomePage />} />
+				<Route path='/criarConta' element={<CreateAccount />} />
 				<Route path="/ultimasNoticias" element={<LatestNews />} />
 				<Route path="/chat" element={cookie.token ? <Chat /> : <Navigate to={'/login'} />}></Route>
 				<Route path="/nossaAgenda" element={cookie.token ? <OurAgend /> : <Navigate to={'/login'} />}></Route>

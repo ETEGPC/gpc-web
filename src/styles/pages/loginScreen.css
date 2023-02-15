@@ -114,6 +114,21 @@
   transition: all 0.2s ease-out;
 }
 
+.createAccount-redirect-p {
+	color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	width: 250px;
+}
+
+.createAccount-redirect-link {
+	color: #6767ff;
+}
+
+.createAccount-redirect-link:visited {
+	color: #5c5cff;
+}
+
 .form-button {
   color: var(--buttons-text-color);
   border: var(--buttons-border);
@@ -193,9 +208,9 @@
 	}
 
 	.eteLogo {
-	  width: 45%;
-	  margin: 8% auto 3% auto;
-	  display: block;
+		width: 40%;
+		margin: 3% auto 3% auto;
+		display: block;
 	}
 
 	.form-datas {
