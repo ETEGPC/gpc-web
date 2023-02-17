@@ -20,7 +20,8 @@
 	margin: 20px 0 0 0;
 }
 
-.createAccount-user-name, .createAccount-password {
+.createAccount-user-name,
+.createAccount-password {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -31,7 +32,8 @@
 	height: 80px;
 }
 
-.createAccount-user-name-input, .createAccount-password-input {
+.createAccount-user-name-input,
+.createAccount-password-input {
 	height: var(--inputs-height);
 	border-radius: var(--inputs-border-radius);
 	background-color: var(--inputs-background-color);
@@ -44,7 +46,23 @@
 	width: 100%;
 }
 
-.createAccount-user-name-label, .createAccount-password-label {
+.schoolClasses {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.schoolClasses-options {
+	max-width: 500px;
+	width: 85%;
+	height: 30px;
+	align-self: center;
+}
+
+.createAccount-user-name-label,
+.createAccount-password-label {
 	display: var(--labels-display);
 	font-weight: var(--labels-font-weight);
 	font-size: var(--labels-font-size);
@@ -55,22 +73,22 @@
 	transition: var(--labels-transition);
 }
 
-.createAccount-user-name-input:focus ~ .createAccount-user-name-label {
+.createAccount-user-name-input:focus~.createAccount-user-name-label {
 	transform: translateY(-160%);
 	transition: all 0.2s ease-out;
 }
 
-.createAccount-user-name-input:valid ~ .createAccount-user-name-label {
+.createAccount-user-name-input:valid~.createAccount-user-name-label {
 	transform: translateY(-160%);
 	transition: all 0.2s ease-out;
 }
 
-.createAccount-password-input:focus ~ .createAccount-password-label {
+.createAccount-password-input:focus~.createAccount-password-label {
 	transform: translateY(-160%);
 	transition: all 0.2s ease-out;
 }
 
-.createAccount-password-input:valid ~ .createAccount-password-label {
+.createAccount-password-input:valid~.createAccount-password-label {
 	transform: translateY(-160%);
 	transition: all 0.2s ease-out;
 }
@@ -91,45 +109,62 @@
 	max-width: 500px;
 }
 
-.buttonLoginWithGoogle {
-	background-color: transparent;
-	font-weight: var(--buttons-font-weight);
-	display: block;
-	width: 85%;
-	border: 1px solid #cacaca;
-	height: var(--buttons-height);
-	font-size: var(--buttons-font-size);
-	border-radius: var(--buttons-border-radius);
-	margin: var(--buttons-margin);
-	cursor: var(--buttons-cursor);
-	max-width: 500px;
+.section-desc {
+	padding: 10px;
+}
+
+.relatives-list {
 	display: flex;
-	justify-content: space-evenly;
+	flex-wrap: wrap;
+	padding: 20px;
 	align-items: center;
 }
 
-.googleLogo {
-	width: 23px;
+.relative-card {
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	width: 180px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	height: fit-content;
+	border-radius: 10px;
+	box-shadow: 1px 1px 4px #cacaca;
 }
 
+.relative-info {
+	margin-top: 10px;
+}
 
-@media screen and (min-width: 800px) and (min-height: 497px){ 
+.remove-btn {
+	margin-top: 10px;
+	align-self: center;
+	color: red;
+	
+}
+
+.remove-btn:hover {
+	text-decoration-line: underline;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 800px) and (min-height: 497px) {
 	.container {
 		display: flex;
-	   justify-content: space-between;
-	 }
- 
-	 .createAccount-container {
-		 width: 76%;
-		 margin-top: 10vh;
-	 }
+		justify-content: space-between;
+	}
 
-	 .createAccount-main {
+	.createAccount-container {
+		width: 76%;
+		margin-top: 10vh;
+	}
+
+	.createAccount-main {
 		box-shadow: 1px 1px 4px #cacaca;
-		height: 320px;
+		height: fit-content;
 		width: 50%;
 		max-width: 500px;
 		margin: 20px auto;
 		border-radius: 10px;
-	 }
+	}
 }

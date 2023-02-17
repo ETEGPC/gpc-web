@@ -54,18 +54,17 @@
 
   .container-content {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 0 3%;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .new-warning {
-    width: 40%;
-    margin: 3%;
+    max-width: 270px;
+    margin: 10px;
     border-radius: 10px;
     box-shadow: 1px 3px 8px #cacaca;
     height: auto;
+    padding: 5px;
   }
 
   .container-class {

@@ -4,11 +4,17 @@ import { CloseMenu, Menu } from '../components/Exports';
 import { useEffect, useState } from 'react';
 import api from '../services/api';
 import SolicitationCard from '../components/SolicitationCard';
+import { toast } from 'react-toastify';
+import { AxiosError } from 'axios';
+import { defaultSolicitationSchema, ficha19SolicitationSchema } from '../utils/validations';
+import { ValidationError } from 'yup';
+
 
 interface ISolicitation {
 	id: string,
 	student: string,
 	status: string,
+	//solicitatedAt: Date,
 	type: string
 }
 
@@ -85,44 +91,175 @@ export function DocumentsRequest() {
 			student,
 			mother,
 			father,
-			phone,
-			startYear,
-			completionYear,
+			phone: Number(phone),
+			startYear: Number(startYear),
+			completionYear: Number(completionYear),
 			parentId
 		};
 
-		if (schoolClass === '') {
-			alert('Você precisa selecionar a turma para solicitar um documento.');
-			return;
-		};
+		if (type === 'Ficha 19') {
+			await ficha19SolicitationSchema.validate(data).then(async (res) => {
+				const reqStatus = toast.loading('Carregando...', {
+					position: 'bottom-right'
+				});
 
-		await api.http.post('/solicitation', {
-			...data
-		}).then((resp) => {
-			if (resp.status === 200) {
-				alert('Solicitação enviada com sucesso! Você será redirecionado para a página inicial agora.')
-				navigate('/paginainicial');
-			} else {
-				alert('Houve um erro ao enviar sua solicitação.');
-			}
-		}).catch(err => {
-			console.log(err);
-			alert('Houve um erro ao enviar sua solicitação.')
-		})
+				await api.http.post('/solicitation', {
+					...data,
+					phone,
+					startYear,
+					completionYear
+				}).then((resp) => {
+					toast.update(reqStatus, {
+						render: resp.data.message,
+						position: "bottom-right",
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: "light",
+						type: 'success',
+						isLoading: false
+					});
+
+					navigate('/');
+				}).catch((err: AxiosError) => {
+					const data = err.response?.data ? err.response.data as { message: string } : { message: 'Houve um erro ao enviar sua solicitação, tente novamente mais tarde.' }
+					console.error(err);
+					toast(data.message, {
+						position: "top-right",
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: "light",
+						type: 'error',
+						isLoading: false
+					});
+				})
+
+			}).catch((err: ValidationError) => {
+				err.errors.map(err => {
+					return toast(err, {
+						position: "top-right",
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: "light",
+						type: 'error',
+					});
+				})
+			})
+		} else {
+			await defaultSolicitationSchema.validate(data).then(async res => {
+				const solicitation = {
+					type: res.type,
+					schoolClass: res.schoolClass,
+					student: res.student,
+					status,
+					parentId
+				};
+
+				const reqStatus = toast.loading('Carregando...', {
+					position: 'bottom-right',
+				});
+
+				await api.http.post('/solicitation', {
+					...solicitation
+				}).then((resp) => {
+					toast.update(reqStatus, {
+						render: resp.data.message,
+						position: "bottom-right",
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: "light",
+						type: 'success',
+						isLoading: false
+					});
+
+					navigate('/');
+				}).catch((err: AxiosError) => {
+					const data = err.response?.data ? err.response.data as { message: string } : { message: 'Houve um erro ao enviar sua solicitação, tente novamente mais tarde.' }
+					console.error(err);
+					toast.update(reqStatus, {
+						position: "bottom-right",
+						render: data.message,
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: "light",
+						type: 'error',
+						isLoading: false
+					});
+				})
+
+
+			}).catch((err: ValidationError) => {
+				err.errors.map(err => {
+					return toast(err, {
+						position: "top-right",
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: "light",
+						type: 'error',
+					});
+				});
+			});
+		}
 	};
 
 	async function handleGetLastSolicitations() {
 		await api.http.get(`/solicitations/${parentId}`).then(resp => {
 			setLastSolicitations(resp.data);
-		}).catch(err => {
+		}).catch((err: AxiosError) => {
+			const data = err.response?.data ? err.response.data as { message: string } : { message: 'Houve um erro ao buscar suas últimas solicitações.' }
 			console.error(err);
-			alert('Houve um erro ao buscar suas últimas solicitações.');
+			toast(data.message, {
+				position: "top-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+				type: 'warning'
+			});
 		})
 	};
 
 	useEffect(() => {
-		handleGetLastSolicitations()
-	});
+		if (lastSolicitations.length < 1) {
+			handleGetLastSolicitations();
+		}
+	}, []);
+
+	useEffect(() => {
+		setCompletionYear('')
+		setFather('')
+		setMother('')
+		setPhone('')
+		setSchoolClass('')
+		setStartYear('')
+		setStudent('')
+	}, [type])
 
 	return (
 		<div className="container">
@@ -174,8 +311,7 @@ export function DocumentsRequest() {
 
 					<div className="enrollmentStatement-document-name" id="enrollmentStatement-document-name">
 
-						<input required className="enrollmentStatement-name-input" type="text"
-
+						<input value={student} required className="enrollmentStatement-name-input" type="text"
 							onChange={e => {
 								setStudent(e.target.value);
 							}}
@@ -207,7 +343,7 @@ export function DocumentsRequest() {
 
 					<div className="frequencyStatement-document-name" id="frequencyStatement-document-name">
 
-						<input required className="frequencyStatement-name-input" type="text"
+						<input value={student} required className="frequencyStatement-name-input" type="text"
 
 							onChange={e => {
 								setStudent(e.target.value);
@@ -244,7 +380,7 @@ export function DocumentsRequest() {
 
 						<div className="sheet19-student-name">
 
-							<input required className="sheet19-student-name-input" type="text"
+							<input value={student} required className="sheet19-student-name-input" type="text"
 								onChange={e => {
 									setStudent(e.target.value);
 								}}
@@ -256,7 +392,7 @@ export function DocumentsRequest() {
 
 						<div className="sheet19-mother-name">
 
-							<input required className="sheet19-mother-name-input" type="text"
+							<input value={mother} required className="sheet19-mother-name-input" type="text"
 
 								onChange={e => {
 									setMother(e.target.value);
@@ -269,7 +405,7 @@ export function DocumentsRequest() {
 						<div className="sheet19-father-name">
 
 							<input required className="sheet19-father-name-input" type="text"
-
+								value={father}
 								onChange={e => {
 									setFather(e.target.value);
 								}}
@@ -281,7 +417,7 @@ export function DocumentsRequest() {
 						<div className="sheet19-phone-number">
 
 							<input required className="sheet19-phone-number-input" type="number" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}
-
+								value={phone}
 								onChange={e => {
 									setPhone(e.target.value);
 								}}
@@ -293,7 +429,7 @@ export function DocumentsRequest() {
 						<div className="sheet19-entry-year">
 
 							<input required className="sheet19-entry-year-input" type="number" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}
-
+								value={startYear}
 								onChange={e => {
 									setStartYear(e.target.value);
 								}}
@@ -304,7 +440,7 @@ export function DocumentsRequest() {
 
 						<div className="sheet19-outgoing-year">
 
-							<input required className="sheet19-outgoing-year-input" type="number" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}
+							<input value={completionYear} required className="sheet19-outgoing-year-input" type="number" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}
 
 								onChange={e => {
 									setCompletionYear(e.target.value);

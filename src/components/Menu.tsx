@@ -94,7 +94,7 @@ export function Menu() {
 
 					<div className="menu-component-0">
 						<img src={initialPage} alt="Ícone da página inicial" />
-						<Link to="/paginaInicial">Página inicial</Link>
+						<Link to="/">Página inicial</Link>
 					</div>
 
 					<div className="menu-component-1">

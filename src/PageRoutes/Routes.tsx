@@ -22,7 +22,7 @@ export function Routes() {
 	return (
 		<BrowserRouter>
 			<Rts>
-				<Route path="" element={<HomePage />} />
+				<Route path="/" element={<HomePage />} />
 				<Route path='*' element={<HomePage />} />
 				<Route path='/criarConta' element={<CreateAccount />} />
 				<Route path="/ultimasNoticias" element={<LatestNews />} />

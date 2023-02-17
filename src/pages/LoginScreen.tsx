@@ -90,7 +90,7 @@ export function LoginScreen() {
 
 				</div>
 
-				<p className='createAccount-redirect-p'>Não possui uma conta? Crie uma <Link to="/criarConta" className='createAccount-redirect-link'>clicando aqui.</Link></p>
+				<p className='createAccount-redirect-p'>Não possui uma conta? Crie uma <Link to="/criarConta" className='createAccount-redirect-link' style={{ color: '#17A1FA' }}>clicando aqui.</Link></p>
 
 				<button className="form-button" onClick={handleLogin}>Entrar</button>
 			</div>

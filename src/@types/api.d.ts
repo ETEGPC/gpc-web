@@ -38,4 +38,10 @@ interface INews {
   image: IImage
 }
 
-export { IMessage, INotice, ISchedules, IEvent, INews };
+interface IRelative {
+  fullName: string,
+  schoolClass: string,
+  kinship: string
+}
+
+export { IMessage, INotice, ISchedules, IEvent, INews, IRelative };

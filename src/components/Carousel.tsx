@@ -38,7 +38,7 @@ export function Carousel() {
 
 	function carousel() {
 
-		const carouselImages = document.getElementById('carousel-images') as HTMLDivElement;
+		const carouselImages: any = document.getElementById('carousel-images') as HTMLDivElement;
 		const images: any = document.querySelectorAll('#carousel-images div');
 		currentImage++;
 
