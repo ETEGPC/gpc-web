@@ -4,10 +4,50 @@
     font-size: var(--h1-font-size);
 }
 
+.download-document-h4 {
+    margin: 3%;
+    font-size: var(--h4-font-size);
+}
+
+.document-download {
+    text-decoration: none;
+    font-size: var(--h4-font-size);
+    color: #0603b1;
+}
+
+
+.aboutGP-main-content {
+    margin: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titles {
+    font-size: var(--h2-font-size);
+}
+
+.content {
+    font-size: var(--p-font-size);
+}
+
+.subtitles {
+    font-size: var(--h3-font-size);
+}
+
+.uls li {
+    list-style: disc;
+    overflow: visible;
+    margin: 0 0 0 15px;
+}
+
 .container-content {
     margin: 0 3%;    
     font-size: var(--p-font-size);
 }
+
+
+
 
 @media screen and (min-width: 800px) and (min-height: 497px){  
     .container {
@@ -19,4 +59,5 @@
          width: 76%;
          margin-top: 10vh;
      }
+    
 }
