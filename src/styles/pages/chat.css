@@ -48,7 +48,8 @@
 .chat-school-menssage {
   background-color: #020054;
   border-radius: 4px;
-  width: 90%;
+  max-width: 80%;
+  width: auto;
   align-self: start;
   height: auto;
 }
@@ -63,8 +64,10 @@
   background-color: #03007E;
   border-radius: 4px;
   align-self: end;
-  max-width: 90%;
+  max-width: 80%;
+  width: auto;
   height: auto;
+
 }
 
 .chat-menssages {
@@ -278,7 +281,8 @@
     .chat-school-menssage {
       background-color: #020054;
       border-radius: 4px;
-      max-width: 450px;
+      max-width: 500px;
+      width: auto;
       margin: 3% 0;
       align-self: start;
       min-height: 1ch;
@@ -289,8 +293,9 @@
       border-radius: 4px;
       margin: 3% 0;
       align-self: end;
-      width: 450px;
+      width: auto;
       min-height: 1ch;
+      max-width: 500px;
     }
 
     .chat-school-menssage-content {
