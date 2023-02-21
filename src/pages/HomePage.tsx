@@ -87,7 +87,13 @@ export function HomePage() {
 				<main className="main-content">
 
 					<h2 className="about-gp">Sobre o Ginásio Permanbucano</h2>
-					<p className="about-gp-content">Lorem ipsum dolor sit amet consectetur. Fermentum quis sem nulla eget eget neque elementum tristique. Pulvinar volutpat quis massa vestibulum malesuada ultrices hac scelerisque a. Vitae ac nunc mauris nec mattis nibh lorem aenean. Aenean in quis tincidunt urna pharetra quam. Iaculis ultrices sagittis amet ultricies dignissim. Lacus massa id lectus molestie aliquet eleifend facilisis. Sit dui gravida pharetra faucibus at arcu in. Eu quis massa elit enim. Gravida senectus tristique ultrices elementum sit et viverra purus metus. Duis pellentesque malesuada pretium amet justo. Mauris fringilla vitae nam id egestas nibh amet fermentum lectus. Neque volutpat mi aenean neque leo auctor vitae cras eget. Imperdiet sit vulputate in id. In volutpat maecenas dolor odio ullamcorper in leo commodo neque...<Link to="/sobreOGinasioPernambucano">Ler completo.</Link></p>
+					<p className="about-gp-content">A Escola Técnica Estadual Ginásio Pernambucano, localizada na AV. Cruz Cabugá, n° 269, bairro de Santo amaro, CEP- 50040-000, no Município do Recife, foi assim redenominada pelo
+					Decreto n°49913, de 10/12/2020, diário oficial de 11/12/2020. Tem Cadastro Escolar E- 000.001,
+					está inscrita no Cadastro Nacional de Pessoas Jurídicas sob nº10.572.071/0764-45, é mantida pelo
+					Governo do Estado de Pernambuco, por meio da Secretaria de Educação (SEE) e oferta uma Educação
+					Profissional Técnica de Nível Médio-Integrado (diurno) e subsequente (noturno), nos cursos de
+					Desenvolvimento de Sistemas e de Multimídia, ambos do Eixo Tecnológico e Ensino Médio regular
+					(diurno). <Link to="/sobreOGinasioPernambucano">Ler completo.</Link></p>
 					<h2 className="contact-forms-title">Formas de contato</h2>
 					<p className="about-contact-forms"><span className="span-contact-forms">Atenção</span> - O horário de atendimento, por todos os meios de comunicação, é de 8h às 17h. Além disso, é recomendado o cadastro e uso do chat do próprio aplicativo caso você seja responsável de algum estudante de nossa escola.</p>
 

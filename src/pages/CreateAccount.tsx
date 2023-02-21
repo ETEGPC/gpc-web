@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import api from '../services/api';
 import { AxiosError } from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { CloseMenu } from '../components/Exports';
 
 export function CreateAccount() {
 	const pickerOptions = ['1A-DS', '1B-DS', '1A-MULT', '1B-MULT', '2A-DS', '2B-DS', '2A-MULT', '2B-MULT', '3A-DS', '3B-DS', '3A-MULT', '3B-MULT']
@@ -154,7 +155,7 @@ export function CreateAccount() {
 
 
 				<Menu />
-				<div className="createAccount-container">
+				<div className="createAccount-container" onClick={CloseMenu}>
 
 					<h1 className="createAccount-h1" >Criar conta</h1>
 					<p className="createAccount-p">Crie uma conta para poder ter acesso a conteúdos exclusivos do aplicativo.</p>
