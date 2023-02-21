@@ -4,6 +4,7 @@ export * from './Menu';
 export * from '../pages/Chat';
 export * from '../pages/OurAgend'
 export * from '../pages/HomePage';
+export * from '../pages/Faq';
 export * from '../pages/MyProfile';
 export * from '../pages/DocumentsRequest';
 export * from '../pages/BulletinBoard';

@@ -13,7 +13,8 @@ import {
 	Timesheet,
 	ChangePassword,
 	AboutGP,
-	CreateAccount
+	CreateAccount,
+	Faq
 } from '../components/Exports';
 
 export function Routes() {
@@ -26,6 +27,7 @@ export function Routes() {
 				<Route path='*' element={<HomePage />} />
 				<Route path='/criarConta' element={<CreateAccount />} />
 				<Route path="/ultimasNoticias" element={<LatestNews />} />
+				<Route path="/faq" element={<Faq />} />
 				<Route path="/chat" element={cookie.token ? <Chat /> : <Navigate to={'/login'} />}></Route>
 				<Route path="/nossaAgenda" element={cookie.token ? <OurAgend /> : <Navigate to={'/login'} />}></Route>
 				<Route path="/paginaInicial" element={<HomePage />}></Route>
