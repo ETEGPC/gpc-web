@@ -99,7 +99,7 @@ export function Menu() {
 
 					<div className="menu-component-1">
 						<img src={user} alt="Ícone da página meu perfil" />
-						<Link to="/meuPerfil">Meu perfi</Link>
+						<Link to="/meuPerfil">Meu perfil</Link>
 					</div>
 
 
@@ -190,7 +190,7 @@ export function Menu() {
 
 					<div className="desktop-menu-component-1">
 						<img src={user} alt="Ícone da página meu perfil" />
-						<Link to="/meuPerfil">Meu perfi</Link>
+						<Link to="/meuPerfil">Meu perfil</Link>
 					</div>
 
 
