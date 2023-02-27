@@ -86,7 +86,7 @@ export function HomePage() {
 
 				<main className="main-content">
 
-					<h2 className="about-gp">Sobre o Ginásio Pernanbucano</h2>
+					<h2 className="about-gp">Sobre o Ginásio Pernambucano</h2>
 					<p className="about-gp-content">A Escola Técnica Estadual Ginásio Pernambucano, localizada na AV. Cruz Cabugá, n° 269, bairro de Santo amaro, CEP- 50040-000, no Município do Recife, foi assim redenominada pelo
 					Decreto n°49913, de 10/12/2020, diário oficial de 11/12/2020. Tem Cadastro Escolar E- 000.001,
 					está inscrita no Cadastro Nacional de Pessoas Jurídicas sob nº10.572.071/0764-45, é mantida pelo
