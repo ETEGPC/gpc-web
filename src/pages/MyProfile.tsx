@@ -29,7 +29,7 @@ export function MyProfile() {
 		}).catch(err => {
 			console.error(err);
 			alert('Houve um erro ao recuperar suas informações. Tente sair de sua conta e entrar novamente.');
-		});
+		})
 	}
 
 	function handleDeleteToken() {
@@ -39,7 +39,8 @@ export function MyProfile() {
 
 	useEffect(() => {
 		getParentInfo();
-	})
+		console.log('Oi')
+	}, [])
 
 	return (
 

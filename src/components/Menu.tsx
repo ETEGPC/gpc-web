@@ -123,7 +123,7 @@ export function Menu() {
 
 					<div className="menu-component-5">
 						<img src={chat} alt="Ícone da página chat" />
-						<Link to="/chat">Chat</Link>
+						<Link to="/faq">Chat</Link>
 					</div>
 
 
@@ -214,7 +214,7 @@ export function Menu() {
 
 					<div className="desktop-menu-component-5">
 						<img src={chat} alt="Ícone da página chat" />
-						<Link to="/chat">Chat</Link>
+						<Link to="/faq">Chat</Link>
 					</div>
 
 

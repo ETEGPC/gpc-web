@@ -21,6 +21,19 @@ details p {
   margin-top: 10px;
 }
 
+.continue-to-chat-button {
+  display: flex;
+  background-color: #17A1FA;
+  color: #FFF;
+  text-decoration-line: none;
+  height: 50px;
+  width: 180px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 20px 10px;
+}
+
 @media screen and (min-width: 800px) and (min-height: 497px) {
   .container {
     display: flex;

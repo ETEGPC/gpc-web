@@ -28,7 +28,7 @@ export function Carousel() {
 		if (carouselData.length === 0) {
 			getCarouselData();
 		}
-	})
+	}, [])
 
 	//Current image of carousel
 	let currentImage: number = 0;
@@ -38,15 +38,15 @@ export function Carousel() {
 
 	function carousel() {
 
-		const carouselImages: any = document.getElementById('carousel-images') as HTMLDivElement;
-		const images: any = document.querySelectorAll('#carousel-images div');
+		const carouselImages = document.querySelector('.carousel-images') as HTMLDivElement;
+		const images: any = document.querySelectorAll('.carousel-images div');
 		currentImage++;
 
 		if (currentImage > images.length - 1) {
 			currentImage = 0;
 		}
 
-		carouselImages.style.transform = `translateX(${-currentImage * 20}%)`;
+		carouselImages['style'].transform = `translateX(${-currentImage * 20}%)`;
 
 		//Variable to storage all circles of carousel
 		let circles: NodeListOf<HTMLDivElement> = document.querySelectorAll('.circles div');
@@ -149,7 +149,7 @@ export function Carousel() {
 
 		<div className="carousel-container">
 
-			<div className="carousel-images" id="carousel-images">
+			<div className="carousel-images" >
 
 				{carouselData.map(item => {
 					return (
@@ -158,7 +158,7 @@ export function Carousel() {
 							{item.description ? <p style={{ marginTop: 30 }}>{item.description}</p> : <></>}
 							{item.schoolClass ? <p style={{ marginTop: 50 }}>Turma: {item.schoolClass}</p> : <></>}
 							{item.date ? <p style={{ marginTop: 70 }}>Data: {new Date(item.date).toLocaleDateString()}</p> : <></>}
-							<img height={250} src={item.image?.imageUrl ? item.image?.imageUrl : ( item.schoolClass ? noticesPlaceHolder : eventsPlaceHolder)} alt="Imagem do carrossel" />
+							<img height={250} src={item.image?.imageUrl ? item.image?.imageUrl : (item.schoolClass ? noticesPlaceHolder : eventsPlaceHolder)} alt="Imagem do carrossel" />
 						</div>
 					);
 				})}

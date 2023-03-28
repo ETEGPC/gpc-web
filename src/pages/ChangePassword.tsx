@@ -5,6 +5,7 @@ import { useState } from 'react';
 import api from '../services/api';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export function ChangePassword() {
 	const [password, setPassword] = useState('');
@@ -21,15 +22,39 @@ export function ChangePassword() {
 		}
 
 		if (data.newPassword !== confirmNewPassword) {
-			alert('As senhas dos campos nova senha e confirmar senha não conferem.');
+			toast('As senhas dos campos nova senha e confirmar senha não conferem.', {
+				position: "bottom-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+				type: 'error',
+			});
 			return
 		};
 
 		if (data.newPassword === '') {
-			alert('O campo nova senha não pode ser nulo.');
+			toast('O campo nova senha não pode ser nulo.', {
+				position: "bottom-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+				type: 'error',
+			});
 			return
 		};
 
+
+		const reqStatus = toast.loading('Carregando...', {
+			position: 'bottom-right'
+		});
 
 		await api.http.patch(`/update-parent/${parentId}`, {
 			...data
@@ -40,16 +65,52 @@ export function ChangePassword() {
 		}).then(resp => {
 			if (resp.status === 200) {
 				setCookie('token', resp.data.token);
-				alert('Senha alterada com sucesso.');
+				toast.update(reqStatus, {
+					render: 'Senha alterada com sucesso.',
+					position: "bottom-right",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "light",
+					type: 'success',
+					isLoading: false
+				});
 				navigate('/');
 
 			} else {
-				alert('Houve um erro ao alterar sua senha.')
+				toast.update(reqStatus, {
+					render: 'Houve um erro ao atualizar sua senha. Tente novamente mais tarde.',
+					position: "bottom-right",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "light",
+					type: 'error',
+					isLoading: false
+				});
 			}
 
 		}).catch(err => {
 			console.error(err);
-			alert('Houve um erro ao atualizar sua senha. Tente novamente mais tarde.')
+			toast.update(reqStatus, {
+				render: 'Houve um erro ao atualizar sua senha. Tente novamente mais tarde.',
+				position: "bottom-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+				type: 'error',
+				isLoading: false
+			});
 		})
 	};
 

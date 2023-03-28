@@ -59,6 +59,7 @@ export function HomePage() {
 				<h1 className="homepage-title">Página inicial</h1>
 
 				<Carousel />
+				
 				<div className="links">
 
 					<div className="links-component1" onClick={() => redirectTopage('/nossaAgenda')} >
@@ -118,7 +119,7 @@ export function HomePage() {
 
 					</div>
 
-					<button onClick={() => redirectTopage('/chat')} className="button-chat">
+					<button onClick={() => redirectTopage('/faq')} className="button-chat">
 						<img alt='button chat icon' className="button-chat-img" src={chatIcon} />
 					</button>
 

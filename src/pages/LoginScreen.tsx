@@ -6,6 +6,7 @@ import api from '../services/api';
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { IoArrowBack } from 'react-icons/io5';
+import { toast } from 'react-toastify';
 
 export function LoginScreen() {
 	const [email, setEmail] = useState('');
@@ -17,6 +18,10 @@ export function LoginScreen() {
 	document.title = "ETE GPC | Login";
 
 	async function handleLogin() {
+		const reqStatus = toast.loading('Carregando...', {
+			position: 'bottom-right'
+		});
+
 		await api.http.post('/parent-login', {
 			email,
 			password
@@ -31,11 +36,25 @@ export function LoginScreen() {
 			localStorage.setItem('schoolClasses', JSON.stringify(schoolClasses));
 			broadcast.postMessage({
 				parentId: resp.data.id
-			})
+			});
+
+			toast.dismiss(reqStatus);
 			navigate('/');
 		}).catch(err => {
 			console.error(err);
-			alert('Email ou senha incorretos.')
+			toast.update(reqStatus, {
+				render: 'Email ou senha incorretos.',
+				position: "bottom-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+				type: 'error',
+				isLoading: false
+			});
 		});
 	};
 
@@ -43,7 +62,7 @@ export function LoginScreen() {
 		if (cookie.token) {
 			navigate('/');
 		}
-	});
+	}, []);
 
 	return (
 		<div className="loginScreen-container">
