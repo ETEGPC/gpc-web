@@ -11,6 +11,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { CloseMenu } from '../components/Menu';
 import { Carousel } from '../components/Carousel';
 import { useEffect } from 'react';
+import { FaEye, FaMapMarkerAlt, FaCompass } from 'react-icons/fa';
 
 export function HomePage() {
 	document.title = 'ETE Ginásio Pernambucano';
@@ -59,7 +60,7 @@ export function HomePage() {
 				<h1 className="homepage-title">Página inicial</h1>
 
 				<Carousel />
-				
+
 				<div className="links">
 
 					<div className="links-component1" onClick={() => redirectTopage('/nossaAgenda')} >
@@ -88,13 +89,32 @@ export function HomePage() {
 				<main className="main-content">
 
 					<h2 className="about-gp">Sobre o Ginásio Pernambucano</h2>
-					<p className="about-gp-content">A Escola Técnica Estadual Ginásio Pernambucano, localizada na AV. Cruz Cabugá, n° 269, bairro de Santo amaro, CEP- 50040-000, no Município do Recife, foi assim redenominada pelo
-					Decreto n°49913, de 10/12/2020, diário oficial de 11/12/2020. Tem Cadastro Escolar E- 000.001,
-					está inscrita no Cadastro Nacional de Pessoas Jurídicas sob nº10.572.071/0764-45, é mantida pelo
-					Governo do Estado de Pernambuco, por meio da Secretaria de Educação (SEE) e oferta uma Educação
-					Profissional Técnica de Nível Médio-Integrado (diurno) e subsequente (noturno), nos cursos de
-					Desenvolvimento de Sistemas e de Multimídia, ambos do Eixo Tecnológico e Ensino Médio regular
-					(diurno). <Link to="/sobreOGinasioPernambucano">Ler completo.</Link></p>
+					<section className='about'>
+						<div className='about-card'>
+							<h3>Missão</h3>
+							<FaMapMarkerAlt color='#0076E2' size={32} />
+							<p className='about-text'>Dialogar com o contexto tecnológico das empresas locais por meio da oferta dos cursos técnicos em Desenvolvimento de Sistemas e Multimídia, na área de tecnologia da informação, com foco na formação de profissionais para atender a demanda crescente desse polo tecnológico.</p>
+						</div>
+
+						<div className='about-card'>
+							<h3>Visão</h3>
+							<FaEye color='#0076E2' size={32} />
+							<p className='about-text'>Ser reconhecida como uma escola de excelência na prestação de serviços educacionais, que qualifiquem o estudante, jovem ou adulto, para o exercício da laboralidade, tornando-os aptos para responder aos desafios técnicos, culturais e sociais da contemporaneidade, a partir da profissão planejada por eles em seus projetos de vidas.</p>
+						</div>
+
+						<div className='about-card'>
+							<h3>Valores</h3>
+
+							<FaCompass color='#0076E2' size={32} />
+							<ul className='values'>
+								<li><b>Ética:</b> como valor norteador das relações interpessoais.</li>
+								<li><b>Solidariedade:</b> Solidariedade: como forma de fortalecer os princípios de igualdade fraternidade.</li>
+								<li><b>Respeito:</b> como elemento que deve permear a relação consigo mesmo, com o outro e com o meio ambiente.</li>
+								<li><b>Profissionalismo:</b> não apenas como uma prática moral, mas como atitude de compromisso, dedicação e respeito a si e à comunidade.</li>
+							</ul>
+						</div>
+					</section>
+
 					<h2 className="contact-forms-title">Formas de contato</h2>
 					<p className="about-contact-forms"><span className="span-contact-forms">Atenção</span> - O horário de atendimento, por todos os meios de comunicação, é das 8h às 17h. Além disso, é recomendado o cadastro e uso do chat do próprio aplicativo caso você seja responsável de algum estudante de nossa escola.</p>
 
