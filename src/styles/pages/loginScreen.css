@@ -129,6 +129,14 @@
 	color: #5c5cff;
 }
 
+.forgot-pass {
+	text-decoration-line: underline;
+}
+
+.forgot-pass:hover {
+	cursor: pointer;
+}
+
 .form-button {
   color: var(--buttons-text-color);
   border: var(--buttons-border);

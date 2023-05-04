@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { IoArrowBack } from 'react-icons/io5';
 import { toast } from 'react-toastify';
+import { AxiosError } from 'axios';
 
 export function LoginScreen() {
 	const [email, setEmail] = useState('');
@@ -58,6 +59,65 @@ export function LoginScreen() {
 		});
 	};
 
+	async function forgotPass() {
+		const reqStatus = toast.loading('Carregando...', {
+			position: 'bottom-right'
+		});
+
+		if (!email) {
+			toast.update(reqStatus, {
+				render: 'Email inserido não é válido.',
+				position: "bottom-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+				type: 'error',
+				isLoading: false
+			});
+
+			return
+		}
+
+		await api.http.post('/parents/sendRecoverEmail', {}, {
+			params: {
+				email
+			}
+		}).then(resp => {
+			toast.update(reqStatus, {
+				render: `${resp.data.message}`,
+				position: "bottom-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+				type: 'success',
+				isLoading: false
+			});
+		}).catch((err: AxiosError) => {
+			const errorMessage = err.response?.data as { message: string }
+			toast.update(reqStatus, {
+				render: `${errorMessage.message}`,
+				position: "bottom-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+				type: 'error',
+				isLoading: false
+			});
+		});
+	}
+
 	useEffect(() => {
 		if (cookie.token) {
 			navigate('/');
@@ -108,10 +168,11 @@ export function LoginScreen() {
 					</div>
 
 				</div>
-
-				<p className='createAccount-redirect-p'>Não possui uma conta? Crie uma <Link to="/criarConta" className='createAccount-redirect-link' style={{ color: '#17A1FA' }}>clicando aqui.</Link></p>
+				<p className='createAccount-redirect-p forgot-pass' onClick={forgotPass}>Esqueci minha senha</p>
 
 				<button className="form-button" onClick={handleLogin}>Entrar</button>
+
+				<p className='createAccount-redirect-p'>Não possui uma conta? Crie uma <Link to="/criarConta" className='createAccount-redirect-link' style={{ color: '#17A1FA' }}>clicando aqui.</Link></p>
 			</div>
 		</div>
 	);

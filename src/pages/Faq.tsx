@@ -116,7 +116,7 @@ export function Faq() {
 
         <p className="faq-description">Caso essas informações não tenham suprido sua necessidade, por favor prossiga para o chat.</p>
         <Link className="continue-to-chat-button" to={'/chat'}>
-          Proseeguir para o chat
+          Prosseguir para o chat
         </Link>
       </div>
     </div>
