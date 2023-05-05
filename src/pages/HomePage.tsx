@@ -1,12 +1,14 @@
 import { Menu } from '../components/Exports';
-import '../styles/pages/homePage.css'
-import greenSchedule from '../images/icons/greenSchedule_icon.svg'
-import greenBulletinBoard from '../images/icons/greenBulletinBoard_icon.svg'
-import greenLatestNews from '../images/icons/greenLatestNews_icon.svg'
-import emailIcon from '../images/icons/email2_icon.svg'
-import instagrmaIcon from '../images/icons/instagram2_icon.svg'
-import whatsappIcon from '../images/icons/whatsapp2_icon.svg'
-import chatIcon from '../images/icons/chat2_icon.svg'
+import '../styles/pages/homePage.css';
+import greenSchedule from '../images/icons/greenSchedule_icon.svg';
+import greenBulletinBoard from '../images/icons/greenBulletinBoard_icon.svg';
+import greenLatestNews from '../images/icons/greenLatestNews_icon.svg';
+import emailIcon from '../images/icons/email2_icon.svg';
+import instagrmaIcon from '../images/icons/instagram2_icon.svg';
+import whatsappIcon from '../images/icons/whatsapp2_icon.svg';
+import chatIcon from '../images/icons/chat2_icon.svg';
+import htmlTagIcon from '../images/icons/htmlTag_icon.svg';
+import cameraIcon from '../images/icons/camera_icon.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { CloseMenu } from '../components/Menu';
 import { Carousel } from '../components/Carousel';
@@ -112,6 +114,25 @@ export function HomePage() {
 								<li><b>Respeito:</b> como elemento que deve permear a relação consigo mesmo, com o outro e com o meio ambiente.</li>
 								<li><b>Profissionalismo:</b> não apenas como uma prática moral, mas como atitude de compromisso, dedicação e respeito a si e à comunidade.</li>
 							</ul>
+						</div>
+					</section>
+
+					<h2 className="about-courses-title">Cursos técnicos</h2>
+
+					<section className="about-couses">
+						<div className="courses">
+							<header>
+								<img src={htmlTagIcon} alt="Ícone de tag HTML"/>
+								<h3>Técnico em Desenvolvimento de Sistemas</h3>
+							</header>
+							<p>O profissional Técnico em Desenvolvimento de Sistemas é capaz de entender e criar os sistemas por trás das grandes aplicações que regem o mundo digital hoje em dia, como exemplo sites WEB, programas mobile/desktop, bancos de dados, entre outros. Isso tudo com algumas das tecnologias mais usadas atualmente, entre elas HTML, CSS, JavaScrpit, Java, PHP, MySQL, de forma que o discente seja capaz de resolver problemas técnicos com qualidade e velocidade.</p>
+						</div>
+						<div className="courses">
+							<header>
+								<img src={cameraIcon} alt="Ícone de câmera" />
+								<h3>Técnico em Multimídia</h3>
+							</header>
+							<p>O curso técnico em multimídia tem como objetivo preparar o aluno para trabalhar na produção de conteúdo digital, utilizando diversas ferramentas de design, produção de vídeo, áudio e animação. Durante o curso, os alunos aprendem a utilizar softwares como Photoshop, Illustrator, Premiere, After Effects, entre outros, para produzir materiais gráficos e audiovisuais de alta qualidade. Além disso, são ensinados conceitos de marketing digital, design de interfaces e experiência do usuário, para que o aluno possa desenvolver projetos que atendam às necessidades do mercado. </p>
 						</div>
 					</section>
 
