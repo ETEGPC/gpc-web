@@ -134,6 +134,7 @@ export function HomePage() {
 							</header>
 							<p>O curso técnico em multimídia tem como objetivo preparar o aluno para trabalhar na produção de conteúdo digital, utilizando diversas ferramentas de design, produção de vídeo, áudio e animação. Durante o curso, os alunos aprendem a utilizar softwares como Photoshop, Illustrator, Premiere, After Effects, entre outros, para produzir materiais gráficos e audiovisuais de alta qualidade. Além disso, são ensinados conceitos de marketing digital, design de interfaces e experiência do usuário, para que o aluno possa desenvolver projetos que atendam às necessidades do mercado. </p>
 						</div>
+                        <p className="moreInformationsParagraph">Para mais informações, vá para a página de Faq <Link to="/faq">clicando aqui.</Link></p>
 					</section>
 
 					<h2 className="contact-forms-title">Formas de contato</h2>
