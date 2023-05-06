@@ -11,8 +11,16 @@
 
 .login-form header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.IoArrowBack {
+    overflow: hidden;
+}
+
+.form-h1 {
+  margin: 0 auto;
 }
 
 .container-title {
