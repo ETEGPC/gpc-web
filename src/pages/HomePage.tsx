@@ -1,12 +1,5 @@
 import { Menu } from '../components/Exports';
 import '../styles/pages/homePage.css';
-import greenSchedule from '../images/icons/greenSchedule_icon.svg';
-import greenBulletinBoard from '../images/icons/greenBulletinBoard_icon.svg';
-import greenLatestNews from '../images/icons/greenLatestNews_icon.svg';
-import emailIcon from '../images/icons/email2_icon.svg';
-import instagrmaIcon from '../images/icons/instagram2_icon.svg';
-import whatsappIcon from '../images/icons/whatsapp2_icon.svg';
-import chatIcon from '../images/icons/chat2_icon.svg';
 import htmlTagIcon from '../images/icons/htmlTag_icon.svg';
 import cameraIcon from '../images/icons/camera_icon.svg';
 import { Link, useNavigate } from 'react-router-dom';
@@ -14,6 +7,17 @@ import { CloseMenu } from '../components/Menu';
 import { Carousel } from '../components/Carousel';
 import { useEffect } from 'react';
 import { FaEye, FaMapMarkerAlt, FaCompass } from 'react-icons/fa';
+
+//Import HomePage's icons
+import {
+ AiOutlineSchedule,
+ AiOutlineBell,
+ AiOutlineAlert,
+ AiFillInstagram
+} from 'react-icons/ai';
+import { MdEmail } from 'react-icons/md';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { RiMessage3Fill } from 'react-icons/ri';
 
 export function HomePage() {
 	document.title = 'ETE Ginásio Pernambucano';
@@ -67,21 +71,21 @@ export function HomePage() {
 
 					<div className="links-component1" onClick={() => redirectTopage('/nossaAgenda')} >
 
-						<img src={greenSchedule} alt="Ícone da nossa agenda" />
+						<AiOutlineSchedule className="homepage-icons" />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 
 					</div>
 
 					<div className="links-component2" onClick={() => redirectTopage('/muralDeAvisos')}>
 
-						<img src={greenBulletinBoard} alt="Ícone do mural de avisos" />
+						<AiOutlineBell className="homepage-icons" />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 
 					</div>
 
 					<div className="links-component3" onClick={() => redirectTopage('/ultimasNoticias')}>
 
-						<img src={greenLatestNews} alt="Ícone das últimas notícias" />
+						<AiOutlineAlert className="homepage-icons" /> 
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 
 					</div>
@@ -143,26 +147,26 @@ export function HomePage() {
 					<div className="contact-forms">
 						<div className="contact-component1" onClick={openEmail}>
 
-							<img src={emailIcon} alt="Ícone do e-mail" />
+							<MdEmail className="components-icon" />
 							<Link to="#">E-mail</Link>
 						</div>
 
 						<div className="contact-component2" onClick={openInstagram}>
 
-							<img src={instagrmaIcon} alt="Ícone do Instagram" />
+							<AiFillInstagram className="components-icon" />
 							<Link to="#">Instagram</Link>
 						</div>
 
 						<div className="contact-component3" onClick={openWhatsApp}>
 
-							<img src={whatsappIcon} alt="Ícone do WhatsApp" />
+							<IoLogoWhatsapp className="components-icon" />
 							<Link to="#">WhatsApp</Link>
 						</div>
 
 					</div>
 
 					<button onClick={() => redirectTopage('/faq')} className="button-chat">
-						<img alt='button chat icon' className="button-chat-img" src={chatIcon} />
+						<RiMessage3Fill className="button-chat-img"/>
 					</button>
 
 				</main>

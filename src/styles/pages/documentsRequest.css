@@ -559,7 +559,7 @@ input[type=number] {
 }
 
 .solicitations {
-	padding: 0 10px;
+  margin: 20px 3%;
 }
 
 .solicitations-list {

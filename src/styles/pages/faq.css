@@ -1,12 +1,17 @@
 .faq-container {}
 
-.faq-container h2 {
-  margin-bottom: 10px;
-  margin-left: 10px;
+.faq-container h1 {
+  margin: 3% 0 3% 3%;
+  text-decoration: underline;
+  font-size: var(--h1-font-size);
 }
 
 .faq-container .faq-description {
   padding: 10px;
+}
+
+.list-of-details {
+  margin: 0 3%;
 }
 
 details {
@@ -27,11 +32,20 @@ details p {
   color: #FFF;
   text-decoration-line: none;
   height: 50px;
-  width: 180px;
+  width: 250px;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   margin: 20px 10px;
+  transition: .2s;
+	font-size: var(--buttons-font-size);
+	font-weight: var(--buttons-font-weight);
+}
+
+.continue-to-chat-button:hover {
+  background-color: #fff;
+  color: #17A1FA;
+  border: 1px solid #17A1FA;
 }
 
 @media screen and (min-width: 800px) and (min-height: 497px) {

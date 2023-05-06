@@ -13,7 +13,7 @@ export function Timesheet() {
 	}
 
 	return (
-		<div>
+		<div className="container">
 			<Menu />
 
 			<div className="timeSheet-container" onClick={CloseMenu}>

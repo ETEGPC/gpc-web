@@ -130,17 +130,19 @@ export function LoginScreen() {
 
 
 				<h3 className="welcome-screen-h3">Olá, seja bem vindo novamente!</h3>
-				<h3 className="welcome-screen-h3">Quer ficar por dentro de tudo que está acontecendo em nossa escola? O que está esperando? Entre com seu usuário e senha.</h3>
+				<h3 className="welcome-screen-h3">Quer ficar por dentro de tudo que está acontecendo em nossa escola? O que está esperando? Entre com seu e-mail e senha. Ou, caso não tenha uma conta, cadastre-se.</h3>
 				<h3 className="welcome-screen-h3">O GP faz a diferença!</h3>
 
 			</div>
 
 			<div className="login-form">
-				<Link to={'/'} >
-					<IoArrowBack color='#FFF' size={32} />
-				</Link>
+        <header>
+				  <Link to={'/'} className="IoArrowBack">
+					  <IoArrowBack color='#FFF' size={32} />
+				  </Link>
 
-				<h1 className="form-h1">Olá, seja bem-vindo!</h1>
+				  <h1 className="form-h1">Olá, seja bem-vindo!</h1>
+        </header>
 
 				<Link to={'/'}>
 					<img className="form-img eteLogo" alt='logo-etegpc' src={eteLogo} />
@@ -168,11 +170,11 @@ export function LoginScreen() {
 					</div>
 
 				</div>
-				<p className='createAccount-redirect-p forgot-pass' onClick={forgotPass}>Esqueci minha senha</p>
 
 				<button className="form-button" onClick={handleLogin}>Entrar</button>
 
-				<p className='createAccount-redirect-p'>Não possui uma conta? Crie uma <Link to="/criarConta" className='createAccount-redirect-link' style={{ color: '#17A1FA' }}>clicando aqui.</Link></p>
+ 				<p className='createAccount-redirect-p forgot-pass' onClick={forgotPass}>Esqueci minha senha</p>
+				<p className='createAccount-redirect-p'>Não possui uma conta? Crie uma <Link to="/criarConta" className='createAccount-redirect-link'>clicando aqui.</Link></p>
 			</div>
 		</div>
 	);

@@ -44,11 +44,14 @@
 }
 
 .links-component1, .links-component2, .links-component3 {
-	width: var(--components-links-width);
-	box-shadow: 2px 2px 8px #cacaca;
-	border-radius: 10px;
-	cursor: pointer;	
+  width: var(--components-links-width);
+  box-shadow: 2px 2px 8px #cacaca;
+  border-radius: 10px;
+  cursor: pointer;
   transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .links-component1:hover, .links-component2:hover, .links-component3:hover{
@@ -65,11 +68,14 @@
 	margin: 6px 0;
 }
 
-.links-component1 img, .links-component2 img, .links-component3 img {
-	width: var(--img-links-width);
-	margin: 4% auto;
-	display: block;
-	max-width: 50px;
+.components-icon {
+  width: 10vw;
+  margin: 4% auto;
+  display: block;
+  height: 10vw;
+  color: #0076e2;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 .main-content {
@@ -109,6 +115,12 @@
 	flex-wrap: wrap;
 }
 
+.homepage-icons {
+  color: #048f36;
+  width: 30px;
+  height: 30px;
+}
+
 .contact-component1, .contact-component2, .contact-component3 {
 	width: 18vw;
 	cursor: pointer;
@@ -146,11 +158,14 @@
 	align-self: end;
 	position: absolute;
 	bottom: 7px;
+  cursor: pointer;
 }
 
 .button-chat-img {
-  width: 10vw;
+  width: 40px;
   margin: auto;
+  color: #0076e2;
+  height: 40px;
 }
 
 .about {
@@ -288,9 +303,9 @@
     margin-bottom: 30px;
 	}
 
-	.links-component1 img, .links-component2 img, .links-component3 img {
+	.components-icon {
 	  width: var(--img-links-width);	    
-	  margin: 0;
+	  margin: 0 auto;
 	}
 
 	.links-component1 a, .links-component2 a, .links-component3 a {
@@ -353,13 +368,15 @@
 		align-self: end;
 		position: absolute;
 		bottom: 3%;
+    cursor: pointer;
 	}	
 
 	.button-chat-img {
-	  width: 40px;
-	  margin: auto;
-	}
-
+    width: 40px;
+    margin: auto;
+    color: #0076e2;
+    height: 40px;
+  }
 	.courses {
 		background-color: #FFF;
 		box-shadow: 2px 2px 8px #cacaca;

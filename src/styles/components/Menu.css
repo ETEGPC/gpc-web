@@ -21,6 +21,16 @@
 	align-items: center;
 }
 
+.install-app-button {
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 10px;
+  margin: 0 0 0 19px;
+  height: 25px;
+  width: 130px;
+  cursor: pointer;
+}
+
 .install-app-label {
 	color: #FFF;
 	font-family: 'Raleway', sans-serif;
@@ -32,10 +42,17 @@
 	display: flex;
 }
 
+.icons {
+  color: white;
+  width: 25px;
+  height: 25px;
+}
+
 .menu-header-img {
-	max-width: 10vw;
-	max-height: 3vh;
-	align-self: center;
+  align-self: center;
+  color: #fff;
+  width: 9vw;
+  height: 7vh;
 }
 
 .menu-header-button {
@@ -108,7 +125,9 @@
 
 
 .menu-img-menu {
-	max-width: 9vw;
+  color: white;
+  width: 12vw;
+  height: 12vw;
 }
 
 .menu-img-gp {

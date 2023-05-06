@@ -9,6 +9,12 @@
 	padding: 10px;
 }
 
+.login-form header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container-title {
   margin: 3% 0% 3% 3%;
   text-decoration: underline;
@@ -26,10 +32,12 @@
 	display: none;	
 }
 
+.IoArrowBack {
+}
+
 .form-h1 {
 	color: white;
-	font-size: var(--h1-font-size);
-	margin: 5% auto;
+	font-size: var(--h1-font-size);	
 	text-align: center;
 }
 
@@ -122,19 +130,23 @@
 }
 
 .createAccount-redirect-link {
-	color: #6767ff;
+	color: #fff;
+  transition: .2s;
 }
 
-.createAccount-redirect-link:visited {
-	color: #5c5cff;
+.createAccount-redirect-link:hover {
+  color: rgb(23, 161, 250);
 }
 
 .forgot-pass {
-	text-decoration-line: underline;
+  text-decoration-line: underline;
+  margin: 20px auto;
+  transition: .2s;
 }
 
 .forgot-pass:hover {
 	cursor: pointer;
+  color: rgb(23, 161, 250);
 }
 
 .form-button {
@@ -151,6 +163,14 @@
   font-weight: var(--buttons-font-weight);
   border-radius: var(--buttons-border-radius);
   cursor: var(--buttons-cursor);
+  transition: .2s;
+  
+}
+
+.form-button:hover {
+  transition: .2s;
+  color: var(--green-buttons-backgroundcolor);
+  background-color: var(--buttons-text-color);
 }
 
 .form-link {
@@ -200,12 +220,12 @@
 	  font-size: var(--h3-font-size);
 	}
 
-	.form-h1 {
-		color: white;
-		font-size: var(--h1-font-size);
-		margin: 5% auto;
-		text-align: center;
-	}
+  .form-h1 {
+    color: white;
+    font-size: var(--h1-font-size);
+    text-align: center;
+    margin: 0 auto;
+  }
 
 	.login-form {
 	  width: 50%;

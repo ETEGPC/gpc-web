@@ -1,23 +1,27 @@
 import { Link } from 'react-router-dom'
-import menuIcon from '../images/icons/menu_icon.svg'
 import '../styles/components/Menu.css';
-import whiteArrow from '../images/icons/whiteArrow_icon.svg'
-import user from '../images/icons/user_icon.svg'
-import latestNews from '../images/icons/latestNews_icon.svg'
-import bulletinBoard from '../images/icons/bulletinBoard_icon.svg'
-import schedule from '../images/icons/schedule_icon.svg'
-import chat from '../images/icons/chat_icon.svg'
-import download from '../images/icons/download_icon.svg'
-import instagram from '../images/icons/instagram_icon.svg'
-import whatsapp from '../images/icons/whatsapp_icon.svg'
-import email from '../images/icons/email_icon.svg'
-import timeline from '../images/icons/timeline_icon.svg'
-import documents from '../images/icons/documents_icon.svg'
-import termOfUse from '../images/icons/termsOfUse_icon.svg'
-import privacyPolicy from '../images/icons/privacyPolicy_icon.svg'
-import initialPage from '../images/icons/initialPage_icon.svg'
 import eteLogo from '../images/eteLogo.svg';
 import { useState } from 'react';
+
+// Import Menu's icons
+import { BsChatDots } from 'react-icons/bs';
+import { FiMenu } from 'react-icons/fi';
+import { BiArrowBack } from 'react-icons/bi'
+import {
+ AiOutlineWhatsApp,
+ AiOutlineInstagram,
+ AiOutlineMail,
+ AiOutlineSchedule,
+ AiOutlineCalendar,
+ AiOutlineFolderOpen,
+ AiOutlineBell,
+ AiOutlineUser,
+ AiOutlineLock,
+ AiOutlineFileText,
+ AiOutlineHome,
+ AiOutlineAlert,
+ AiOutlineDownload
+ } from 'react-icons/ai';
 
 //export function CloseMenu(){
 
@@ -74,7 +78,7 @@ export function Menu() {
 			<div className="menu-open" id="menu">
 
 				<header className="menu-header">
-					<button onClick={CloseMenu} className="menu-header-button"><img className="menu-header-img" id="menu-header-img" alt="Ícone do menu" src={whiteArrow} /></button>
+					<button onClick={CloseMenu} className="menu-header-button"><BiArrowBack className="menu-header-img" id="menu-header-img"/></button>
 					<h1 className="menu-header-h1">Menu</h1>
 
 				</header>
@@ -85,86 +89,86 @@ export function Menu() {
 						<></>
 						:
 						<div onClick={installPwa} className="install-app-container">
-							<img src={download} alt="Ícone da página inicial" />
-							<button style={{ marginLeft: 10, backgroundColor: '#1270B0' }}>
+							<AiOutlineDownload className="icons"/>
+							<button className="install-app-button">
 								<p className='install-app-label'>Instalar aplicativo</p>
 							</button>
 						</div>
 					}
 
 					<div className="menu-component-0">
-						<img src={initialPage} alt="Ícone da página inicial" />
+						<AiOutlineHome className="icons" />
 						<Link to="/">Página inicial</Link>
 					</div>
 
 					<div className="menu-component-1">
-						<img src={user} alt="Ícone da página meu perfil" />
+						<AiOutlineUser className="icons" />
 						<Link to="/meuPerfil">Meu perfil</Link>
 					</div>
 
 
 					<div className="menu-component-2">
-						<img src={latestNews} alt="Ícone da página últimas notícias" />
+						<AiOutlineAlert className="icons" /> 
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 					</div>
 
 
 					<div className="menu-component-3">
-						<img src={bulletinBoard} alt="Ícone da página mural de avisos" />
+						<AiOutlineBell className="icons" />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 					</div>
 
 
 					<div className="menu-component-4">
-						<img src={schedule} alt="Ícone da página nossa agenda" />
+						<AiOutlineSchedule className="icons" />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 					</div>
 
 
 					<div className="menu-component-5">
-						<img src={chat} alt="Ícone da página chat" />
+						<BsChatDots className="icons chat-icon"/>
 						<Link to="/faq">Chat</Link>
 					</div>
 
 
 					<div className="menu-component-7">
-						<img src={instagram} alt="Ícone do Instagram" />
+						<AiOutlineInstagram className="icons" />
 						<Link onClick={openInstagram} to="#">Instagram</Link>
 					</div>
 
 
 					<div className="menu-component-8">
-						<img src={whatsapp} alt="Ícone do WhatsApp" />
+						<AiOutlineWhatsApp className='icons'/>
 						<Link onClick={openWhatsApp} to="#">WhatsApp</Link>
 					</div>
 
 
 					<div className="menu-component-9">
-						<img src={email} alt="Ícone do e-mail" />
+						<AiOutlineMail className="icons" />
 						<Link to="#" onClick={openEmail}>E-mail</Link>
 					</div>
 
 
 					<div className="menu-component-10">
-						<img src={timeline} alt="Ícone da página quadro de horários" />
+						<AiOutlineCalendar className="icons" />
 						<Link to="/quadroDeHorarios">Quadro de horários</Link>
 					</div>
 
 
 					<div className="menu-component-11">
-						<img src={documents} alt="Ícone da página solicitação de documentos" />
+						<AiOutlineFolderOpen className="icons" />
 						<Link to="/solicitacaoDeDocumentos">Solicitação de documentos</Link>
 					</div>
 
 					<hr />
 
 					<div className="menu-component-12">
-						<img src={termOfUse} alt="Ícone da página termos de uso" />
+						<AiOutlineFileText className="icons" />
 						<Link to="#">Termos de uso</Link>
 					</div>
 
 					<div className="menu-component-13">
-						<img src={privacyPolicy} alt="Ícone da página política de privacidade" />
+						<AiOutlineLock className='icons' />
 						<Link to="#">Política de privacidade</Link>
 					</div>
 
@@ -174,7 +178,7 @@ export function Menu() {
 
 
 			<div className="menu-closed">
-				<button onClick={OpenMenu} className="menu-button"><img className="menu-img-menu" src={menuIcon} alt="Ícone do menu" /></button>
+				<button onClick={OpenMenu} className="menu-button"><FiMenu className="menu-img-menu"/></button>
 				<img className="menu-img-gp" src={eteLogo} alt="Ícone da ETE" />
 				<h2 className="menu-school-title">ETE Ginásio Pernambucano</h2>
 			</div>
@@ -184,79 +188,79 @@ export function Menu() {
 				<main className="desktop-menu-main">
 
 					<div className="desktop-menu-component-0">
-						<img src={initialPage} alt="Ícone da página inicial" />
+						<AiOutlineHome className="icons" />
 						<Link to="/paginaInicial">Página inicial</Link>
 					</div>
 
 					<div className="desktop-menu-component-1">
-						<img src={user} alt="Ícone da página meu perfil" />
+						<AiOutlineUser className="icons" />
 						<Link to="/meuPerfil">Meu perfil</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-2">
-						<img src={latestNews} alt="Ícone da página últimas notícias" />
+						<AiOutlineAlert className="icons" /> 
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-3">
-						<img src={bulletinBoard} alt="Ícone da página mural de avisos" />
+						<AiOutlineBell className="icons" />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-4">
-						<img src={schedule} alt="Ícone da página nossa agenda" />
+						<AiOutlineSchedule className="icons" />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-5">
-						<img src={chat} alt="Ícone da página chat" />
+            <BsChatDots className="icons chat-icon"/>
 						<Link to="/faq">Chat</Link>
 					</div>
 
 
 
 					<div className="desktop-menu-component-7">
-						<img src={instagram} alt="Ícone do Instagram" />
+            <AiOutlineInstagram className="icons" />
 						<Link onClick={openInstagram} to="#">Instagram</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-8">
-						<img src={whatsapp} alt="Ícone do WhatsApp" />
+            <AiOutlineWhatsApp className='icons'/>
 						<Link to="#" onClick={openWhatsApp}>WhatsApp</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-9">
-						<img src={email} alt="Ícone do e-mail" />
+						<AiOutlineMail className="icons" />
 						<Link to="#" onClick={openEmail}>E-mail</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-10">
-						<img src={timeline} alt="Ícone da página quadro de horários" />
+						<AiOutlineCalendar className="icons" />
 						<Link to="/quadroDeHorarios">Quadro de horários</Link>
 					</div>
 
 
 					<div className="desktop-menu-component-11">
-						<img src={documents} alt="Ícone da página solicitação de documentos" />
+						<AiOutlineFolderOpen className="icons" />
 						<Link to="/solicitacaoDeDocumentos">Solicitação de documentos</Link>
 					</div>
 
 					<hr />
 
 					<div className="desktop-menu-component-12">
-						<img src={termOfUse} alt="Ícone da página termos de uso" />
+						<AiOutlineFileText className="icons" />
 						<Link to="#">Termos de uso</Link>
 					</div>
 
 					<div className="desktop-menu-component-13">
-						<img src={privacyPolicy} alt="Ícone da página política de privacidade" />
+						<AiOutlineLock className='icons' />
 						<Link to="#">Política de privacidade</Link>
 					</div>
 
