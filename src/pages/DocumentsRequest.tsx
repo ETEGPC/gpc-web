@@ -268,7 +268,7 @@ export function DocumentsRequest() {
 
 			<div className="documentsRequest-container" onClick={CloseMenu}>
 
-				<h1 className="documents-h1">Solicitação de documentos</h1>
+				
 				<h2 className="documents-h2">Preencha os campos abaixo para solicitar algum documento</h2>
 
 				<section className="documents-container">

@@ -7,7 +7,7 @@ export function Faq() {
     <div className="container">
       <Menu />
       <div className="faq-container">
-        <h2>Faq</h2>
+        
         <p className="faq-description">Antes de proseguir para a página de chat, por favor dê uma olhada nas perguntas mais comuns e veja se elas conseguem resolver sua dúvida.</p>
         <details>
           <summary>Como funciona o processo seletivo? </summary>

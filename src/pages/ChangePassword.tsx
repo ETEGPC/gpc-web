@@ -122,7 +122,6 @@ export function ChangePassword() {
 
 			<div className="changePassword-container" onClick={CloseMenu}>
 
-				<h1 className="container-title">Redefinir senha</h1>
 
 				<h2 className="container-subTitle">Preencha os campos abaixo para alterar a sua senha atual</h2>
 

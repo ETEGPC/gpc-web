@@ -58,7 +58,6 @@ export function Chat() {
 			<Menu />
 
 			<div className="chat-container" onClick={CloseMenu}>
-				<h1 className='container-title'>Chat</h1>
 				<h2 className='chat-school-title'>ETE Ginásio</h2>
 
 				<hr className='chat-hr' />

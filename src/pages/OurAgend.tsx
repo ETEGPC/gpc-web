@@ -33,7 +33,7 @@ export function OurAgend() {
 
 			<div className="ourAgend-container" onClick={CloseMenu}>
 
-				<h1 className="container-title">Nossa agenda</h1>
+				{/* <h1 className="container-title">Nossa agenda</h1> */}
 
 				<Calendar2
 					events={events}

@@ -57,8 +57,6 @@ export function HomePage() {
 
 			<div className="homePage-container" id="container" onClick={CloseMenu}>
 
-				<h1 className="homepage-title">Página inicial</h1>
-
 				<Carousel />
 
 				<div className="links">

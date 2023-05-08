@@ -18,7 +18,7 @@ export function Timesheet() {
 
 			<div className="timeSheet-container" onClick={CloseMenu}>
 
-				<h1 className="container-title">Quadro de horários</h1>
+				{/* <h1 className="container-title">Quadro de horários</h1> */}
 
 				{
 					schoolClasses.map(schoolClass => {

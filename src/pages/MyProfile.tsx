@@ -50,7 +50,7 @@ export function MyProfile() {
 
 			<div className="myProfile-container" onClick={CloseMenu}>
 
-				<h1 className="container-title">Meu perfil</h1>
+				{/* <h1 className="container-title">Meu perfil</h1> */}
 
 				<div className="my-datas">
 

@@ -13,9 +13,6 @@ export function AboutGP() {
 
             <div className="aboutGP-container" onClick={CloseMenu}>
 
-                <h1 className='container-title'>Sobre o Ginásio</h1>
-
-
 
                 <h4 className="download-document-h4">Para baixar o documento completo<a className="document-download" href="../documents/PPP 2022 Def.pdf" download> clique aqui.</a></h4>
 

@@ -33,7 +33,7 @@ export function LatestNews() {
 
 			<div className="latestNews-container" onClick={CloseMenu}>
 
-				<h1 className="latestNews-h1" >Últimas notícias</h1>
+				{/* <h1 className="latestNews-h1" >Últimas notícias</h1> */}
 				{
 					latestNews.length === 0 ?
 						<p>Ops... Parece que ainda não há nenhuma notícia. Tente novamente mais tarde.</p>

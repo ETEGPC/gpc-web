@@ -157,8 +157,8 @@ export function CreateAccount() {
 				<Menu />
 				<div className="createAccount-container" onClick={CloseMenu}>
 
-					<h1 className="createAccount-h1" >Criar conta</h1>
-					<p className="createAccount-p">Crie uma conta para poder ter acesso a conteúdos exclusivos do aplicativo.</p>
+					{/* <h1 className="createAccount-h1" >Criar conta</h1>
+					<p className="createAccount-p">Crie uma conta para poder ter acesso a conteúdos exclusivos do aplicativo.</p> */}
 
 					<main className="createAccount-main">
 						<p className='section-desc'>Sobre você</p>
