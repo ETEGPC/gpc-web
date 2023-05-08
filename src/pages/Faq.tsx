@@ -7,7 +7,6 @@ export function Faq() {
     <div className="container">
       <Menu />
       <div className="faq-container">
-        
         <p className="faq-description">Antes de proseguir para a página de chat, por favor dê uma olhada nas perguntas mais comuns e veja se elas conseguem resolver sua dúvida.</p>
         <details>
           <summary>Como funciona o processo seletivo? </summary>
@@ -119,6 +118,6 @@ export function Faq() {
           Prosseguir para o chat
         </Link>
       </div>
-    </div>
+    </div >
   );
 }

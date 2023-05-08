@@ -32,7 +32,7 @@ html, body, #root, .App{
 	--buttons-border-radius: 10px;
 	--buttons-font-weight: 600;
 	--buttons-cursor: pointer;
-	--buttons-margin: 20px auto 20px auto;
+	--buttons-margin: 0px auto 20px auto;
 	--buttons-border: none;
 	--buttons-outline: none;
 

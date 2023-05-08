@@ -1,17 +1,23 @@
 import { Menu } from '../components/Exports';
-import '../styles/pages/homePage.css'
-import greenSchedule from '../images/icons/greenSchedule_icon.svg'
-import greenBulletinBoard from '../images/icons/greenBulletinBoard_icon.svg'
-import greenLatestNews from '../images/icons/greenLatestNews_icon.svg'
-import emailIcon from '../images/icons/email2_icon.svg'
-import instagrmaIcon from '../images/icons/instagram2_icon.svg'
-import whatsappIcon from '../images/icons/whatsapp2_icon.svg'
-import chatIcon from '../images/icons/chat2_icon.svg'
+import '../styles/pages/homePage.css';
+import htmlTagIcon from '../images/icons/htmlTag_icon.svg';
+import cameraIcon from '../images/icons/camera_icon.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { CloseMenu } from '../components/Menu';
 import { Carousel } from '../components/Carousel';
 import { useEffect } from 'react';
 import { FaEye, FaMapMarkerAlt, FaCompass } from 'react-icons/fa';
+
+//Import HomePage's icons
+import {
+ AiOutlineSchedule,
+ AiOutlineBell,
+ AiOutlineAlert,
+ AiFillInstagram
+} from 'react-icons/ai';
+import { MdEmail } from 'react-icons/md';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { RiMessage3Fill } from 'react-icons/ri';
 
 export function HomePage() {
 	document.title = 'ETE Ginásio Pernambucano';
@@ -63,21 +69,21 @@ export function HomePage() {
 
 					<div className="links-component1" onClick={() => redirectTopage('/nossaAgenda')} >
 
-						<img src={greenSchedule} alt="Ícone da nossa agenda" />
+						<AiOutlineSchedule className="homepage-icons" />
 						<Link to="/nossaAgenda">Nossa agenda</Link>
 
 					</div>
 
 					<div className="links-component2" onClick={() => redirectTopage('/muralDeAvisos')}>
 
-						<img src={greenBulletinBoard} alt="Ícone do mural de avisos" />
+						<AiOutlineBell className="homepage-icons" />
 						<Link to="/muralDeAvisos">Mural de avisos</Link>
 
 					</div>
 
 					<div className="links-component3" onClick={() => redirectTopage('/ultimasNoticias')}>
 
-						<img src={greenLatestNews} alt="Ícone das últimas notícias" />
+						<AiOutlineAlert className="homepage-icons" /> 
 						<Link to="/ultimasNoticias">Últimas notícias</Link>
 
 					</div>
@@ -113,32 +119,52 @@ export function HomePage() {
 						</div>
 					</section>
 
+					<h2 className="about-courses-title">Cursos técnicos</h2>
+
+					<section className="about-couses">
+						<div className="courses">
+							<header>
+								<img src={htmlTagIcon} alt="Ícone de tag HTML"/>
+								<h3>Técnico em Desenvolvimento de Sistemas</h3>
+							</header>
+							<p>O profissional Técnico em Desenvolvimento de Sistemas é capaz de entender e criar os sistemas por trás das grandes aplicações que regem o mundo digital hoje em dia, como exemplo sites WEB, programas mobile/desktop, bancos de dados, entre outros. Isso tudo com algumas das tecnologias mais usadas atualmente, entre elas HTML, CSS, JavaScrpit, Java, PHP, MySQL, de forma que o discente seja capaz de resolver problemas técnicos com qualidade e velocidade.</p>
+						</div>
+						<div className="courses">
+							<header>
+								<img src={cameraIcon} alt="Ícone de câmera" />
+								<h3>Técnico em Multimídia</h3>
+							</header>
+							<p>O curso técnico em multimídia tem como objetivo preparar o aluno para trabalhar na produção de conteúdo digital, utilizando diversas ferramentas de design, produção de vídeo, áudio e animação. Durante o curso, os alunos aprendem a utilizar softwares como Photoshop, Illustrator, Premiere, After Effects, entre outros, para produzir materiais gráficos e audiovisuais de alta qualidade. Além disso, são ensinados conceitos de marketing digital, design de interfaces e experiência do usuário, para que o aluno possa desenvolver projetos que atendam às necessidades do mercado. </p>
+						</div>
+                        <p className="moreInformationsParagraph">Para mais informações, vá para a página de Faq <Link to="/faq">clicando aqui.</Link></p>
+					</section>
+
 					<h2 className="contact-forms-title">Formas de contato</h2>
 					<p className="about-contact-forms"><span className="span-contact-forms">Atenção</span> - O horário de atendimento, por todos os meios de comunicação, é das 8h às 17h. Além disso, é recomendado o cadastro e uso do chat do próprio aplicativo caso você seja responsável de algum estudante de nossa escola.</p>
 
 					<div className="contact-forms">
 						<div className="contact-component1" onClick={openEmail}>
 
-							<img src={emailIcon} alt="Ícone do e-mail" />
+							<MdEmail className="components-icon" />
 							<Link to="#">E-mail</Link>
 						</div>
 
 						<div className="contact-component2" onClick={openInstagram}>
 
-							<img src={instagrmaIcon} alt="Ícone do Instagram" />
+							<AiFillInstagram className="components-icon" />
 							<Link to="#">Instagram</Link>
 						</div>
 
 						<div className="contact-component3" onClick={openWhatsApp}>
 
-							<img src={whatsappIcon} alt="Ícone do WhatsApp" />
+							<IoLogoWhatsapp className="components-icon" />
 							<Link to="#">WhatsApp</Link>
 						</div>
 
 					</div>
 
 					<button onClick={() => redirectTopage('/faq')} className="button-chat">
-						<img alt='button chat icon' className="button-chat-img" src={chatIcon} />
+						<RiMessage3Fill className="button-chat-img"/>
 					</button>
 
 				</main>

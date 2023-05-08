@@ -44,6 +44,14 @@
 	font-weight: var(--buttons-font-weight);
 	border-radius: var(--buttons-border-radius);
 	max-width: 500px;	
+  transition: .2s;
+  cursor: pointer;
+}
+
+.container-button:hover {
+  color: var(--red-buttons-backgroundColor);
+  background-color: #fff;
+  border: 1px solid var(--red-buttons-backgroundColor);
 }
 
 .continer-link {
@@ -97,6 +105,14 @@
 	  font-size: var(--buttons-font-size);
 	  font-weight: var(--buttons-font-weight);
 	  border-radius: var(--buttons-border-radius);
+    cursor: pointer;
+    transition: .2s;
 	}
+
+  .container-button:hover {
+    color: var(--red-buttons-backgroundColor);
+    background-color: #fff;
+    border: 1px solid var(--red-buttons-backgroundColor);
+  }
 
 }

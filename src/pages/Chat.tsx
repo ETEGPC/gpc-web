@@ -92,7 +92,7 @@ export function Chat() {
 						ref={input}
 					/>
 					<button ref={sendButton} className='chat-button' disabled={messageInput === '' ? true : false} onClick={handleSendMessage}>
-						<IoSend color={messageInput === '' ? '#616161' : '#048F36'} size={28} />
+						<IoSend className="IoSend" color={messageInput === '' ? '#616161' : '#048F36'} size={28} />
 					</button>
 				</div>
 			</div >

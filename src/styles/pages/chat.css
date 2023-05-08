@@ -122,6 +122,7 @@
   height: 42px;
   border-radius: 60px;
   box-shadow: 1px 1px 4px #cacaca;
+  transition: .2s;
 }
 
 .chat-button-img {
