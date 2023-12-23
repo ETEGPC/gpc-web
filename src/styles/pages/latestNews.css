@@ -62,8 +62,8 @@
     }
 
     .latestNews-container {
-        width: 76%;
-        margin-top: 10vh;
+      width: 63vw;
+      margin-top: 60px;        
     }
 
     .latestNews-content {

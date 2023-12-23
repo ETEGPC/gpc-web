@@ -63,7 +63,7 @@ export function HomePage() {
 
 			<div className="homePage-container" id="container" onClick={CloseMenu}>
 
-				<Carousel />
+				{/* <Carousel /> */}
 
 				<div className="links">
 

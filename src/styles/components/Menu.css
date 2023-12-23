@@ -15,6 +15,28 @@
 	width: 84vw;
 	transform: translateX(-100%);
 	transition: 0.2s;
+	top: 0;
+}
+
+.menu-main-header {
+	display: flex;
+	margin: 0 0 0 9%;
+}
+
+.menu-main-header svg {
+	align-self: center;
+	color: #fff;
+	width: 7vw;
+	height: 7vh;
+}
+
+.menu-main-header h1 {
+	color: white;
+	text-decoration: underline;
+	font-size: 26px;
+	display: inline;
+	align-self: center;
+	margin-left: 19px;
 }
 
 .install-app-container {
@@ -48,12 +70,6 @@
   height: 25px;
 }
 
-.menu-header-img {
-  align-self: center;
-  color: #fff;
-  width: 7vw;
-  height: 7vh;
-}
 
 .menu-header-button {
 	background-color: transparent;
@@ -64,18 +80,9 @@
   display: flex;
 }
 
-.menu-header-h1 {
-	color: white;
-	text-decoration: underline;
-	font-size: 26px;
-	display: inline;
-	align-self: center;
-}
-
-
 .menu-main {
  	background-color: #010030;
-  height: 93vh;
+  	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -92,7 +99,7 @@
 }
 
 
-.menu-main div a{
+.menu-main div p:not(.install-app-label){
 	color: white;
 	font-weight: 600;
 	padding: 0 0 0 19px;
@@ -148,14 +155,42 @@
 
 @media screen and (min-width: 800px) and (min-height: 497px){ 
 
+	.menu-container {
+		background-color: #020063;
+		font-family: 'Raleway', sans-serif;
+	}
+
+	.menu-header {
+		width: 100vw;
+		position: absolute;
+		height: 60px;
+		background: #020063;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
 	.menu-open {
 		z-index: 2;
 		flex-direction: column;
-		position: absolute;
 		background-color: #020063;
-		width: 84vw;
-		transform: translateX(-100%);
 		transition: 0.2s;
+		transform: translateX(0);
+		width: 340px;
+		height: 100vh;
+		position: absolute;
+		top: 60px;
+	}
+
+	.menu-main {
+		background-color: #010030;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	.menu-main-header {
 		display: none;
 	}
 
@@ -183,16 +218,6 @@
 	  font-size: var(--h2-font-size);
 	  margin-left: 1%;
 	  display: block;
-	}
-
-	.menu-open {
-		z-index: 2;
-		flex-direction: column;
-		position: absolute;
-		background-color: #020063;
-		width: 84vw;
-		transform: translateX(100%);
-		transition: 0.2s;
 	}
 
 	.desktop-menu {

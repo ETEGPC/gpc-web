@@ -1,4 +1,4 @@
-import { ICalendar } from "./components";
+import { ICalendar, IMenuItems, IMenuItemProps } from "./components";
 import { IMessage, INotice, ISchedules, IEvent, IRelative } from "./api";
 
-export type { ICalendar, IMessage, INotice, ISchedules, IEvent, IRelative};
+export type { ICalendar, IMenuItems, IMenuItemProps, IMessage, INotice, ISchedules, IEvent, IRelative};
