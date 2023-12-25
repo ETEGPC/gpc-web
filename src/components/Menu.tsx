@@ -1,9 +1,7 @@
 import { useNavigate, NavigateFunction } from 'react-router-dom'
 import '../styles/components/Menu.css';
 import eteLogo from '../images/eteLogo.svg';
-import { useState, useEffect } from 'react';
-
-// Import Menu's icons
+import { useState, useRef, useEffect } from 'react';
 import { BsChatDots } from 'react-icons/bs';
 import { FiMenu } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi'
@@ -21,56 +19,62 @@ import {
  AiOutlineHome,
  AiOutlineAlert,
  AiOutlineDownload
- } from 'react-icons/ai';
- import { IMenuItems, IMenuItemProps } from '../@types';
+} from 'react-icons/ai';
+import { IMenuItems, IMenuItemProps } from '../@types';
+import * as S from './StyledMenu';
+import { useIsDesktopWindow } from '../CustomHooks/useIsDesktopWindow';
 
 export function CloseMenu() {
 	let menu: any = document.getElementById('menu');
-	menu.style.transform = 'translateX(-100%)';
+	menu.style.transform = 'translateX(-100%)';	
 }
 
 const MenuItem = ({ items }: IMenuItemProps) => {	
 	return (
 		<>
 			{items.map((item, index) => (			
-				<div key={index} className={`menu-component-${index}`} onClick={item.handleOnclick}>
+				<S.MenuItemContainer key={index} onClick={item.handleOnclick}>
 					{item.icon}
 					<p>{item.linkText}</p>					
-				</div>
+				</S.MenuItemContainer>
 			))}
 		</>
 	)
 }
 
+
 export function Menu() {
-
-	const [isDesktopWindow, setIsDesktopWindow] = useState<boolean>();
-
-	useEffect(() => {
-		const toggleIsInstallPwaVisible = (): void => {
-			if(window.innerHeight === 497 && window.innerWidth === 800){
-				setIsDesktopWindow(false);
-			}else {
-				setIsDesktopWindow(true);
-			}
-		};
-
-		toggleIsInstallPwaVisible();
-		window.addEventListener('resize', toggleIsInstallPwaVisible);
-
-		return () => window.removeEventListener('resize', toggleIsInstallPwaVisible);
-
-	}, []);
-
+	const isDesktopWindow: boolean | undefined = undefined;
+	const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false);
 	const navigate: NavigateFunction = useNavigate();
+	const menuRef = useRef<HTMLDivElement>(null);
+
+	// useEffect(() => {
+	// 	isDesktopWindow = useIsDesktopWindow();
+	// }, []);
 
 	function openWhatsApp() {
 		window.open('https://wa.me/5581997841403', '_blank');
 	}
 
-	function CloseMenu() {
-		let menu: any = document.getElementById('menu');
-		menu.style.transform = 'translateX(-100%)';
+	function closeMenu(desktopWindow: boolean): boolean | undefined {		
+		console.log(isDesktopWindow)
+		if(desktopWindow){
+			return false;
+		}
+
+		if(menuRef.current && isMenuVisible){
+			menuRef.current.style.transform = "translateX(-100%)";
+			setIsMenuVisible(false);
+		}
+	}
+
+	const openMenu = (): void => {
+		if(menuRef.current && !isMenuVisible){
+			console.log("abriu")
+			menuRef.current.style.transform = "translateX(0%)";
+			setIsMenuVisible(true);
+		}
 	}
 
 	function openInstagram() {
@@ -124,12 +128,7 @@ export function Menu() {
 	];
 
 	let deferredPrompt: any;
-	const [canInstall, setCanInstall] = useState(false)
-
-	function OpenMenu() {
-		let menu: any = document.getElementById('menu');
-		menu.style.transform = 'translateX(0%)';
-	}	
+	const [canInstall, setCanInstall] = useState(false)	
 
 	window.addEventListener('beforeinstallprompt', (e) => {
 		e.preventDefault();
@@ -141,35 +140,32 @@ export function Menu() {
 		deferredPrompt.prompt();
 	}
 
-
 	return (
-		<div className="menu-container">
-			<header className="menu-header">
-				<button onClick={OpenMenu} className="menu-button"><FiMenu className="menu-img-menu"/></button>
-				<img className="menu-img-gp" src={eteLogo} alt="Ícone da ETE" />
-				<h2 className="menu-school-title">ETE Ginásio Pernambucano</h2>
-			</header>
-			<div className="menu-open" id="menu">
-				<main className="menu-main">
-					{isDesktopWindow && (
-						<header className="menu-main-header">
-							<BiArrowBack onClick={CloseMenu} />	
-							<h1 className="menu-h1">Menu</h1>
+		<S.MenuContainer>
+			<S.MenuHeader> 
+				<FiMenu onClick={openMenu} /> 
+				<S.MenuHeaderSchoolIcon src={eteLogo} alt="Ícone da ETE" /> 
+				<h2>ETE Ginásio Pernambucano</h2> 
+			</S.MenuHeader>
+			<S.MenuContent ref={menuRef}> 
+				<main> 
+					{isDesktopWindow === false && (
+						<header> 
+							<BiArrowBack onClick={() => closeMenu(isDesktopWindow!)} />	
+							<h1>Menu</h1> 
 						</header>
 					)}
 					{!navigator.userAgent.includes('iPhone') && canInstall ?
 						<></>
 						:		
-						<div onClick={installPwa} className="install-app-container">
-							<AiOutlineDownload className="icons"/>
-							<button className="install-app-button">
-								<p className='install-app-label'>Instalar aplicativo</p>
-							</button>
-						</div>
+						<S.MenuInstallAppContainer onClick={installPwa}> 
+							<AiOutlineDownload />
+							<button>Instalar aplicativo</button>
+						</S.MenuInstallAppContainer>
 					}					
 					<MenuItem items={menuItems}/>
 				</main>
-			</div>			
-		</div>
+			</S.MenuContent>			
+		</S.MenuContainer>
 	);
 }
