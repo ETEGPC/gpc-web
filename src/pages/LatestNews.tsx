@@ -2,7 +2,6 @@ import { Menu } from "../components/Menu";
 // import image from '../images/imageExample.png'
 // import { Link } from "react-router-dom";
 import '../styles/pages/latestNews.css';
-import { CloseMenu } from '../components/Menu';
 import api from "../services/api";
 import { INews } from "../@types/api";
 import { useEffect, useState } from "react";
@@ -31,7 +30,7 @@ export function LatestNews() {
 
 			<Menu />
 
-			<div className="latestNews-container" onClick={CloseMenu}>
+			<div className="latestNews-container">
 
 				{/* <h1 className="latestNews-h1" >Últimas notícias</h1> */}
 				{

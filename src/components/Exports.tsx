@@ -1,6 +1,6 @@
 export * from '../pages/LatestNews';
 export * from '../pages/LoginScreen';
-export * from './Menu';
+export * from './Menu/';
 export * from '../pages/Chat';
 export * from '../pages/OurAgend'
 export * from '../pages/HomePage';

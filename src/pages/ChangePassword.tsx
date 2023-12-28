@@ -1,6 +1,5 @@
 import { Menu } from '../components/Menu';
 import '../styles/pages/changePassword.css';
-import { CloseMenu } from '../components/Menu';
 import { useState } from 'react';
 import api from '../services/api';
 import { useCookies } from 'react-cookie';
@@ -120,7 +119,7 @@ export function ChangePassword() {
 
 			<Menu />
 
-			<div className="changePassword-container" onClick={CloseMenu}>
+			<div className="changePassword-container">
 
 
 				<h2 className="container-subTitle">Preencha os campos abaixo para alterar a sua senha atual</h2>

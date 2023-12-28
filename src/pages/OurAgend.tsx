@@ -1,6 +1,5 @@
 import { Menu } from '../components/Exports';
 import '../styles/pages/ourAgend.css';
-import { CloseMenu } from '../components/Menu';
 import Calendar2 from '../components/Calendar';
 import api from '../services/api';
 import { IEvent } from '../@types';
@@ -31,7 +30,7 @@ export function OurAgend() {
 
 			<Menu />
 
-			<div className="ourAgend-container" onClick={CloseMenu}>
+			<div className="ourAgend-container">
 
 				{/* <h1 className="container-title">Nossa agenda</h1> */}
 

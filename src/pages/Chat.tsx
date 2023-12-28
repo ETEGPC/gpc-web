@@ -4,7 +4,6 @@ import { IoSend } from 'react-icons/io5';
 import api from '../services/api';
 import { IMessage } from '../@types';
 import '../styles/pages/chat.css';
-import { CloseMenu } from '../components/Menu';
 
 export function Chat() {
 	const [messageInput, setMessageInput] = useState('');
@@ -57,7 +56,7 @@ export function Chat() {
 		<div className='container'>
 			<Menu />
 
-			<div className="chat-container" onClick={CloseMenu}>
+			<div className="chat-container">
 				<h2 className='chat-school-title'>ETE Ginásio</h2>
 
 				<hr className='chat-hr' />

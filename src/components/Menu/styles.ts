@@ -106,7 +106,7 @@ export const MenuItemContainer = styled.div`
     padding: 0% 0% 0 9%;	
 	display: flex;
 
-    img {
+    svg {
         color: white;
         width: 25px;
         height: 25px;
@@ -135,6 +135,7 @@ export const MenuContainer = styled.div`
             display: flex;
             align-items: center;
             justify-content: flex-start;
+            z-index: 2;
         }
 
         ${MenuContent} {

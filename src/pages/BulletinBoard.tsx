@@ -1,5 +1,4 @@
 import { Menu } from '../components/Exports';
-import { CloseMenu } from '../components/Menu';
 import '../styles/pages/bulletinBoard.css';
 import { useEffect, useState } from 'react';
 import { INotice } from '../@types';
@@ -33,7 +32,7 @@ export function BulletinBoard() {
 		<div className="container">
 			<Menu />
 
-			<div className="bulletinBoard-container" onClick={CloseMenu}>
+			<div className="bulletinBoard-container">
 
 				<h1 className='container-title'>Mural de avisos</h1>
 

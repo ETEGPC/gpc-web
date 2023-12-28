@@ -1,7 +1,6 @@
-import { CloseMenu, Menu } from '../components/Exports';
+import { Menu } from '../components/Exports';
 import api from '../services/api';
 import '../styles/pages/timesheet.css';
-// import { CloseMenu } from '../components/Menu';
 
 export function Timesheet() {
 	const schoolClasses: string[] = JSON.parse(String(localStorage.getItem('schoolClasses')));
@@ -16,7 +15,7 @@ export function Timesheet() {
 		<div className="container">
 			<Menu />
 
-			<div className="timeSheet-container" onClick={CloseMenu}>
+			<div className="timeSheet-container">
 
 				{/* <h1 className="container-title">Quadro de horários</h1> */}
 

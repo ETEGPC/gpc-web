@@ -1,6 +1,6 @@
 import '../styles/pages/documentsRequest.css';
 import { useNavigate } from 'react-router-dom';
-import { CloseMenu, Menu } from '../components/Exports';
+import { Menu } from '../components/Exports';
 import { useEffect, useState } from 'react';
 import api from '../services/api';
 import SolicitationCard from '../components/SolicitationCard';
@@ -266,7 +266,7 @@ export function DocumentsRequest() {
 
 			<Menu />
 
-			<div className="documentsRequest-container" onClick={CloseMenu}>
+			<div className="documentsRequest-container">
 
 				
 				<h2 className="documents-h2">Preencha os campos abaixo para solicitar algum documento</h2>

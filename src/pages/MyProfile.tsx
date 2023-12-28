@@ -1,7 +1,6 @@
 import { Menu } from '../components/Exports';
 import '../styles/pages/myProfile.css';
 import { Link } from 'react-router-dom';
-import { CloseMenu } from '../components/Menu';
 import { useCookies } from 'react-cookie';
 import { useEffect, useState } from 'react';
 import api from '../services/api';
@@ -48,7 +47,7 @@ export function MyProfile() {
 
 			<Menu />
 
-			<div className="myProfile-container" onClick={CloseMenu}>
+			<div className="myProfile-container">
 
 				{/* <h1 className="container-title">Meu perfil</h1> */}
 

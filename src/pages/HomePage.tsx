@@ -3,7 +3,6 @@ import '../styles/pages/homePage.css';
 import htmlTagIcon from '../images/icons/htmlTag_icon.svg';
 import cameraIcon from '../images/icons/camera_icon.svg';
 import { Link, useNavigate } from 'react-router-dom';
-import { CloseMenu } from '../components/Menu';
 import { Carousel } from '../components/Carousel';
 import { useEffect } from 'react';
 import { FaEye, FaMapMarkerAlt, FaCompass } from 'react-icons/fa';
@@ -61,9 +60,9 @@ export function HomePage() {
 
 			<Menu />
 
-			<div className="homePage-container" id="container" onClick={CloseMenu}>
+			<div className="homePage-container" id="container">
 
-				{/* <Carousel /> */}
+				<Carousel />
 
 				<div className="links">
 

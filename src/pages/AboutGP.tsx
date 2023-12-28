@@ -1,7 +1,6 @@
 import React from 'react';
 import { Menu } from '../components/Exports';
 import '../styles/pages/aboutGP.css';
-import { CloseMenu } from '../components/Exports';
 
 export function AboutGP() {
 
@@ -11,7 +10,7 @@ export function AboutGP() {
         <div className="container">
             <Menu />
 
-            <div className="aboutGP-container" onClick={CloseMenu}>
+            <div className="aboutGP-container">
 
 
                 <h4 className="download-document-h4">Para baixar o documento completo<a className="document-download" href="../documents/PPP 2022 Def.pdf" download> clique aqui.</a></h4>

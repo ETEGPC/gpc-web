@@ -1,7 +1,6 @@
 import { useNavigate, NavigateFunction } from 'react-router-dom'
-import '../styles/components/Menu.css';
-import eteLogo from '../images/eteLogo.svg';
-import { useState, useRef, useEffect } from 'react';
+import eteLogo from '../../images/eteLogo.svg';
+import { useState, useRef } from 'react';
 import { BsChatDots } from 'react-icons/bs';
 import { FiMenu } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi'
@@ -20,14 +19,9 @@ import {
  AiOutlineAlert,
  AiOutlineDownload
 } from 'react-icons/ai';
-import { IMenuItems, IMenuItemProps } from '../@types';
-import * as S from './StyledMenu';
-import { useIsDesktopWindow } from '../CustomHooks/useIsDesktopWindow';
-
-export function CloseMenu() {
-	let menu: any = document.getElementById('menu');
-	menu.style.transform = 'translateX(-100%)';	
-}
+import { IMenuItems, IMenuItemProps } from '../../@types';
+import * as S from './styles';
+import { useIsDesktopWindow } from '../../CustomHooks/useIsDesktopWindow';
 
 const MenuItem = ({ items }: IMenuItemProps) => {	
 	return (
@@ -44,21 +38,18 @@ const MenuItem = ({ items }: IMenuItemProps) => {
 
 
 export function Menu() {
-	const isDesktopWindow: boolean | undefined = undefined;
+	let isDesktopWindow: boolean = useIsDesktopWindow();;
+	console.log(isDesktopWindow)
 	const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false);
 	const navigate: NavigateFunction = useNavigate();
 	const menuRef = useRef<HTMLDivElement>(null);
 
-	// useEffect(() => {
-	// 	isDesktopWindow = useIsDesktopWindow();
-	// }, []);
 
 	function openWhatsApp() {
 		window.open('https://wa.me/5581997841403', '_blank');
 	}
 
 	function closeMenu(desktopWindow: boolean): boolean | undefined {		
-		console.log(isDesktopWindow)
 		if(desktopWindow){
 			return false;
 		}
@@ -71,14 +62,13 @@ export function Menu() {
 
 	const openMenu = (): void => {
 		if(menuRef.current && !isMenuVisible){
-			console.log("abriu")
 			menuRef.current.style.transform = "translateX(0%)";
 			setIsMenuVisible(true);
 		}
 	}
 
 	function openInstagram() {
-		window.open('https://www.instagram.com/eteginasiopec/', '_blank');
+		window.open('https://www.instagram.com/eteginasiopernambucano/', '_blank');
 	}
 
 	function openEmail() {
@@ -141,7 +131,7 @@ export function Menu() {
 	}
 
 	return (
-		<S.MenuContainer>
+		<S.MenuContainer onClick={() => closeMenu(isDesktopWindow)}>
 			<S.MenuHeader> 
 				<FiMenu onClick={openMenu} /> 
 				<S.MenuHeaderSchoolIcon src={eteLogo} alt="Ícone da ETE" /> 
@@ -151,7 +141,7 @@ export function Menu() {
 				<main> 
 					{isDesktopWindow === false && (
 						<header> 
-							<BiArrowBack onClick={() => closeMenu(isDesktopWindow!)} />	
+							<BiArrowBack onClick={() => closeMenu(isDesktopWindow)} />	
 							<h1>Menu</h1> 
 						</header>
 					)}
