@@ -39,7 +39,6 @@ const MenuItem = ({ items }: IMenuItemProps) => {
 
 export function Menu() {
 	let isDesktopWindow: boolean = useIsDesktopWindow();;
-	console.log(isDesktopWindow)
 	const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false);
 	const navigate: NavigateFunction = useNavigate();
 	const menuRef = useRef<HTMLDivElement>(null);
@@ -134,8 +133,12 @@ export function Menu() {
 		<S.MenuContainer onClick={() => closeMenu(isDesktopWindow)}>
 			<S.MenuHeader> 
 				<FiMenu onClick={openMenu} /> 
-				<S.MenuHeaderSchoolIcon src={eteLogo} alt="Ícone da ETE" /> 
-				<h2>ETE Ginásio Pernambucano</h2> 
+				<S.MenuHeaderSchoolIcon 
+					src={eteLogo}
+					alt="Ícone da ETE"
+					onClick={() => navigate('/')}
+				/> 
+				<h2 onClick={() => navigate('/')}>ETE Ginásio Pernambucano</h2> 
 			</S.MenuHeader>
 			<S.MenuContent ref={menuRef}> 
 				<main> 

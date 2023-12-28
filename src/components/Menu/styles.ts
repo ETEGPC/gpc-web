@@ -136,6 +136,7 @@ export const MenuContainer = styled.div`
             align-items: center;
             justify-content: flex-start;
             z-index: 2;
+            cursor: pointer;
         }
 
         ${MenuContent} {
